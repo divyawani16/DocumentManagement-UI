@@ -74,38 +74,44 @@
 
   .add-icon {
     position: absolute;
-    top: 10px;
-    right: 300px;
+    top: 15px;
+    right: 5 rem;
     font-size: 15px;
     color: #1e293b;
-  }
+    border: none;
+    outline: none;
+    left: 30px;
+
+    }
+    
+  
   .table-container {
     text-align: center;
   }
   
-  .demo-table {
-    width: 80%;
-    height: 400px;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 900px;
-    border-collapse: collapse;
-    font-size: 16px;
-    align-items: center;
-    left: 0px;
+  // .demo-table {
+  //   width: 80%;
+  //   height: 400px;
+  //   margin-top: 50px;
+  //   margin-left: 50px;
+  //   margin-right: 900px;
+  //   border-collapse: collapse;
+  //   font-size: 16px;
+  //   align-items: center;
+  //   left: 0px;
   
-  }
+  // }
   
-  .mat-header-row {
-    background-color: #3c3e53;
-    font-weight: bold;
-    // background-color: white;
-  font-weight: bold;
-  }
+  // .mat-header-row {
+  //   background-color: #3c3e53;
+  //   font-weight: bold;
+  //   // background-color: white;
+  // font-weight: bold;
+  // }
   
-  .mat-row:hover {
-    background-color: #ECECEC;
-  }
+  // .mat-row:hover {
+  //   background-color: #ECECEC;
+  // }
   
   // .mat-cell, .mat-header-cell {
   //   padding: 12px;

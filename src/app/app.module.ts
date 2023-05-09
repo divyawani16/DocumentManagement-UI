@@ -22,6 +22,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { PropertyComponent } from './property/property.component';
+import { TableComponent } from './table/table.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,11 @@ import { PropertyComponent } from './property/property.component';
     SidenavComponent,
     LoginComponent,
     LoginLayoutComponent,
-    PropertyComponent
+    PropertyComponent,
+    TableComponent,
+    UsersComponent,
+    
+
     
   ],
   imports: [

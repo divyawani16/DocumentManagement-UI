@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Column } from '../table/column';
+
 export interface Element {
   position: number,
   name: string,
   weight: number,
   symbol: string
 }
-
 @Component({
-  selector: 'app-property',
-  templateUrl: './property.component.html',
-  styleUrls: ['./property.component.scss']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss']
 })
-export class PropertyComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   constructor() { }
 

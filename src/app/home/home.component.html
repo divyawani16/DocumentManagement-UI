@@ -12,7 +12,7 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       
       <button mat-icon-button class="add-icon" (click)="addDocument($event)">
-        <mat-icon>add_circle_outline</mat-icon>
+        <span class="material-icons">add_circle</span>
       </button>
       <!-- <div class="search-box">
         <mat-form-field class="search-field">
@@ -30,12 +30,16 @@
       
        
       </div>
-
+  
+     <app-table
+     [tableColumns]="tableColumns"
+     [tableData]="tableData">
+    </app-table>
 <!--     
     <div class="page__content-data position-absolute text-center"> -->
       
       
-       <table mat-table [dataSource]="dataSource" class="demo-table ">
+       <!-- <table mat-table [dataSource]="dataSource" class="demo-table ">
 
    
         <ng-container matColumnDef="No."class="mat-column-name">
@@ -73,6 +77,6 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      
+       -->
     </div>
   </div>

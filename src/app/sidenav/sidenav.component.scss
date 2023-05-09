@@ -12,9 +12,12 @@
   }
 }
 .mat-divider {
-  border-top-width: 2px;
+  border-top-width: 1px;
   border-color: white;
+  width: 90%;
+  margin: 0 auto;
 }
+
 .mat-list-item {
   color: #94a3b8 !important;
   font-size: 0.8rem;
