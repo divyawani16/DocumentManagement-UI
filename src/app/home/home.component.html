@@ -1,29 +1,18 @@
-<!-- <div class="container-fluid page">
-  <div class="page__box">  Documents</div>
-  <div class="page__content shadow p-3 position-relative">
-    <div class="page__content-data position-absolute text-center">
-      Home Content Goes Here
-    </div>
-  </div>
-</div> -->
+
 <div class="container-fluid page">
   <div class="page__box">Documents</div>
   <div class="page__content shadow p-3 position-relative">
     <div class="d-flex justify-content-between align-items-center mb-3">
       
-      <button mat-icon-button class="add-icon" (click)="addDocument($event)">
+      <!-- <button mat-icon-button class="add-icon" (click)="addDocument($event)">
         <span class="material-icons">add_circle</span>
-      </button>
-      <!-- <div class="search-box">
-        <mat-form-field class="search-field">
-          <input #searchInput matInput placeholder="Search">
-          <mat-icon matSuffix (click)="searchInput.focus()" class="search-icon">search</mat-icon>
-        </mat-form-field>
-      </div> -->
+      </button> -->
+      
+      <app-button (click)="openDialog()" title="Add Document"> </app-button>
 
       <div class="search-box" (click)="onSearchBoxClick()">
         <mat-form-field class="search-field">
-          <input #searchInput matInput placeholder="">
+          <input #searchInput  matInput placeholder="">
           <mat-icon matSuffix class="search-icon"[ngClass]="{'search-icon-hidden': isSearchBoxClicked}">search</mat-icon>
         </mat-form-field>
       </div>

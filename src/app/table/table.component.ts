@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Column } from './column';
 
@@ -33,4 +33,10 @@ export class TableComponent<T> implements OnInit {
     this.displayedColumns = this.tableColumns.map((c) => c.columnDef);
     this.dataSource = new MatTableDataSource(this.tableData);
   }
+  
+  // @Output() buttonClicked = new EventEmitter<string>();
+
+  // onButtonClicked(){
+  //   this.buttonClicked.emit('how');
+  // }
 }

@@ -24,7 +24,14 @@ import { MatTableModule } from '@angular/material/table';
 import { PropertyComponent } from './property/property.component';
 import { TableComponent } from './table/table.component';
 import { UsersComponent } from './users/users.component';
-
+import { ButtonComponent } from './button/button.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DocumentDetailsComponent } from './document-details/document-details.component';
+import { HistoryComponent } from './history/history.component';
+import { AddDocumentComponent } from './add-document/add-document.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteComponent } from './delete/delete.component'
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +44,12 @@ import { UsersComponent } from './users/users.component';
     PropertyComponent,
     TableComponent,
     UsersComponent,
-    
+    ButtonComponent,
 
-    
+    DocumentDetailsComponent,
+    HistoryComponent,
+    AddDocumentComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +68,9 @@ import { UsersComponent } from './users/users.component';
     MatInputModule,
     MatGridListModule,
     MatTableModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],

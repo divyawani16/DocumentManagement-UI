@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable, ReplaySubject } from 'rxjs';
 import { Column } from '../table/column';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDocumentComponent } from '../add-document/add-document.component';
 // export interface PeriodicElement {
 //   Document_Name: string;
 //   No: number;
@@ -39,19 +41,20 @@ export interface Element {
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+ 
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddDocumentComponent,{
+      width: '640px',disableClose: true 
+    });
+}
 
   ngOnInit(): void {
   }
 
   searchText: string = '';
 
-  // displayedColumns: string[] = ['No.', 'Document Name', 'PropertyName', 'User','Created Date','Status'];
-  // dataSource = ELEMENT_DATA;
-  addDocument(event: Event) {
-    event.stopPropagation();
-    // Add document logic here
-  }
 
   tableColumns: Array<Column> = [
     {
@@ -96,6 +99,10 @@ export class HomeComponent implements OnInit {
   onSearchBoxClick() {
     this.isSearchBoxClicked = true;
   }
+
+  // buttonTriggered(evt){
+  //   console.log(evt)
+  // }
   
 }
 

@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PropertyComponent } from './property/property.component';
 import { UsersComponent } from './users/users.component';
+import { DocumentDetailsComponent } from './document-details/document-details.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent, pathMatch: 'full', data: { layout: 'login-layout' } },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, data: { layout: 'default' } },
   { path: 'users', component: UsersComponent, data: { layout: 'default' } },
   { path: 'property', component: PropertyComponent, data: { layout: 'default' } },
+  { path: 'document-details', component: DocumentDetailsComponent, data: { layout: 'default' } },
+  { path: 'history', component: HistoryComponent, data: { layout: 'default' } },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 

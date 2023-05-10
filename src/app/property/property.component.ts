@@ -55,4 +55,9 @@ export class PropertyComponent implements OnInit {
     { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
     { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }
   ];
+
+  addProperty(event: Event) {
+    event.stopPropagation();
+    // Add document logic here
+  }
 }
