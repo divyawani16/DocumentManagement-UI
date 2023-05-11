@@ -3,12 +3,43 @@
   <div class="page__box">Documents</div>
   <div class="page__content shadow p-3 position-relative">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      
+
+      <h1>Document Details</h1>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">DocumentId</th>
+            <th scope="col">Name</th>
+            <th scope="col">User</th>
+            <th scope="col">Property</th>
+            <th scope="col">Doctype</th>
+            <th scope="col">DocMimeType</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of documentslist">
+            <td>{{ user.documentId}}</td>
+            <td>{{ user.documentName }}</td>
+            <td>{{ user.userId }}</td>
+            <td>{{ user.propertyId }}</td>
+            <td>{{ user.docTypeId }}</td>
+            <td>{{ user.docMimeTypeId }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
       <!-- <button mat-icon-button class="add-icon" (click)="addDocument($event)">
         <span class="material-icons">add_circle</span>
       </button> -->
       
-      <app-button (click)="openDialog()" title="Add Document"> </app-button>
+      <!-- <app-button (click)="openDialog()" title="Add Document"> </app-button>
 
       <div class="search-box" (click)="onSearchBoxClick()">
         <mat-form-field class="search-field">
@@ -19,11 +50,11 @@
       
        
       </div>
+      
   
      <app-table
-     [tableColumns]="tableColumns"
-     [tableData]="tableData">
-    </app-table>
+    [tableColumns]="tableColumns">
+    </app-table> -->
 <!--     
     <div class="page__content-data position-absolute text-center"> -->
       
@@ -67,5 +98,4 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
        -->
-    </div>
-  </div>
+  

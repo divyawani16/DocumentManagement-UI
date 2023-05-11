@@ -3,6 +3,41 @@
     <div class="page__box">Document-Details</div>
     <div class="page__content shadow p-3 position-relative">
       <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Documentversion Details!</h1>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">DcoumentVersionId</th>
+            <th scope="col">DocumentId</th>
+            <th scope="col">StageId</th>
+            <th scope="col">VersionNumber</th>
+            <th scope="col">location</th>
+            <th scope="col">CreatedBy</th>
+            <th scope="col">CreatedDate</th>
+            <th scope="col">UpdatedBy</th>
+            <th scope="col">UpdatedDate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of DocumentVersionlist">
+            <td>{{ user.documentVersionId}}</td>
+            <td>{{ user.documentId }}</td>
+            <td>{{ user.stageId }}</td>
+            <td>{{ user.versionNumber }}</td>
+            <td>{{ user.location }}</td>
+            <td>{{ user.createdBy }}</td>
+            <td>{{ user.createdDate }}</td>
+            <td>{{ user.updatedBy }}</td>
+            <td>{{ user.updatedDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+  
       </div>
       </div>
       </div>

@@ -1,45 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+//import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider,SocialAuthService } from 'angularx-social-login';
+//import { an } from '';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+selector: 'app-login',
+templateUrl: './login.component.html',
+styleUrls: ['./login.component.css']
+
 })
-export class LoginComponent implements OnInit {
-  username = '';
-  password = '';
-  hide = true;
-  loginForm: FormGroup;
+export class LoginComponent {
 
-  constructor(private router: Router) {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required])
-    });
-    console.log('LoginComponent constructor called');
-  }
-  ngOnInit(): void {
-    console.log('LoginComponent ngOnInit');
-  }
-  
-  get usernameFormControl() {
-    return this.loginForm.get('username');
-  }
+ constructor(
 
-  get passwordFormControl() {
-    return this.loginForm.get('password');
-  }
+ // private afAuth: AngularFireAuth,
 
-  login() {
-    const username = this.loginForm.get('username')?.value;
-    const password = this.loginForm.get('password')?.value;
+ private router: Router, private readonly authService: SocialAuthService,
+ private httpClient: HttpClient
+ ) {
 
-    // Perform login logic here
+ }
 
-    // this.router.navigate(['/dashboard']);
-    this.router.navigateByUrl('/home');
-  }
+ngOnInit() {
+   this.authService.authState.subscribe((user: any) => {
+     this.getAccessToken();
+console.log('authState user: ', user);
+ console.log('Token from state: ', user.authToken)
+ });
+
+ }
+ private accessToken = '';
+ user: any;
+ googleClientId = '248604648421-q1rfoqrjds4i5hons2ijmkpqmpmvsj1t.apps.googleusercontent.com';
+ getAccessToken(): void {
+ console.log('getAccessToken')
+ this.authService.getAccessToken(GoogleLoginProvider.PROVIDER_ID).then(accessToken => this.accessToken = accessToken);
+ }
+
 }
+
 
