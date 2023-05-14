@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "admin-panel-layout"
+  "defaultProject": "admin-panel-layout",
+  "cli": {
+    "analytics": "de6ffa5c-345e-408c-a84c-67243985b4b5"
+  }
 }

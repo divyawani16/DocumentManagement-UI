@@ -8,22 +8,42 @@
         <span class="material-icons">add_circle</span>
       </button> -->
       
-      <app-button (click)="openDialog()" title="Add Document"> </app-button>
-
-      <div class="search-box" (click)="onSearchBoxClick()">
-        <mat-form-field class="search-field">
-          <input #searchInput  matInput placeholder="">
-          <mat-icon matSuffix class="search-icon"[ngClass]="{'search-icon-hidden': isSearchBoxClicked}">search</mat-icon>
-        </mat-form-field>
-      </div>
       
+      <h1>Document Details</h1>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Srno</th>
+            <th scope="col">DocumentName</th>
+            <th scope="col">User</th>
+            <th scope="col">Property</th>
+            <th scope="col">doctype</th>
+            <th scope="col">docMimeType</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of documentslist">
+            <td>{{ user.documentId}}</td>
+            <td>{{ user.documentName }}</td>
+            <td>{{ user.userId }}</td>
+            <td>{{ user.propertyId }}</td>
+            <td>{{ user.docTypeId }}</td>
+            <td>{{ user.docMimeTypeId }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
        
       </div>
-  
-     <app-table
-     [tableColumns]="tableColumns"
-     [tableData]="tableData">
-    </app-table>
+  </div>
+
+
 <!--     
     <div class="page__content-data position-absolute text-center"> -->
       
@@ -68,4 +88,4 @@
       </table>
        -->
     </div>
-  </div>
+ 

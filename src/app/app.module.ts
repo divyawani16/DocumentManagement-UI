@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -32,6 +31,7 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +70,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatTableModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
