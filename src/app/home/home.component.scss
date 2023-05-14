@@ -15,6 +15,15 @@
     font-size: 30px; 
   }
   
+  .edit-button {
+    background-color: blue;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: red;
+    color: white;
+  }
   
   &__content {
     min-height: calc(110vh - 178px);

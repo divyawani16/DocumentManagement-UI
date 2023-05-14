@@ -10,20 +10,31 @@
       
       <app-button (click)="openDialog()" title="Add Document"> </app-button>
 
-      <div class="search-box" (click)="onSearchBoxClick()">
+      <div class="search-box" [ngClass]="{ 'search-box-clicked': isClicked }">
         <mat-form-field class="search-field">
-          <input #searchInput  matInput placeholder="">
-          <mat-icon matSuffix class="search-icon"[ngClass]="{'search-icon-hidden': isSearchBoxClicked}">search</mat-icon>
+          <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()" 
+            (click)="isClicked = true" (blur)="isClicked = false">
+          <!-- <mat-icon matSuffix [ngClass]="{ 'search-icon-hidden': isClicked }" class="search-icon">search</mat-icon> -->
         </mat-form-field>
       </div>
       
-       
+      
+      <div class="container-fluid">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                         (onEdit)="editUser($event)" (onDelete)="deleteUser($event)">
+              </app-table>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+ 
   
-     <app-table
-     [tableColumns]="tableColumns"
-     [tableData]="tableData">
-    </app-table>
+  
 <!--     
     <div class="page__content-data position-absolute text-center"> -->
       
@@ -67,5 +78,4 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
        -->
-    </div>
-  </div>
+   

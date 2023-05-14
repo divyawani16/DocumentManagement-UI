@@ -1,0 +1,75 @@
+<ng-container *ngIf="isFormVisible">
+<div class="form">
+
+  <mat-tab-group>
+    <mat-tab label="Add Document">
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label class="input_label">Document Name</mat-label>
+        <input matInput class="input_field">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label class="input_label">User Name</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label class="input_label">Property Name</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <button mat-icon-button (click)="fileInput.click()"class="button">
+        <mat-icon>attach_file</mat-icon>
+        Choose File
+      </button>
+      <input type="file" style="display: none" #fileInput (change)="handleFileInput($event)">
+      <div *ngIf="fileNames.length > 0">
+        <p>Selected Files:</p>
+        <ul>
+          <li *ngFor="let name of fileNames">{{ name }}</li>
+        </ul>
+      </div>
+<hr>
+<div class="button-container">
+  <button mat-raised-button color="primary" (click)="uploadDocuments()" class="btn">Save</button>
+  <button mat-raised-button color="warn" (click)="closeForm()" class="btn">Close</button>
+</div>
+
+
+
+      
+      <!-- <mat-form-field appearance="outline">
+        <mat-label class="input_label">Selected Files</mat-label>
+        <input matInput [value]="fileNames.join('\n')" readonly>
+      </mat-form-field>
+       -->
+    </mat-tab>
+    <mat-tab label="Tags">
+      <div>
+        <h3>Add Tag</h3>
+        <br>
+        <div>
+          <input type="text" placeholder="Tag 1">
+        </div>
+        <br>
+        <div>
+          <input type="text" placeholder="Tag 2">
+        </div>
+        <br>
+        <div>
+          <input type="text" placeholder="Tag 3">
+        </div>
+        <br>
+        <div>
+          <input type="text" placeholder="Tag 4">
+        </div>
+      </div>
+      <br>
+      <!-- <div class="button-container">
+        <button mat-raised-button color="primary" (click)="uploadDocuments()" class="btn">Save</button>
+      </div> -->
+    </mat-tab>
+    <br>
+    
+  </mat-tab-group>
+ 
+</div>
+</ng-container>
