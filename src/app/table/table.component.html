@@ -1,37 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-container">
+      <div *ngIf="GridArray.length === 0" class="no-results">No results found.</div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  class="demo-table " >
-    <ng-container
-      *ngFor="let disCol of tableColumns let colIndex = index;"
-      matColumnDef="{{disCol.columnDef}}" 
-    >
-      <th mat-header-cell *matHeaderCellDef>
-        {{ disCol.header }}
-      </th>
-  
-      <td mat-cell *matCellDef="let element">
-        <span *ngIf="!disCol.isLink; else link">
-          {{ disCol.cell(element) }}
-        </span>
-  
-        <ng-template #link>
-          <a [routerLink]="[disCol.url]">
-            {{ disCol.cell(element) }}
-          </a>
-        </ng-template>
-      </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
-  
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" > </tr>
-  </table>
-
-  <!-- <button type="button" (click)="onButtonClicked()">
-    <ng-content></ng-content>
-  </button> -->
-<!-- 
-  <button mat-icon-button class="add-icon"(click)="onButtonClicked()">
-    <ng-content></ng-content>
-    <span class="material-icons">add_circle</span>
-  </button>
-   -->
+      <table class="demo-table mat-elevation-z8">
+        <thead>
+          <tr class="mat-header-row">
+            <th>Sr</th>
+            <th *ngFor="let head of HeadArray" class="mat-header-cell">{{head.Head}}</th>  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of GridArray; let sr=index">
+            <td>{{sr+1}}</td>
+            <td *ngFor="let head of HeadArray" class="mat-cell">
+              <div *ngIf="head.FieldName != ''">{{item[head.FieldName]}}</div>
+              <div *ngIf="head.FieldName == ''" class="text-center">
+               
+                <button mat-icon-button color="primary" (click)="edit(item)" title="edit">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div> 
+            </td>
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
