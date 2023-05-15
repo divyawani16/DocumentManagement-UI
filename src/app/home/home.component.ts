@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
+
 import { HomeService } from './home.service';
 import { Document } from './home.model';
+
 
 @Component({
   selector: 'app-home',
@@ -11,6 +13,7 @@ import { Document } from './home.model';
 })
 export class HomeComponent implements OnInit {
   searchValue: string = '';
+
   documentsList: Document[] = [];
 
   constructor(
@@ -28,6 +31,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
+
+//   constructor(public dialog: MatDialog) {}
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddDocumentComponent, {
       width: '450px',
@@ -40,6 +46,7 @@ export class HomeComponent implements OnInit {
       console.log(result);
     });
   }
+
 
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
@@ -61,6 +68,40 @@ export class HomeComponent implements OnInit {
     return filteredList;
   }
 
+
+//   usersList: any[] = [
+//     { Id: 1, Name: 'John Smith', property_name: '@example.com', user: '234', created_date: 'com', status: 'active', },
+//     { Id: 2, Name: 'anu', property_name: 'john.smith@example.com', user: '4', created_date: 'example.com', status: 'active', },
+//     { Id: 3, Name: 'Smith2', property_name: 'abc.smith@example.com', user: '555', created_date: 'www.example.com', status: 'active', },
+//   ];
+
+//   headArray = [
+//     { 'Head': 'Name', 'FieldName': 'Name' },
+//     { 'Head': 'property_name', 'FieldName': 'property_name' },
+//     { 'Head': 'user', 'FieldName': 'user' },
+//     { 'Head': 'created_date', 'FieldName': 'created_date' },
+//     { 'Head': 'status', 'FieldName': 'status' },
+//     { 'Head': 'Action', 'FieldName': '' }
+//   ];
+
+//   ngOnInit(): void {
+//     console.log('Users list:', this.usersList);
+//   }
+
+//   filterData() {
+//     console.log('Search value:', this.searchValue);
+//     if (!this.searchValue) {
+//       return this.usersList;
+//     }
+//     const filteredList = this.usersList.filter(user => {
+//       return user.Name.toLowerCase().includes(this.searchValue.toLowerCase());
+//     });
+//     console.log('Filtered list:', filteredList);
+//     return filteredList;
+//   }
+  
+
+
   search() {
     console.log('Search value:', this.searchValue);
     this.filterData();
@@ -71,12 +112,20 @@ export class HomeComponent implements OnInit {
   }
 
   deleteDocument(document: Document) {
-    // implement delete functionality
-  }
+
+//   editUser(item: any) {
+//     // implement edit functionality
+//   }
+
+//   deleteUser(item: any) {
+
+//     // implement delete functionality
+//   }
 
   isClicked = false;
 
   onSearchBoxClick() {
+
     this.  isClicked = true;
   }
 
@@ -121,3 +170,9 @@ export class HomeComponent implements OnInit {
 // }
 
   
+
+//     this.isClicked = true;
+//   }
+
+// }
+

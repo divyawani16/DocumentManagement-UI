@@ -1,0 +1,103 @@
+.form .input_field {
+    width: 20%;
+    height: 20%;
+  }
+  
+  .form mat-form-field {
+    display: flex;
+    // justify-content: center;
+  }
+  
+  .form mat-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .file-input-button {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 16px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  // .form input[type="file"] {
+  //   display: none;
+  // }
+  
+  .form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+  
+  .form button:hover {
+    background-color: #555;
+  }
+  
+  .form .mat-tab-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  // .form button-container {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+
+  //   margin-left: 2px;
+  // }
+  
+  .button-container {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    display: inline-block;
+    margin: 4px;
+    padding: 0px;
+    width: 80px;
+    height: 30px;
+    margin-top: 0px;
+  }
+  .button-container button:first-child {
+    background-color: rgb(29, 29, 75);
+    color: white;
+  }
+  
+  .button-container button:last-child {
+    background-color: red;
+    color: white;
+  }
+  hr {
+    border-top: 1px solid blue !important;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  // .btn {
+  //   width: 100px;
+  // }
+  
+//   .form input[type="file"] {
+//     height: 10%;
+//     padding: 5px;
+//     font-size: 14px;
+//   }
+  
+  

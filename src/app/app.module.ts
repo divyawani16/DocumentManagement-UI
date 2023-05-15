@@ -31,8 +31,11 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
+
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatSelectModule } from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs'
 
 @NgModule({
   declarations: [
@@ -74,7 +77,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatDialogModule,
     MatDatepickerModule,
     MatRadioModule,
+
     HttpClientModule
+
+    MatSelectModule,
+    MatTabsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
