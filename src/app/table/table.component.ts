@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Column } from './column';
+//import { Column } from './column';
 
 
 // export interface Column {

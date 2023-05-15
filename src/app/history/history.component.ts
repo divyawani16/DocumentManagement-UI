@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Document} from './history.model';
+import { HistoryService } from './history.service';
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  DocumentAuditlist: Document[] | undefined;
 
-  ngOnInit(): void {
+  constructor(private HistoryService: HistoryService) { }
+
+  ngOnInit() {
+    try{
+      this.HistoryService.getDocumentAudit()
+      .subscribe(documentAudit => this.DocumentAuditlist = documentAudit);
+    }catch(err){
+      console.log(err)
+    }
   }
-
-}
+  }

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -32,8 +31,12 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
+
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +55,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     HistoryComponent,
     AddDocumentComponent,
     DeleteComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,8 +77,12 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatDialogModule,
     MatDatepickerModule,
     MatRadioModule,
+
+    HttpClientModule
+
     MatSelectModule,
     MatTabsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
