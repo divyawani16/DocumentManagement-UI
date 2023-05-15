@@ -70,10 +70,10 @@ export class HomeComponent implements OnInit {
     // implement delete functionality
   }
 
-  isSearchBoxClicked = false;
+  isClicked = false;
 
   onSearchBoxClick() {
-    this.isSearchBoxClicked = true;
+    this.isClicked = true;
   }
 
 }
