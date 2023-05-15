@@ -32,6 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     HistoryComponent,
     AddDocumentComponent,
     DeleteComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

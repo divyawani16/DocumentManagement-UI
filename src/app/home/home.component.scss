@@ -7,14 +7,25 @@
     background: #1e293b;
     margin: 0 -1rem;
     font-size: 24px;
+  
   }
   .page__box {
     min-height: 50px;
     background: #1e293b;
     margin: 0 -1rem;
     font-size: 30px; 
+    ;
   }
   
+  .edit-button {
+    background-color: blue;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: red;
+    color: white;
+  }
   
   &__content {
     min-height: calc(110vh - 178px);
@@ -132,4 +143,3 @@
 }
   
 }
-
