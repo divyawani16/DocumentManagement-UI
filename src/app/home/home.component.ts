@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
     try{
       this.homeService.getDocuments()
       .subscribe(documents => this.documentsList = documents);
+      console.log(this.documentsList)
     }catch(err){
       console.log(err)
     }
@@ -41,12 +42,11 @@ export class HomeComponent implements OnInit {
   }
 
   headArray = [  
-    { 'Head': 'documentName', 'FieldName': 'documentName' },  
-    { 'Head': 'User ID', 'FieldName': 'userId' }, 
-    { 'Head': 'Property ID', 'FieldName': 'propertyId' },  
-    { 'Head': 'Document Type ID', 'FieldName': 'docTypeId' }, 
-    { 'Head': 'Document Mime Type ID', 'FieldName': 'docMimeTypeId' }, 
-
+    { 'Head': 'Document Name', 'FieldName': 'documentName' },  
+    { 'Head': 'User Name ', 'FieldName': 'userName' }, 
+    { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
+    { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
+    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' }, 
   ];
 
   filterData() {
@@ -79,6 +79,8 @@ export class HomeComponent implements OnInit {
   onSearchBoxClick() {
     this.isSearchBoxClicked = true;
   }
+
+  
 }
 
 

@@ -1,17 +1,17 @@
 export class Document {
     documentId?: number;
     documentName: string;
-    userId: number;
-    propertyId: number;
-    docTypeId: number;
-    docMimeTypeId: number;
+    userName: string;
+    PropertyName: string;
+    docTypeName: string;
+    docMimeTypeName: string;
   
-    constructor(documentName: string, userId: number, propertyId: number, docTypeId: number, docMimeTypeId: number) {
+    constructor(documentName: string, userName: string, PropertyName: string, docTypeName: string, docMimeTypeName: string) {
       this.documentName = documentName;
-      this.userId = userId;
-      this.propertyId = propertyId;
-      this.docTypeId = docTypeId;
-      this.docMimeTypeId = docMimeTypeId;
+      this.userName = userName;
+      this.PropertyName = PropertyName;
+      this.docTypeName = docTypeName;
+      this.docMimeTypeName = docMimeTypeName;
     }
   }
   

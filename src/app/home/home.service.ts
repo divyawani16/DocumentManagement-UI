@@ -10,7 +10,7 @@ export class HomeService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/documents/get';
+    this.baseUrl = 'http://localhost:8089/documents/getalldocumentsdetails';
   }
 
    public getDocuments(): Observable<Document[]> {
