@@ -9,35 +9,12 @@
       <input matInput type="text" [(ngModel)]="searchValue" (click)="onSearchBoxClick()" (keyup)="search()">
     </mat-form-field>
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Document Name</th>
-        <th>User ID</th>
-        <th>Property ID</th>
-        <th>Document Type ID</th>
-        <th>Document Mime Type ID</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let document of filterData()">
-        <tr>
-          <td>{{ document.documentName }}</td>
-          <td>{{ document.userId }}</td>
-          <td>{{ document.propertyId }}</td>
-          <td>{{ document.docTypeId }}</td>
-          <td>{{ document.docMimeTypeId }}</td>
-          <td>
-          <button mat-raised-button color="primary" (click)="editDocument(document)">Edit</button>
-          <button mat-raised-button color="warn" (click)="deleteDocument(document)">Delete</button>
-          </td>
-          </tr>
-          </ng-container>
-          </tbody>
-          
-            </table>
-          </div>
+  <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                   (onEdit)="editDocument($event)" (onDelete)="deleteDocument($event)">
+          <!-- <ng-template #customButtons>
+            <button mat-raised-button color="primary" (click)="openDialog()">Add New</button>
+          </ng-template> -->
+        </app-table>
          
           <!-- <h1 mat-dialog-title>Add Document</h1>
           <div mat-dialog-content>
