@@ -16,8 +16,9 @@ export class PropertyService {
     return this.http.get<Document[]>(`${this.baseUrl}/get`);
   }
 
-  public deleteProperty(id: number): Observable<void> {
-    const url = `${this.baseUrl}/${id}`;
+  public deleteProperty(propertyId: number): Observable<void> {
+    const url = `${this.baseUrl}/${propertyId}`;
     return this.http.delete<void>(url);
   }
+  
 }

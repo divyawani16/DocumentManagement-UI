@@ -77,16 +77,16 @@ export class PropertyComponent implements OnInit {
       this.Propertylist.splice(index, 1);
     }
   
-    this.PropertyService.deleteProperty(item.id).subscribe(
+    this.PropertyService.deleteProperty(item.propertyId).subscribe(
       () => {
         console.log('Record deleted successfully from the database');
-        this.filterData();
       },
       (error) => {
         console.error('Error deleting record from the database:', error);
       }
     );
   }
+  
   
   isClicked = false;
 
