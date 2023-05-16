@@ -1,6 +1,5 @@
 <ng-container *ngIf="isFormVisible">
     <div class="form">
-    
       <mat-tab-group>
         <mat-tab label="Add Properties">
           <br>
@@ -28,7 +27,15 @@
             <mat-label class="input_label">FlatNumber</mat-label>
             <input matInput>
           </mat-form-field>
-          
+          <hr>
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="uploadProperty()" class="btn">Save</button>
+      <button mat-raised-button color="warn" (click)="closeForm()" class="btn">Close</button>
+    </div>
+    </mat-tab>
+    </mat-tab-group>
+    </div>
+    </ng-container>
           
           <!-- <button mat-icon-button (click)="fileInput.click()"class="button">
             <mat-icon>attach_file</mat-icon>
@@ -41,12 +48,4 @@
               <li *ngFor="let name of fileNames">{{ name }}</li>
             </ul>
           </div> -->
-    <hr>
-    <div class="button-container">
-      <button mat-raised-button color="primary" (click)="uploadProperty()" class="btn">Save</button>
-      <button mat-raised-button color="warn" (click)="closeForm()" class="btn">Close</button>
-    </div>
-    </mat-tab>
-    </mat-tab-group>
-    </div>
-    </ng-container>
+    

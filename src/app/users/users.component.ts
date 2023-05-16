@@ -22,6 +22,8 @@ export class UsersComponent implements OnInit {
       this.usersService.getUsers()
       .subscribe(users => this.userslist = users);
       console.log(this.userslist)
+      
+      
     }catch(err){
       console.log(err)
     }
@@ -30,7 +32,7 @@ export class UsersComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUserComponent, {
       width: '450px',
-      height: '600px',
+      height: '500px',
       data: {},
 
     });
