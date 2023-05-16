@@ -4,6 +4,7 @@ import { AddDocumentComponent } from '../add-document/add-document.component';
 
 import { HomeService } from './home.service';
 import { Document } from './home.model';
+import { AddpropertyComponent } from '../addproperty/addproperty.component';
 
 
 @Component({
@@ -38,7 +39,8 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(AddDocumentComponent, {
       width: '450px',
       height: '500px',
-      data: {}
+      data: {},
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -53,7 +55,8 @@ export class HomeComponent implements OnInit {
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' }, 
+    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
+    {'Head': 'Action', 'FieldName': ' ' } 
   ];
 
   filterData() {
@@ -107,12 +110,12 @@ export class HomeComponent implements OnInit {
     this.filterData();
   }
 
-  editDocument(document: Document) {
+  editDocument(item: any) {
     // implement edit functionality
   }
 
-  deleteDocument(document: Document) {
-
+  deleteDocument(item: any) {
+  }
 //   editUser(item: any) {
 //     // implement edit functionality
 //   }
@@ -121,17 +124,16 @@ export class HomeComponent implements OnInit {
 
 //     // implement delete functionality
 //   }
-  }
+
   isClicked = false;
 
   onSearchBoxClick() {
 
-    this.  isClicked = true;
+    this.isClicked = true;
   }
+  
 
 }
-
-
 // import { DataSource } from '@angular/cdk/table';
 // import { Component, OnInit } from '@angular/core';
 // import { MatTableDataSource } from '@angular/material/table';

@@ -1,19 +1,20 @@
-import { Component, OnInit,Inject  } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-add-document',
-  templateUrl: './add-document.component.html',
-  styleUrls: ['./add-document.component.scss']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.scss']
 })
-export class AddDocumentComponent implements OnInit {
+export class AddUserComponent implements OnInit {
+
   selectedFiles: FileList;
   fileNames: string[] = [];
   successMessageVisible: boolean = false;
   public isFormVisible = true;
 
   constructor(
-    public dialogRef: MatDialogRef<AddDocumentComponent>,
+    public dialogRef: MatDialogRef<AddUserComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
   
   ngOnInit(): void {
@@ -70,4 +71,5 @@ export class AddDocumentComponent implements OnInit {
   }
   
   
+
 }

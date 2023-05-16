@@ -31,11 +31,13 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
-
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
+import { AddpropertyComponent } from './addproperty/addproperty.component';
+import { AddUserComponent } from './add-user/add-user.component'
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import {MatTabsModule} from '@angular/material/tabs'
     AddDocumentComponent,
     DeleteComponent,
     DashboardComponent,
+    AddpropertyComponent,
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +82,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatDatepickerModule,
     MatRadioModule,
 
+ 
     HttpClientModule,
 
     MatSelectModule,
