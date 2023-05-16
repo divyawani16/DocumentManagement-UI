@@ -71,14 +71,23 @@ export class PropertyComponent implements OnInit {
   editProperty(item: any) {
     
   }
-
   deleteProperty(item: any) {
     const index = this.Propertylist.indexOf(item);
     if (index > -1) {
       this.Propertylist.splice(index, 1);
     }
-  this.filterData();
-}
+  
+    this.PropertyService.deleteProperty(item.id).subscribe(
+      () => {
+        console.log('Record deleted successfully from the database');
+        this.filterData();
+      },
+      (error) => {
+        console.error('Error deleting record from the database:', error);
+      }
+    );
+  }
+  
   isClicked = false;
 
   onSearchBoxClick() {

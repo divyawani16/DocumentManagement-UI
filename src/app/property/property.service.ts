@@ -6,14 +6,18 @@ import { Document } from './property.model';
   providedIn: 'root'
 })
 export class PropertyService {
+  private baseUrl: string;
 
-  private baseUrl:string;
-
-  constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/properties/get';
+  constructor(private http: HttpClient) {
+    this.baseUrl = 'http://localhost:8089/api/properties';
   }
 
-   public getProperty(): Observable<Document[]> {
-    return this.http.get<Document[]>(this.baseUrl);
+  public getProperty(): Observable<Document[]> {
+    return this.http.get<Document[]>(`${this.baseUrl}/get`);
+  }
+
+  public deleteProperty(id: number): Observable<void> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 }
