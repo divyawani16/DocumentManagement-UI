@@ -4,6 +4,7 @@ import { AddDocumentComponent } from '../add-document/add-document.component';
 
 import { HomeService } from './home.service';
 import { Document } from './home.model';
+import { AddpropertyComponent } from '../addproperty/addproperty.component';
 
 
 @Component({

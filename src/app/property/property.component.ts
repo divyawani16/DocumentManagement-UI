@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Document } from './property.model';
 import { PropertyService } from './property.service';
 import { MatDialog } from '@angular/material/dialog';
+import { AddpropertyComponent } from '../addproperty/addproperty.component';
 @Component({
   selector: 'app-property',
   templateUrl: './property.component.html',
@@ -26,18 +27,18 @@ export class PropertyComponent implements OnInit {
     }
   }
   
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(AddpropertyComponent, {
-  //     width: '450px',
-  //     height: '500px',
-  //     data: {}
-  //   });
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddpropertyComponent, {
+      width: '450px',
+      height: '500px',
+      data: {}
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //     console.log(result);
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
+  }
 
   headArray = [
     { 'Head': 'propertyName', 'FieldName': 'propertyName' },
