@@ -24,11 +24,15 @@ export class DocumentDetailsComponent implements OnInit {
   }
 
   headArray = [  
-    { 'Head': 'Document Name', 'FieldName': 'documentName' },  
-    { 'Head': 'User Name ', 'FieldName': 'userName' }, 
-    { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
-    { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' }, 
+    { 'Head': 'documentName', 'FieldName': 'documentName' },  
+    { 'Head': 'stageId', 'FieldName': 'stageId' }, 
+    { 'Head': 'versionNumber', 'FieldName': 'versionNumber' },  
+    { 'Head': 'location', 'FieldName': 'location' }, 
+    { 'Head': 'createdBy', 'FieldName': 'createdBy' }, 
+    { 'Head': 'createdDate', 'FieldName': 'createdDate' }, 
+    { 'Head': 'updatedBy', 'FieldName': 'updatedBy' }, 
+    { 'Head': 'updatedDate', 'FieldName': 'updatedDate' }, 
+
   ];
 
   filterData() {

@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     // Perform login logic here
 
     // this.router.navigate(['/dashboard']);
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/dashboard');
   }
 }
 

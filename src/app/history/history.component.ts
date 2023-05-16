@@ -7,7 +7,7 @@ import { HistoryService } from './history.service';
   styleUrls: ['./history.component.scss']
 })
 export class HistoryComponent implements OnInit {
-
+  searchValue: string = '';
   DocumentAuditlist: Document[] | undefined;
 
   constructor(private HistoryService: HistoryService) { }
@@ -21,4 +21,42 @@ export class HistoryComponent implements OnInit {
       console.log(err)
     }
   }
+  headArray = [  
+    { 'Head': 'stageId', 'FieldName': 'stageId' },  
+    { 'Head': 'finishedBy', 'FieldName': 'finishedBy' }, 
+    { 'Head': 'finishedOn', 'FieldName': 'finishedOn' },  
+    { 'Head': 'documentVersionId ', 'FieldName': 'documentVersionId' }, 
+    
+  ];
+
+  // filterData() {
+  //   console.log('Search value:', this.searchValue);
+  //   if (!this.searchValue) {
+  //     return this.DocumentAuditlist;
+  //   }
+  //   const filteredList = this.DocumentAuditlist.filter(document => {
+  //     return document.stageId.toLowerCase().includes(this.searchValue.toLowerCase());
+  //   });
+  //   console.log('Filtered list:', filteredList);
+  //   return filteredList;
+  // }
+  // search() {
+  //   console.log('Search value:', this.searchValue);
+  //   this.filterData();
+  // }
+
+  editDocument(document: Document) {
+    // implement edit functionality
+  }
+
+  deleteDocument(document: Document) {
+  }
+
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
+  
   }

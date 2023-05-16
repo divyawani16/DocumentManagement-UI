@@ -55,7 +55,8 @@ export class HomeComponent implements OnInit {
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' }, 
+    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
+    {'Head': 'Action', 'FieldName': 'edit | delete' } 
   ];
 
   filterData() {
@@ -109,11 +110,11 @@ export class HomeComponent implements OnInit {
     this.filterData();
   }
 
-  editDocument(document: Document) {
+  editDocument(item: any) {
     // implement edit functionality
   }
 
-  deleteDocument(document: Document) {
+  deleteDocument(item: any) {
   }
 //   editUser(item: any) {
 //     // implement edit functionality
