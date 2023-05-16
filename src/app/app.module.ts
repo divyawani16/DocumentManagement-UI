@@ -78,7 +78,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatDatepickerModule,
     MatRadioModule,
 
-    HttpClientModule
+    HttpClientModule,
 
     MatSelectModule,
     MatTabsModule,
