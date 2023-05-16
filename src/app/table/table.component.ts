@@ -57,7 +57,7 @@ export class TableComponent<T> implements OnInit {
 
   ngOnInit(): void {
 
-    this.dataSource = new MatTableDataSource(this.GridArray);
+    // this.dataSource = new MatTableDataSource(this.GridArray);
   }
   edit(item: any) {
     debugger;
