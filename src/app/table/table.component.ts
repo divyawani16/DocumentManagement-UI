@@ -64,7 +64,7 @@ export class TableComponent<T> implements OnInit {
     this.onEdit.emit(item);
   }
   delete(item: any) {
-    debugger;
+
     this.onDelete.emit(item);
   }
   
