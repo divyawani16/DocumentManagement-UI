@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUserComponent, {
       width: '450px',
-      height: '500px',
+      height: '600px',
       data: {},
 
     });

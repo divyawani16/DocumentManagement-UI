@@ -29,8 +29,8 @@ export class PropertyComponent implements OnInit {
   
   openDialog(): void {
     const dialogRef = this.dialog.open(AddpropertyComponent, {
-      width: '450px',
-      height: '500px',
+      width: '500px',
+      height: '700px',
       data: {}
     });
 
@@ -47,7 +47,8 @@ export class PropertyComponent implements OnInit {
     { 'Head': 'pincode', 'FieldName': 'pincode' },
     { 'Head': 'building', 'FieldName': 'building' },
     { 'Head': 'floorNumber', 'FieldName': 'floorNumber' },
-    { 'Head': 'flatNumber', 'FieldName': 'flatNumber' }
+    { 'Head': 'flatNumber', 'FieldName': 'flatNumber' },
+    { 'Head': 'Action', 'FieldName': 'action' }
   ];
   
   filterData() {
@@ -72,9 +73,12 @@ export class PropertyComponent implements OnInit {
   }
 
   deleteProperty(item: any) {
-
-
-  }
+    const index = this.Propertylist.indexOf(item);
+    if (index > -1) {
+      this.Propertylist.splice(index, 1);
+    }
+  this.filterData();
+}
   isClicked = false;
 
   onSearchBoxClick() {

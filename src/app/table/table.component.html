@@ -44,10 +44,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of GridArray; let sr=index">
-            <td>{{sr+1}}</td>
+            <td>{{ sr+1 }}</td>
             <td *ngFor="let head of HeadArray" class="mat-cell">
               <div *ngIf="head.FieldName !== ''">{{ item[head.FieldName] }}</div>
-              <div *ngIf="head.FieldName == ''" class="text-center">
+              <div *ngIf="head.FieldName == 'action'" class="text-center">
                
                 <button mat-icon-button color="primary" (click)="edit(item)" title="edit">
                   <mat-icon>edit</mat-icon>

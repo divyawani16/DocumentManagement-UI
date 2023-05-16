@@ -5,18 +5,32 @@
         <mat-tab label="Add Properties">
           <br>
           <mat-form-field appearance="outline">
-            <mat-label class="input_label">Document Name</mat-label>
+            <mat-label class="input_label">Property Name</mat-label>
             <input matInput class="input_field">
           </mat-form-field>
           <mat-form-field appearance="outline">
-            <mat-label class="input_label">User Name</mat-label>
+            <mat-label class="input_label">Address</mat-label>
             <input matInput>
           </mat-form-field>
           <mat-form-field appearance="outline">
-            <mat-label class="input_label">Property Name</mat-label>
+            <mat-label class="input_label">Pincode</mat-label>
             <input matInput>
           </mat-form-field>
-          <button mat-icon-button (click)="fileInput.click()"class="button">
+          <mat-form-field appearance="outline">
+            <mat-label class="input_label">Building</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label class="input_label">Floor Number</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label class="input_label">FlatNumber</mat-label>
+            <input matInput>
+          </mat-form-field>
+          
+          
+          <!-- <button mat-icon-button (click)="fileInput.click()"class="button">
             <mat-icon>attach_file</mat-icon>
             Choose File
           </button>
@@ -26,7 +40,7 @@
             <ul>
               <li *ngFor="let name of fileNames">{{ name }}</li>
             </ul>
-          </div>
+          </div> -->
     <hr>
     <div class="button-container">
       <button mat-raised-button color="primary" (click)="uploadProperty()" class="btn">Save</button>

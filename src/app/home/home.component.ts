@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
     { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': ' ' } 
+    {'Head': 'Action', 'FieldName': 'action' } 
   ];
 
   filterData() {
