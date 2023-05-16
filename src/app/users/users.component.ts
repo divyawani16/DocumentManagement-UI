@@ -43,10 +43,11 @@ export class UsersComponent implements OnInit {
 
 
   headArray = [  
-    { 'Head': 'firstName', 'FieldName': 'lastName' },  
+    { 'Head': 'firstName', 'FieldName': 'firstName' },  
     { 'Head': 'lastName', 'FieldName': 'lastName' }, 
     { 'Head': 'username', 'FieldName': 'username' },  
     { 'Head': 'password', 'FieldName': 'password' }, 
+    {'Head': 'emailId', 'FieldName': 'emailId'},
     { 'Head': 'phoneNumber', 'FieldName': 'phoneNumber' }, 
   ];
 
