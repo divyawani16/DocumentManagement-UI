@@ -3,7 +3,9 @@
     <div class="page__content shadow p-3 position-relative">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h1>History</h1>
-        <div class="card my-5">
+        
+
+      <div class="card my-5">
             <div class="card-body">
               <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
@@ -12,12 +14,12 @@
                     <th scope="col">stageId</th>
                     <th scope="col">finishedBy</th>
                     <th scope="col">finishedOn</th>
-                    <th scope="col">documentVersionId</th>
+                    <th scope="col">DocumentVersion</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let user of DocumentAuditlist">
-                    <td>{{ user.documentAuditId}}</td>
+                    <td>{{ user.documentA}}</td>
                     <td>{{ user.stageId }}</td>
                     <td>{{ user.finishedBy }}</td>
                     <td>{{ user.finishedOn }}</td>
@@ -26,7 +28,7 @@
                 </tbody>
               </table>
             </div>
-          </div>
+          </div> 
       </div>
       </div>
       </div>

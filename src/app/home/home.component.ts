@@ -121,7 +121,7 @@ export class HomeComponent implements OnInit {
 
 //     // implement delete functionality
 //   }
-
+  }
   isClicked = false;
 
   onSearchBoxClick() {
@@ -129,7 +129,6 @@ export class HomeComponent implements OnInit {
     this.  isClicked = true;
   }
 
-  
 }
 
 
@@ -175,4 +174,3 @@ export class HomeComponent implements OnInit {
 //   }
 
 // }
-
