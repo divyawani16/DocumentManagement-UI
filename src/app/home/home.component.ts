@@ -129,9 +129,7 @@ export class HomeComponent implements OnInit {
 
     this.isClicked = true;
   }
-
   
-
 
 }
 // import { DataSource } from '@angular/cdk/table';
@@ -176,4 +174,3 @@ export class HomeComponent implements OnInit {
 //   }
 
 // }
-
