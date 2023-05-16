@@ -1,6 +1,6 @@
 export class Document {
     documentVersionId?: number;
-    documentId: number;
+    documentName: string;
     stageId: number;
     versionNumber: number;
     location: string;
@@ -9,8 +9,8 @@ export class Document {
     updatedBy:string;
     updatedDate : Date;
 
-    constructor(documentId: number, stageId: number, versionNumber: number, location: string, createdBy: string,createdDate:Date, updatedBy: string, updatedDate : Date) {
-      this.documentId = documentId;
+    constructor(documentName: string, stageId: number, versionNumber: number, location: string, createdBy: string,createdDate:Date, updatedBy: string, updatedDate : Date) {
+      this.documentName= documentName;
       this.stageId = stageId;
       this.versionNumber = versionNumber;
       this.location = location;

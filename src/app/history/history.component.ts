@@ -16,6 +16,7 @@ export class HistoryComponent implements OnInit {
     try{
       this.HistoryService.getDocumentAudit()
       .subscribe(documentAudit => this.DocumentAuditlist = documentAudit);
+      console.log(this.DocumentAuditlist);
     }catch(err){
       console.log(err)
     }

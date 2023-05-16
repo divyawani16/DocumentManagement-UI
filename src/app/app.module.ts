@@ -36,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
-import { AddpropertyComponent } from './addproperty/addproperty.component'
+import { AddpropertyComponent } from './addproperty/addproperty.component';
+import { AddUserComponent } from './add-user/add-user.component'
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AddpropertyComponent } from './addproperty/addproperty.component'
     DeleteComponent,
     DashboardComponent,
     AddpropertyComponent,
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { DocumentDetailsService } from './document-details.service';
   styleUrls: ['./document-details.component.scss']
 })
 export class DocumentDetailsComponent implements OnInit {
+  searchValue: string = '';
 
   DocumentVersionlist: Document[] | undefined;
 
@@ -16,8 +17,56 @@ export class DocumentDetailsComponent implements OnInit {
     try{
       this.DocumentDetailsService.getDocumentVersion()
       .subscribe(documentVersions => this.DocumentVersionlist = documentVersions);
+      console.log(this.DocumentVersionlist);
     }catch(err){
       console.log(err)
     }
   }
+
+  headArray = [  
+    { 'Head': 'Document Name', 'FieldName': 'documentName' },  
+    { 'Head': 'User Name ', 'FieldName': 'userName' }, 
+    { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
+    { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
+    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' }, 
+  ];
+
+  filterData() {
+    console.log('Search value:', this.searchValue);
+    if (!this.searchValue) {
+      return this.DocumentVersionlist;
+    }
+    const filteredList = this.DocumentVersionlist.filter(document => {
+      return document.documentName.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+    console.log('Filtered list:', filteredList);
+    return filteredList;
+  }
+  search() {
+    console.log('Search value:', this.searchValue);
+    this.filterData();
+  }
+
+  editDocument(document: Document) {
+    // implement edit functionality
+  }
+
+  deleteDocument(document: Document) {
+  }
+//   editUser(item: any) {
+//     // implement edit functionality
+//   }
+
+//   deleteUser(item: any) {
+
+//     // implement delete functionality
+//   }
+
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
+
   }
