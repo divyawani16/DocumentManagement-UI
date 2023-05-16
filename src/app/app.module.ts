@@ -35,7 +35,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
+import { AddpropertyComponent } from './addproperty/addproperty.component'
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     AddDocumentComponent,
     DeleteComponent,
     DashboardComponent,
+    AddpropertyComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatDatepickerModule,
     MatRadioModule,
 
-    HttpClientModule
+    HttpClientModule,
 
     MatSelectModule,
     MatTabsModule,

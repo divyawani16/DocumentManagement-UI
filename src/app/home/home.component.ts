@@ -38,7 +38,8 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(AddDocumentComponent, {
       width: '450px',
       height: '500px',
-      data: {}
+      data: {},
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -112,7 +113,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteDocument(document: Document) {
-
+  }
 //   editUser(item: any) {
 //     // implement edit functionality
 //   }
@@ -126,13 +127,13 @@ export class HomeComponent implements OnInit {
 
   onSearchBoxClick() {
 
-    this.  isClicked = true;
+    this.isClicked = true;
   }
 
   
+
+
 }
-
-
 // import { DataSource } from '@angular/cdk/table';
 // import { Component, OnInit } from '@angular/core';
 // import { MatTableDataSource } from '@angular/material/table';

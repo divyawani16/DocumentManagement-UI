@@ -1,51 +1,27 @@
-
 <div class="container-fluid page">
-    <div class="page__box">Properties</div>
-    <div class="page__content shadow p-3 position-relative">
-      <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="page__box" style="text-align: center">Properties</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      
+      <!-- <app-button (click)="openDialog()" title="Add Property"> </app-button> -->
 
+      <div class="search-box" [ngClass]="{ 'search-box-clicked':   isClicked }">
+        <mat-form-field class="search-field">
+          <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()" 
+            (click)="isClicked = true" (blur)="isClicked = false">
+          <!-- <mat-icon matSuffix [ngClass]="{ 'search-icon-hidden': isClicked }" class="search-icon">search</mat-icon> -->
+        </mat-form-field>
+      </div>
 
-        <p>Property</p>
-        <div class="card my-5">
-            <div class="card-body">
-              <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Srno</th>
-                    <th scope="col">propertyName</th>
-                    <th scope="col">address</th>
-                    <th scope="col">city</th>
-                    <th scope="col">pincode</th>
-                    <th scope="col">building</th>
-                    <th scope="col">floorNumber</th>
-                    <th scope="col">flatNumber</th>
-            </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let user of Propertylist">
-                    <td>{{ user.propertyId}}</td>
-                    <td>{{ user.propertyName }}</td>
-                    <td>{{ user.address }}</td>
-                    <td>{{ user.city }}</td>
-                    <td>{{ user.pincode }}</td>
-                    <td>{{ user.building }}</td>
-                    <td>{{ user.floorNumber }}</td>
-                    <td>{{ user.flatNumber }}</td>
-                
-                  </tr>
-                </tbody>
-              </table>
+      <div class="container-fluid">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">  
+                <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                   (onEdit)="editProperty($event)" (onDelete)="deleteProperty($event)"> </app-table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-       
-
-<!--         <app-button (click)="addProperty($event)" title="Add Property"> </app-button>
-        <!-- <app-table
-        [tableColumns]="tableColumns"
-        [tableData]="tableData">
-       </app-table> --> -->
-
-      </div>
-    </div>
-  </div>
-  
+        </div>

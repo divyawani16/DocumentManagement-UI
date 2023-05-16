@@ -22,6 +22,9 @@ export class AddDocumentComponent implements OnInit {
   closeDialog(): void {
     this.dialogRef.close();
   }
+  openDialog():void{
+    this.isFormVisible=true;
+  }
   
   handleFileInput(event): void {
     this.selectedFiles = event.target.files;
