@@ -26,7 +26,7 @@ export class HistoryComponent implements OnInit {
     { 'Head': 'finishedBy', 'FieldName': 'finishedBy' }, 
     { 'Head': 'finishedOn', 'FieldName': 'finishedOn' },  
     { 'Head': 'documentVersionId ', 'FieldName': 'documentVersionId' }, 
-    
+    {'Head': 'Action', 'FieldName': 'action' } 
   ];
 
   // filterData() {

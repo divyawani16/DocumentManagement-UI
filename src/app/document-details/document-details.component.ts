@@ -32,7 +32,7 @@ export class DocumentDetailsComponent implements OnInit {
     { 'Head': 'createdDate', 'FieldName': 'createdDate' }, 
     { 'Head': 'updatedBy', 'FieldName': 'updatedBy' }, 
     { 'Head': 'updatedDate', 'FieldName': 'updatedDate' }, 
-
+    {'Head': 'Action', 'FieldName': 'action' } 
   ];
 
   filterData() {
