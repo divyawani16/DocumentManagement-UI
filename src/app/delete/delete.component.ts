@@ -12,7 +12,7 @@ export class DeleteComponent  {
 
   constructor(private fb: FormBuilder,
     private dialog: MatDialog,
-                  private dialogRef: MatDialogRef<DeleteComponent>) {} // Closing dialog window
+    private dialogRef: MatDialogRef<DeleteComponent>) {} // Closing dialog window
     
     public cancel(): void { // To cancel the dialog window
     this.dialogRef.close();

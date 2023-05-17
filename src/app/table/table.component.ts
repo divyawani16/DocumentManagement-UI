@@ -1,16 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-//import { Column } from './column';
-
-
-// export interface Column {
-//   columnDef: string;
-//   header: string;
-//   cell: Function;
-//   isLink?: boolean;
-//   url?: string;
-// }
-
 
 @Component({
   selector: 'app-table',

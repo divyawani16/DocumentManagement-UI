@@ -9,7 +9,7 @@ export class PropertyService {
   private baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'http://localhost:8089/api/properties';
+    this.baseUrl = 'http://localhost:8089/api/properties/';
   }
 
   public getProperty(): Observable<Document[]> {
@@ -19,6 +19,9 @@ export class PropertyService {
   public deleteProperty(propertyId: number): Observable<void> {
     const url = `${this.baseUrl}/${propertyId}`;
     return this.http.delete<void>(url);
+  }
+  public createProperty(property: Document): Observable<Document> {
+    return this.http.post<Document>(this.baseUrl, property);
   }
   
 }

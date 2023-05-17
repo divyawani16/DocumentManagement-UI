@@ -14,5 +14,10 @@ export class UsersService {
 
    public getUsers(): Observable<Document[]> {
     return this.http.get<Document[]>(this.baseUrl);
-  }
+   }
+   public createUsers(users: Document): Observable<Document> {
+      return this.http.post<Document>(this.baseUrl, users);
+    }
+  
+  
 }

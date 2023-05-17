@@ -22,28 +22,29 @@ export class HistoryComponent implements OnInit {
     }
   }
   headArray = [  
-    { 'Head': 'stageId', 'FieldName': 'stageId' },  
-    { 'Head': 'finishedBy', 'FieldName': 'finishedBy' }, 
-    { 'Head': 'finishedOn', 'FieldName': 'finishedOn' },  
-    { 'Head': 'documentVersionId ', 'FieldName': 'documentVersionId' }, 
+    { 'Head': 'Document Name', 'FieldName': 'documentName' },  
+    { 'Head': 'Stage Name', 'FieldName': 'stageName' },  
+    { 'Head': 'Finished By', 'FieldName': 'finishedBy' }, 
+    { 'Head': 'Finished On', 'FieldName': 'finishedOn' },  
+    { 'Head': 'Document Version  ', 'FieldName': 'documentVersionId' }, 
     
   ];
 
-  // filterData() {
-  //   console.log('Search value:', this.searchValue);
-  //   if (!this.searchValue) {
-  //     return this.DocumentAuditlist;
-  //   }
-  //   const filteredList = this.DocumentAuditlist.filter(document => {
-  //     return document.stageId.toLowerCase().includes(this.searchValue.toLowerCase());
-  //   });
-  //   console.log('Filtered list:', filteredList);
-  //   return filteredList;
-  // }
-  // search() {
-  //   console.log('Search value:', this.searchValue);
-  //   this.filterData();
-  // }
+  filterData() {
+    console.log('Search value:', this.searchValue);
+    if (!this.searchValue) {
+      return this.DocumentAuditlist;
+    }
+    const filteredList = this.DocumentAuditlist.filter(document => {
+      return document.documentName. toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+    console.log('Filtered list:', filteredList);
+    return filteredList;
+  }
+  search() {
+    console.log('Search value:', this.searchValue);
+    this.filterData();
+  }
 
   editDocument(document: Document) {
     // implement edit functionality
