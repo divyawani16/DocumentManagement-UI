@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   hide = true;
   loginForm: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, ) {
+    
     this.loginForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
@@ -35,7 +37,12 @@ export class LoginComponent implements OnInit {
   login() {
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
-
+    
+    // this.snackBar.open('Login Successful', 'Close', {
+    //   duration: 2000,
+    //   panelClass: 'success-snackbar',
+    // });
+  
     // Perform login logic here
 
     // this.router.navigate(['/dashboard']);

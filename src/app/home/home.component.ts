@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   searchValue: string = '';
 
   documentsList: Document[] = [];
+  tableName: string;
 
   constructor(
     private dialog: MatDialog,
@@ -56,7 +57,9 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
     { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': 'action' } 
+    {'Head': 'Action', 'FieldName': 'action' } ,
+    { 'Head': 'View', 'FieldName': 'view' }
+   
   ];
 
   filterData() {
@@ -83,14 +86,15 @@ export class HomeComponent implements OnInit {
 
   deleteDocument(item: any) {
   }
-//   editUser(item: any) {
-//     // implement edit functionality
-//   }
 
-//   deleteUser(item: any) {
+  download(item: any): void {
+    // Implement download functionality
+  }
 
-//     // implement delete functionality
-//   }
+  print(item: any): void {
+    // Implement print functionality
+  }
+
 
   isClicked = false;
 
@@ -101,45 +105,4 @@ export class HomeComponent implements OnInit {
   
 
 }
-// import { DataSource } from '@angular/cdk/table';
-// import { Component, OnInit } from '@angular/core';
-// import { MatTableDataSource } from '@angular/material/table';
-// import { Observable, ReplaySubject } from 'rxjs';
-// import { Column } from '../table/column';
-// import { MatDialog } from '@angular/material/dialog';
-// import { AddDocumentComponent } from '../add-document/add-document.component';
-// import { HomeService } from './home.service';
-// import { Document } from './home.model';
 
-// @Component({
-//   selector: 'app-home',
-//   templateUrl: './home.component.html',
-//   styleUrls: ['./home.component.scss']
-// })
-// export class HomeComponent implements OnInit {
-
- 
-//   documentslist: Document[] | undefined;
-
-//   constructor(private homeService: HomeService) { }
-
-//   ngOnInit() {
-//     try{
-//       this.homeService.getDocuments()
-//       .subscribe(documents => this.documentslist = documents);
-//     }catch(err){
-//       console.log(err)
-//     }
-    
-    
-//   }
-  
-  
-// }
-
-  
-
-//     this.isClicked = true;
-//   }
-
-// }

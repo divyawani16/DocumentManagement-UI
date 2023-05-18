@@ -55,8 +55,19 @@
                 <button mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">
                   <mat-icon>delete</mat-icon>
                 </button>
+                
               </div> 
             </td>
+            <ng-container *ngIf="head.FieldName === 'view'">
+              <td class="mat-cell">
+                <button mat-icon-button color="primary" (click)="download(item)" title="Download">
+                  <mat-icon>cloud_download</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="print(item)" title="Print">
+                  <mat-icon>print</mat-icon>
+                </button>
+              </td>
+            </ng-container>
           </tr> 
         </tbody>
       </table>

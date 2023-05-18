@@ -20,21 +20,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class TableComponent<T> implements OnInit {
   @Input() GridArray: any[];
   @Input() GridHeadArray: any[];
-  // @Input()
-  // tableColumns: Array<Column> = [];
 
-  // @Input()
-  // tableData: Array<T> = [];
-
-  // displayedColumns: Array<string> = [];
-  // dataSource: MatTableDataSource<T> = new MatTableDataSource();
-
-  // constructor() {}
-
-  // ngOnInit(): void {
-  //   this.displayedColumns = this.tableColumns.map((c) => c.columnDef);
-  //   this.dataSource = new MatTableDataSource(this.tableData);
-  // }
   @Input() filteredData!: any[];
 
   
@@ -42,17 +28,13 @@ export class TableComponent<T> implements OnInit {
   // @Input() GridArray :any[] = []; 
   private _gridArray: any[] = [];
   dataSource: MatTableDataSource<any>;
-// @Input()
-// set GridArray(value: any[]) {
-//   this._gridArray = value;
-//   this.dataSource = new MatTableDataSource(this.filteredData.length > 0 ? this.filteredData : this._gridArray);
-// }
-// get GridArray() {
-// //   return this._gridArray;
-// }
+
 
   @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
+  @Output() onDownload = new EventEmitter<any>();
+  @Output() onPrint = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -67,10 +49,11 @@ export class TableComponent<T> implements OnInit {
 
     this.onDelete.emit(item);
   }
-  
-  // @Output() buttonClicked = new EventEmitter<string>();
+  download(item: any) {
+    this.onDownload.emit(item);
+  }
 
-  // onButtonClicked(){
-  //   this.buttonClicked.emit('how');
-  // }
+  print(item: any) {
+    this.onPrint.emit(item);
+  }
 }

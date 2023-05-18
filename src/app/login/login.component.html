@@ -1,34 +1,31 @@
 <div class="login-background">
-<div class="body">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title> <h2>Login</h2></mat-card-title> 
-    </mat-card-header>
-    <mat-card-content class="login-container parent-container">
-      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
-        <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput formControlName="username" required>
-          <mat-error *ngIf="usernameFormControl?.hasError('required')">Username is required</mat-error>
-        </mat-form-field>
-              
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput formControlName="password" required class="mat-form-field-underline">
-          <mat-error *ngIf="passwordFormControl?.hasError('required')">Password is required</mat-error>
-        </mat-form-field>
-        
-        <button mat-raised-button color="primary" type="submit" class="login-button">
-        <mat-icon>lock</mat-icon>
-      <span>Login</span>
-      </button>
-      </form>
-    </mat-card-content>
-  </mat-card>
+  <div class="body">
+    <mat-card>
+      <mat-card-content class="login-container parent-container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+          <mat-form-field appearance="fill">
+            <mat-label><span class="form-field-label">Username</span></mat-label>
+            <input matInput formControlName="username" required>
+            <mat-error *ngIf="usernameFormControl?.hasError('required')">Username is required</mat-error>
+          </mat-form-field>
+                  
+          <mat-form-field appearance="fill">
+            <mat-label><span class="form-field-label">Password</span></mat-label>
+            <input matInput formControlName="password" required class="mat-form-field-underline">
+            <mat-error *ngIf="passwordFormControl?.hasError('required')">Password is required</mat-error>
+          </mat-form-field>
+          
+          <button mat-raised-button color="primary" type="submit" class="login-button">
+            <mat-icon>lock</mat-icon>
+            <span>Login</span>
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
-<p> This is a test </p>
+<!-- <mat-snack-bar-container></mat-snack-bar-container> -->
 
-</div>
 
 <!-- <div class="body"> -->
   

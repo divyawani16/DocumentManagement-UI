@@ -38,7 +38,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AddpropertyComponent } from './addproperty/addproperty.component';
 import { AddUserComponent } from './add-user/add-user.component'
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +84,7 @@ import { AddUserComponent } from './add-user/add-user.component'
     MatGridListModule,
  
     HttpClientModule,
-
+ 
     MatSelectModule,
     MatTabsModule,
 

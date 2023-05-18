@@ -7,14 +7,9 @@
   background-size: cover;
   background-position: center;
 }
-.login-background {
-  background-image: url('/assets/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .login-container {
-  background-color: #f2e6ff;
+  background-color: #182957;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(30, 30, 30, 30); 
   padding: 50px;
@@ -29,20 +24,31 @@ mat-form-field {
   margin-bottom: 20px;
 }
 
+input.mat-input-element {
+  color: white;
+}
+
 button {
   width: 100%;
 }
 
+.form-field-label {
+  color: white;
+}
 
 .mat-card-header {
   display: flex;
   justify-content: center;
 }
+
 h2 {
   font-weight: bold;
 }
 
-
+.success-snackbar {
+  background-color: green;
+  color: white;
+}
 
 /* 
 .mat-label {
