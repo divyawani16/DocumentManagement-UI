@@ -6,41 +6,49 @@
       <br>
       <mat-form-field appearance="outline">
         <mat-label class="input_label">Document Name</mat-label>
-        <input matInput class="input_field">
+        <input matInput [(ngModel)]="document.documentName">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label class="input_label">User Name</mat-label>
+        <input matInput [(ngModel)]="document.userName">
         <input matInput>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label class="input_label">Property Name</mat-label>
+        <input matInput [(ngModel)]="document.propertyName">
         <input matInput>
       </mat-form-field>
-      <button mat-icon-button (click)="fileInput.click()"class="button">
-        <mat-icon>attach_file</mat-icon>
-        Choose File
-      </button>
-      <input type="file" style="display: none" #fileInput (change)="handleFileInput($event)">
-      <div *ngIf="fileNames.length > 0">
-        <p>Selected Files:</p>
-        <ul>
-          <li *ngFor="let name of fileNames">{{ name }}</li>
-        </ul>
-      </div>
-<hr>
-<div class="button-container">
-  <button mat-raised-button color="primary" (click)="uploadDocuments()" class="btn">Save</button>
-  <button mat-raised-button color="warn" (click)="closeForm()" class="btn">Close</button>
-</div>
-
-
-
-      
-      <!-- <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline">
+        <mat-label class="input_label">Document Type Name</mat-label>
+        <input matInput [(ngModel)]="document.docTypeName">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label class="input_label">Document Mime Name</mat-label>
+        <input matInput [(ngModel)]="document.docMimeTypeName">
+        <input matInput>
+      </mat-form-field>
+         <mat-form-field appearance="outline">
         <mat-label class="input_label">Selected Files</mat-label>
         <input matInput [value]="fileNames.join('\n')" readonly>
       </mat-form-field>
-       -->
+       
+        <button mat-icon-button (click)="fileInput.click()"class="button">
+          <mat-icon>attach_file</mat-icon>
+          Choose File
+        </button>
+        <input type="file" style="display: none" #fileInput (change)="handleFileInput($event)">
+        <div *ngIf="fileNames.length > 0">
+          <p>Selected Files:</p>
+          <ul>
+            <li *ngFor="let name of fileNames">{{ name }}</li>
+          </ul>
+        </div>
+<hr>
+<div class="button-container">
+  <button mat-raised-button color="primary" (click)="uploadDocument()" class="btn">Save</button>
+  <button mat-raised-button color="warn" (click)="closeForm()" class="btn">Close</button>
+</div>
     </mat-tab>
     <mat-tab label="Tags">
       <div>

@@ -10,10 +10,19 @@ export class HomeService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/documents/getalldocumentsdetails';
+    this.baseUrl = 'http://localhost:8089/api/documents';
+  }
+  
+   public getDocuments(): Observable<Document[]> {
+    return this.http.get<Document[]>(`${this.baseUrl}/getalldocumentsdetails`);
   }
 
-   public getDocuments(): Observable<Document[]> {
-    return this.http.get<Document[]>(this.baseUrl);
+  // public createDocument(document: Document): Observable<Document> {
+  //   return this.http.post<Document>(this.baseUrl, document);
+    
+  // }
+  public createDocument(formData: FormData): Observable<any> {
+    return this.http.post<any>(this.baseUrl, formData);
   }
+  
 }

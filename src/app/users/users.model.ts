@@ -22,7 +22,6 @@ export class Document {
       public password: string = '',
      // public emailId: string = '',
       public phoneNumber: number = 0,
- 
     ) {}
   }
   

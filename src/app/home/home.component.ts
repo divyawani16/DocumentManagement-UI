@@ -14,8 +14,8 @@ import { AddpropertyComponent } from '../addproperty/addproperty.component';
 })
 export class HomeComponent implements OnInit {
   searchValue: string = '';
-
-  documentsList: Document[] = [];
+  documentsList: Document[] | undefined;
+  //documentsList: Document[] = [];
 
   constructor(
     private dialog: MatDialog,
@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  loadData(){
     try{
       this.homeService.getDocuments()
       .subscribe(documents => this.documentsList = documents);
