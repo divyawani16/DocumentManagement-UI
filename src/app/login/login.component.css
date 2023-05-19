@@ -7,11 +7,6 @@
   background-size: cover;
   background-position: center;
 }
-.login-background {
-  background-image: url('/assets/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .login-container {
   background-color: #4e5055;
@@ -31,20 +26,31 @@ mat-form-field {
   margin-bottom: 20px;
 }
 
+input.mat-input-element {
+  color: white;
+}
+
 button {
   width: 100%;
 }
 
+.form-field-label {
+  color: white;
+}
 
 .mat-card-header {
   display: flex;
   justify-content: center;
 }
+
 h2 {
   font-weight: bold;
 }
 
-
+.success-snackbar {
+  background-color: green;
+  color: white;
+}
 
 /* 
 .mat-label {

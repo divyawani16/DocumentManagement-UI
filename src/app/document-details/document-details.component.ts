@@ -33,6 +33,7 @@ export class DocumentDetailsComponent implements OnInit {
     { 'Head': 'Updated By', 'FieldName': 'updatedBy' }, 
     { 'Head': 'Updated Date', 'FieldName': 'updatedDate' }, 
 
+
   ];
 
   filterData() {

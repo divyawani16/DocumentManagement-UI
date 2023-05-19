@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
+import { MatIconModule } from '@angular/material/icon';
 import { HomeService } from './home.service';
 import { Document } from './home.model';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
@@ -14,6 +15,7 @@ import { HttpEventType } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   searchValue: string = '';
+
   documentsList: Document[] | undefined;
 
   constructor(
@@ -56,6 +58,7 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } 
+
   ];
 
   filterData() {
@@ -94,6 +97,18 @@ export class HomeComponent implements OnInit {
     );
   }
 
+
+
+  download(item: any): void {
+    // Implement download functionality
+  }
+
+  print(item: any): void {
+    // Implement print functionality
+  }
+
+
+
   isClicked = false;
   onSearchBoxClick() {
 
@@ -102,3 +117,4 @@ export class HomeComponent implements OnInit {
   
 
 }
+

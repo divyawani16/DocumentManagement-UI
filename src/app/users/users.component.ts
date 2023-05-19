@@ -51,6 +51,7 @@ export class UsersComponent implements OnInit {
     //{ 'Head': 'Password', 'FieldName': 'password' }, 
     //{'Head': 'emailId', 'FieldName': 'emailId'},
     { 'Head': 'Phone Number', 'FieldName': 'phoneNumber' }, 
+
   ];
 
   filterData() {

@@ -22,12 +22,12 @@ export class HistoryComponent implements OnInit {
     }
   }
   headArray = [  
+
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
     { 'Head': 'Stage Name', 'FieldName': 'stageName' },  
     { 'Head': 'Finished By', 'FieldName': 'finishedBy' }, 
     { 'Head': 'Finished On', 'FieldName': 'finishedOn' },  
     { 'Head': 'Document Version  ', 'FieldName': 'documentVersionId' }, 
-    
   ];
 
   filterData() {

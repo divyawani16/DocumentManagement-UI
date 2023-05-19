@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit {
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
 
-
 this.snackBar.open('Login Successful!', 'Close', {
 
 duration: 2000,

@@ -16,6 +16,9 @@ export class TableComponent<T> implements OnInit {
   dataSource: MatTableDataSource<any>;
   @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
+  @Output() onDownload = new EventEmitter<any>();
+  @Output() onPrint = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -29,4 +32,13 @@ export class TableComponent<T> implements OnInit {
 
     this.onDelete.emit(item);
   }
+
+  download(item: any) {
+    this.onDownload.emit(item);
+  }
+
+  print(item: any) {
+    this.onPrint.emit(item);
+  }
+
 }
