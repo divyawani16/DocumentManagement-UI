@@ -16,16 +16,7 @@
             <div class="col-md-12">  
               <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
                 (onEdit)="editDocument($event)" (onDelete)="deleteDocument($event)">
-                <ng-template appTableColumnDef="view" let-item>
-                  <td class="mat-cell">
-                    <button mat-icon-button color="primary" (click)="download(item)" title="Download">
-                      <mat-icon>cloud_download</mat-icon>
-                    </button>
-                    <button mat-icon-button color="primary" (click)="print(item)" title="Print">
-                      <mat-icon>print</mat-icon>
-                    </button>
-                  </td>
-                </ng-template>
+                
               </app-table>
             </div>
           </div>

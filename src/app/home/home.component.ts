@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
-
+import { MatIconModule } from '@angular/material/icon';
 import { HomeService } from './home.service';
 import { Document } from './home.model';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
@@ -58,8 +58,7 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
     { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } ,
-    { 'Head': 'View', 'FieldName': 'view' }
-   
+  
   ];
 
   filterData() {
