@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
-
 import { HomeService } from './home.service';
 import { Document } from './home.model';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
+import { HttpEventType } from '@angular/common/http';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { AddpropertyComponent } from '../addproperty/addproperty.component';
 export class HomeComponent implements OnInit {
   searchValue: string = '';
   documentsList: Document[] | undefined;
-  //documentsList: Document[] = [];
+
 
   constructor(
     private dialog: MatDialog,
@@ -82,19 +82,28 @@ export class HomeComponent implements OnInit {
   }
 
   editDocument(item: any) {
-    // implement edit functionality
+
   }
 
+ 
   deleteDocument(item: any) {
+    const index = this.documentsList.indexOf(item);
+    if (index > -1) {
+      this.documentsList.splice(index, 1);
+    }
+  
+    this.homeService.deleteDocument(item.documentId).subscribe(
+      () => {
+        console.log('Record deleted successfully from the database');
+        this.loadData(); // Reload the data after deletion
+      },
+      (error) => {
+        console.error('Error deleting record from the database:', error);
+      }
+    );
   }
-//   editUser(item: any) {
-//     // implement edit functionality
-//   }
-
-//   deleteUser(item: any) {
-
-//     // implement delete functionality
-//   }
+  
+  
 
   isClicked = false;
 

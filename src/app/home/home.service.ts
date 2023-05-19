@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpProgressEvent, HttpEvent} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Document } from './home.model';
 @Injectable({
@@ -21,8 +21,13 @@ export class HomeService {
   //   return this.http.post<Document>(this.baseUrl, document);
     
   // }
+
   public createDocument(formData: FormData): Observable<any> {
     return this.http.post<any>(this.baseUrl, formData);
+  }
+  public deleteDocument(documentId: number): Observable<void> {
+    const url = `${this.baseUrl}/${documentId}`;
+    return this.http.delete<void>(url);
   }
   
 }
