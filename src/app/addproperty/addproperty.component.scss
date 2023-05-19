@@ -5,7 +5,7 @@
   
   .form mat-form-field {
     display: flex;
-    // justify-content: center;
+   
   }
   
   .form mat-label {
@@ -27,9 +27,6 @@
     transition: background-color 0.2s ease-in-out;
   }
   
-  // .form input[type="file"] {
-  //   display: none;
-  // }
   
   .form button {
     background-color: #333;
@@ -52,14 +49,7 @@
     color: #333;
   }
   
-  // .form button-container {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
 
-  //   margin-left: 2px;
-  // }
-  
   .button-container {
     text-align: right;
     margin-top: 20px;
@@ -90,14 +80,6 @@
   
   
   
-  // .btn {
-  //   width: 100px;
-  // }
-  
-//   .form input[type="file"] {
-//     height: 10%;
-//     padding: 5px;
-//     font-size: 14px;
-//   }
+
   
   

@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeService } from './home.service';
 import { Document } from './home.model';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
+import { HttpEventType } from '@angular/common/http';
 
 
 @Component({
@@ -15,8 +16,7 @@ import { AddpropertyComponent } from '../addproperty/addproperty.component';
 export class HomeComponent implements OnInit {
   searchValue: string = '';
 
-  documentsList: Document[] = [];
-  tableName: string;
+  documentsList: Document[] | undefined;
 
   constructor(
     private dialog: MatDialog,
@@ -24,6 +24,9 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.loadData();
+  }
+  loadData(){
     try{
       this.homeService.getDocuments()
       .subscribe(documents => this.documentsList = documents);
@@ -32,9 +35,6 @@ export class HomeComponent implements OnInit {
       console.log(err)
     }
   }
-
-
-//   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddDocumentComponent, {
@@ -55,10 +55,10 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
-    { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': 'action' } ,
-  
+    { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
+    { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
+    {'Head': 'Action', 'FieldName': 'action' } 
+
   ];
 
   filterData() {
@@ -79,12 +79,25 @@ export class HomeComponent implements OnInit {
     this.filterData();
   }
 
-  editDocument(item: any) {
-    // implement edit functionality
+ 
+  deleteDocument(item: any) {
+    const index = this.documentsList.indexOf(item);
+    if (index > -1) {
+      this.documentsList.splice(index, 1);
+    }
+  
+    this.homeService.deleteDocument(item.documentId).subscribe(
+      () => {
+        console.log('Record deleted successfully from the database');
+        this.loadData(); 
+      },
+      (error) => {
+        console.error('Error deleting record from the database:', error);
+      }
+    );
   }
 
-  deleteDocument(item: any) {
-  }
+
 
   download(item: any): void {
     // Implement download functionality
@@ -95,8 +108,8 @@ export class HomeComponent implements OnInit {
   }
 
 
-  isClicked = false;
 
+  isClicked = false;
   onSearchBoxClick() {
 
     this.isClicked = true;

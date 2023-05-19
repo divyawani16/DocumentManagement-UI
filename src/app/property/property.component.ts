@@ -41,13 +41,13 @@ export class PropertyComponent implements OnInit {
   }
 
   headArray = [
-    { 'Head': 'propertyName', 'FieldName': 'propertyName' },
-    { 'Head': 'address', 'FieldName': 'address' },
-    { 'Head': 'city', 'FieldName': 'city' },
-    { 'Head': 'pincode', 'FieldName': 'pincode' },
-    { 'Head': 'building', 'FieldName': 'building' },
-    { 'Head': 'floorNumber', 'FieldName': 'floorNumber' },
-    { 'Head': 'flatNumber', 'FieldName': 'flatNumber' },
+    { 'Head': 'Property Name', 'FieldName': 'propertyName' },
+    { 'Head': 'Building', 'FieldName': 'building' },
+    { 'Head': 'Floor Number', 'FieldName': 'floorNumber' },
+    { 'Head': 'Flat Number', 'FieldName': 'flatNumber' },
+    { 'Head': 'Address', 'FieldName': 'address' },
+    { 'Head': 'City', 'FieldName': 'city' },
+    { 'Head': 'Pincode', 'FieldName': 'pincode' },
     { 'Head': 'Action', 'FieldName': 'action' }
   ];
   
