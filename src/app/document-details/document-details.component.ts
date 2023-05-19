@@ -24,14 +24,14 @@ export class DocumentDetailsComponent implements OnInit {
   }
 
   headArray = [  
-    { 'Head': 'documentId', 'FieldName': 'documentId' },  
-    { 'Head': 'stageId', 'FieldName': 'stageId' }, 
-    { 'Head': 'versionNumber', 'FieldName': 'versionNumber' },  
-    { 'Head': 'location', 'FieldName': 'location' }, 
-    { 'Head': 'createdBy', 'FieldName': 'createdBy' }, 
-    { 'Head': 'createdDate', 'FieldName': 'createdDate' }, 
-    { 'Head': 'updatedBy', 'FieldName': 'updatedBy' }, 
-    { 'Head': 'updatedDate', 'FieldName': 'updatedDate' }, 
+  //  { 'Head': 'Document', 'FieldName': 'documentId' },  
+    { 'Head': 'Stage Id', 'FieldName': 'stageId' }, 
+    { 'Head': 'Version Number', 'FieldName': 'versionNumber' },  
+    { 'Head': 'Location', 'FieldName': 'location' }, 
+    { 'Head': 'Created By', 'FieldName': 'createdBy' }, 
+    { 'Head': 'Created Date', 'FieldName': 'createdDate' }, 
+    { 'Head': 'Updated By', 'FieldName': 'updatedBy' }, 
+    { 'Head': 'Updated Date', 'FieldName': 'updatedDate' }, 
 
   ];
 

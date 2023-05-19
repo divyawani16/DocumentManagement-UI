@@ -16,11 +16,11 @@
           <input matInput [(ngModel)]="document.propertyName">
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label class="input_label">Document Type Name</mat-label>
+          <mat-label class="input_label">Document Type </mat-label>
           <input matInput [(ngModel)]="document.docTypeName">
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label class="input_label">Document Mime Name</mat-label>
+          <mat-label class="input_label">Document Mime </mat-label>
           <input matInput [(ngModel)]="document.docMimeTypeName">
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -35,9 +35,9 @@
         <input type="file" style="display: none" name="file" #fileInput (change)="handleFileInput($event)">
         
         <div *ngIf="fileNames.length > 0">
-          <p>Selected Files:</p>
+          <!-- <p>Selected Files:</p> -->
           <ul>
-            <li *ngFor="let name of fileNames">{{ name }}</li>
+            <!-- <li *ngFor="let name of fileNames">{{ name }}</li> -->
           </ul>
         </div>
         <hr>

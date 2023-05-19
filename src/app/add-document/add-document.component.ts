@@ -50,7 +50,6 @@ export class AddDocumentComponent implements OnInit {
       }
     );
   }
-  
 
   handleFileInput(event: any): void {
     this.selectedFiles = event.target.files;

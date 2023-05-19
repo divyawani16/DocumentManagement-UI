@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   searchValue: string = '';
   documentsList: Document[] | undefined;
 
-
   constructor(
     private dialog: MatDialog,
     private homeService: HomeService
@@ -25,7 +24,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.loadData();
   }
-
   loadData(){
     try{
       this.homeService.getDocuments()
@@ -35,8 +33,6 @@ export class HomeComponent implements OnInit {
       console.log(err)
     }
   }
-
-
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddDocumentComponent, {
@@ -57,8 +53,8 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
-    { 'Head': 'Document Type Name', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type Name', 'FieldName': 'docMimeTypeName' },
+    { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
+    { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } 
   ];
 
@@ -80,10 +76,6 @@ export class HomeComponent implements OnInit {
     this.filterData();
   }
 
-  editDocument(item: any) {
-
-  }
-
  
   deleteDocument(item: any) {
     const index = this.documentsList.indexOf(item);
@@ -101,11 +93,8 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-  
-  
 
   isClicked = false;
-
   onSearchBoxClick() {
 
     this.isClicked = true;
@@ -113,45 +102,3 @@ export class HomeComponent implements OnInit {
   
 
 }
-// import { DataSource } from '@angular/cdk/table';
-// import { Component, OnInit } from '@angular/core';
-// import { MatTableDataSource } from '@angular/material/table';
-// import { Observable, ReplaySubject } from 'rxjs';
-// import { Column } from '../table/column';
-// import { MatDialog } from '@angular/material/dialog';
-// import { AddDocumentComponent } from '../add-document/add-document.component';
-// import { HomeService } from './home.service';
-// import { Document } from './home.model';
-
-// @Component({
-//   selector: 'app-home',
-//   templateUrl: './home.component.html',
-//   styleUrls: ['./home.component.scss']
-// })
-// export class HomeComponent implements OnInit {
-
- 
-//   documentslist: Document[] | undefined;
-
-//   constructor(private homeService: HomeService) { }
-
-//   ngOnInit() {
-//     try{
-//       this.homeService.getDocuments()
-//       .subscribe(documents => this.documentslist = documents);
-//     }catch(err){
-//       console.log(err)
-//     }
-    
-    
-//   }
-  
-  
-// }
-
-  
-
-//     this.isClicked = true;
-//   }
-
-// }

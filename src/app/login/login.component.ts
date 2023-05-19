@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+// import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
+// import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +23,31 @@ export class LoginComponent implements OnInit {
     });
     console.log('LoginComponent constructor called');
   }
+
+
   ngOnInit(): void {
+//     this.authService.authState.subscribe((user: any) => {
+    
+//  this.getAccessToken();
+  
+//       ////add code.
+      
+//       console.log('authState user: ', user);
+      
+//     console.log('Token from state: ', user.authToken)
+      
+//       });
+      
+//        }
+      
+//        private accessToken = '';
+      
+//       user: any;
+//        googleClientId = '248604648421-gu3ja2c5e8po1uapmfqo1p2t54tskpkt.apps.googleusercontent.com';
+//       getAccessToken(): void {
+//       console.log('getAccessToken')
+//       this.authService.getAccessToken(GoogleLoginProvider.PROVIDER_ID).then(accessToken => this.accessToken = accessToken);
+       
     console.log('LoginComponent ngOnInit');
   }
   
