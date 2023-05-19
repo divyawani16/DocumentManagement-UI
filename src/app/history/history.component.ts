@@ -47,7 +47,7 @@ export class HistoryComponent implements OnInit {
   }
 
   editDocument(document: Document) {
-    // implement edit functionality
+  
   }
 
   deleteDocument(document: Document) {

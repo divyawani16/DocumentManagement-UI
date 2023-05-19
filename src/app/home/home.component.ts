@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-//   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddDocumentComponent, {
@@ -95,7 +94,7 @@ export class HomeComponent implements OnInit {
     this.homeService.deleteDocument(item.documentId).subscribe(
       () => {
         console.log('Record deleted successfully from the database');
-        this.loadData(); // Reload the data after deletion
+        this.loadData(); 
       },
       (error) => {
         console.error('Error deleting record from the database:', error);

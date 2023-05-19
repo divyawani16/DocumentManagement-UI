@@ -65,7 +65,6 @@ import { AddUserComponent } from './add-user/add-user.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // * MATERIAL IMPORTS
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,

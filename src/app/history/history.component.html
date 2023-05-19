@@ -2,16 +2,13 @@
   <div class="page__box" style="text-align: center">Documents</div>
   <div class="page__content shadow p-3 position-relative">
     <div class="d-flex justify-content-between align-items-center mb-3">
+    
       
-      <!-- <app-button (click)="openDialog()" title="Add Document"> </app-button> -->
-      
-     <div class="search-box" [ngClass]="{ 'search-box-clicked':  isClicked }"> 
-        <mat-form-field class="search-field">
-          <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()" 
-            (click)="isClicked = true" (blur)="isClicked = false">
-           <mat-icon matSuffix [ngClass]="{ 'search-icon-hidden': isClicked }" class="search-icon">search</mat-icon> 
-        </mat-form-field>
-      </div>
+     <div class="search-box" [ngClass]="{ 'search-box-clicked': isClicked }">
+      <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()"
+        (click)="isClicked = true" (blur)="isClicked = false">
+    </div>
+
       <div class="container-fluid">
         <div class="card-body">
           <div class="row">

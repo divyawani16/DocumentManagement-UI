@@ -52,19 +52,12 @@ export class DocumentDetailsComponent implements OnInit {
   }
 
   editDocument(document: Document) {
-    // implement edit functionality
+    
   }
 
   deleteDocument(document: Document) {
   }
-//   editUser(item: any) {
-//     // implement edit functionality
-//   }
 
-//   deleteUser(item: any) {
-
-//     // implement delete functionality
-//   }
 
   isClicked = false;
 
