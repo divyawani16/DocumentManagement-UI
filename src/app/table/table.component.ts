@@ -1,16 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-//import { Column } from './column';
-
-
-// export interface Column {
-//   columnDef: string;
-//   header: string;
-//   cell: Function;
-//   isLink?: boolean;
-//   url?: string;
-// }
-
 
 @Component({
   selector: 'app-table',
@@ -20,16 +9,11 @@ import { MatTableDataSource } from '@angular/material/table';
 export class TableComponent<T> implements OnInit {
   @Input() GridArray: any[];
   @Input() GridHeadArray: any[];
-
   @Input() filteredData!: any[];
-
-  
   @Input() HeadArray :any[] = [];
-  // @Input() GridArray :any[] = []; 
+  
   private _gridArray: any[] = [];
   dataSource: MatTableDataSource<any>;
-
-
   @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
   @Output() onDownload = new EventEmitter<any>();
@@ -39,16 +23,16 @@ export class TableComponent<T> implements OnInit {
 
   ngOnInit(): void {
 
-    // this.dataSource = new MatTableDataSource(this.GridArray);
   }
   edit(item: any) {
-    debugger;
+   
     this.onEdit.emit(item);
   }
   delete(item: any) {
 
     this.onDelete.emit(item);
   }
+
   download(item: any) {
     this.onDownload.emit(item);
   }
@@ -56,4 +40,5 @@ export class TableComponent<T> implements OnInit {
   print(item: any) {
     this.onPrint.emit(item);
   }
+
 }

@@ -1,12 +1,5 @@
 @import "../home/home.component.scss";
 
-// .container-fluid {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100vh;
-//   }
 
   .page__content {
     display: flex;
@@ -26,47 +19,48 @@
   .col-md-4,
   .col-sm-4,
   .col-xs-6 {
-    flex-basis: calc(33.33% - 20px); /* Adjust the percentage and gap as needed */
-    max-width: calc(33.33% - 20px); /* Adjust the percentage and gap as needed */
+    flex-basis: calc(33.33% - 20px); 
+    max-width: calc(33.33% - 20px);
   }
 
   .mat-card {
-    background-color:#1e293b;; /* set background color */
-    border-radius: 4px; /* set border radius */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* set box shadow */
-    margin: 10px; /* set margin */
-    padding: 10px; /* set padding */
-    text-align: center; /* set text alignment */
+    background-color:#1e293b;; 
+    border-radius: 4px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    margin: 10px; 
+    padding: 10px; 
+    text-align: center; 
     font-size:30px;
+    color:#e9eef1;
    
  }
  .mat-icon {
-    color: #e9eef1; /* set icon color */
-    font-size: 48px; /* set icon size */
-    margin: 20px; /* set margin */
+    color: #e9eef1; 
+    font-size: 48px; 
+    margin: 20px; 
     
   }
   
-  /* Styling for the links */
+  
   a {
-    color: #eff2f5; /* set link color */
-    display: block; /* set display to block */
-    font-size: 16px; /* set font size */
-    margin-top: 10px; /* set margin top */
-    text-decoration: none; /* remove underline */
+    color: #eff2f5;
+    display: block; 
+    font-size: 16px; 
+    margin-top: 10px; 
+    text-decoration: none; 
   }
   
-  /* Styling for the figures */
+ 
   figure {
-    display: inline-block; /* set display to inline-block */
-    margin: 10px; /* set margin */
-    text-align: center; /* set text alignment */
-    width: calc(33.33% - 20px); /* set width to 33.33% minus margin */
+    display: inline-block; 
+    margin: 10px; 
+    text-align: center; 
+    width: calc(33.33% - 20px); 
   }
   
-  /* Media query for responsiveness */
+  
   @media screen and (max-width: 767px) {
     figure {
-      width: 100%; /* set width to 100% on small screens */
+      width: 100%; 
     }
   }

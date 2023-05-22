@@ -3,8 +3,7 @@
   <div class="page__content shadow p-3 position-relative">
     <div class="d-flex justify-content-between align-items-center mb-3">
       
-      <!-- <app-button (click)="openDialog()" title="Add Document"> </app-button> -->
-      
+     
       <div class="search-box" [ngClass]="{ 'search-box-clicked': isClicked }">
         <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()"
           (click)="isClicked = true" (blur)="isClicked = false">
