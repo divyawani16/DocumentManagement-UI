@@ -50,6 +50,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  editDocument(document: Document) {
+  
+  }
 
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  

@@ -17,7 +17,6 @@ export class HomeService {
     return this.http.get<Document[]>(`${this.baseUrl}/getalldocumentsdetails`);
   }
 
-
   public createDocument(formData: FormData): Observable<any> {
     return this.http.post<any>(this.baseUrl, formData);
   }
