@@ -1,17 +1,11 @@
-export class Document {
-    documentId?: number;
-    documentName: string;
-    userName: string;
-    PropertyName: string;
-    docTypeName: string;
-    docMimeTypeName: string;
-  
-    constructor(documentName: string, userName: string, PropertyName: string, docTypeName: string, docMimeTypeName: string) {
-      this.documentName = documentName;
-      this.userName = userName;
-      this.PropertyName = PropertyName;
-      this.docTypeName = docTypeName;
-      this.docMimeTypeName = docMimeTypeName;
-    }
+  export class Document {
+    constructor(
+      //public documentId:number = 0,
+        public documentName: string = '',
+        public userName: string = '',
+        public propertyName: string = '',
+        public docTypeName: string = '',
+        public docMimeTypeName: string = '',
+       
+      ) {}
   }
-  

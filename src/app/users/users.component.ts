@@ -22,6 +22,8 @@ export class UsersComponent implements OnInit {
       this.usersService.getUsers()
       .subscribe(users => this.userslist = users);
       console.log(this.userslist)
+      
+      
     }catch(err){
       console.log(err)
     }
@@ -30,7 +32,7 @@ export class UsersComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUserComponent, {
       width: '450px',
-      height: '600px',
+      height: '500px',
       data: {},
 
     });
@@ -43,13 +45,13 @@ export class UsersComponent implements OnInit {
 
 
   headArray = [  
-    { 'Head': 'firstName', 'FieldName': 'firstName' },  
-    { 'Head': 'lastName', 'FieldName': 'lastName' }, 
-    { 'Head': 'username', 'FieldName': 'username' },  
-    { 'Head': 'password', 'FieldName': 'password' }, 
-    {'Head': 'emailId', 'FieldName': 'emailId'},
-    { 'Head': 'phoneNumber', 'FieldName': 'phoneNumber' }, 
-    { 'Head': 'Action', 'FieldName': 'action' }
+    { 'Head': 'First Name', 'FieldName': 'firstName' },  
+    { 'Head': 'Last Name', 'FieldName': 'lastName' }, 
+    { 'Head': 'User Name', 'FieldName': 'username' },  
+    //{ 'Head': 'Password', 'FieldName': 'password' }, 
+    //{'Head': 'emailId', 'FieldName': 'emailId'},
+    { 'Head': 'Phone Number', 'FieldName': 'phoneNumber' }, 
+
   ];
 
   filterData() {
@@ -69,12 +71,6 @@ export class UsersComponent implements OnInit {
     this.filterData();
   }
 
-  editUser(document: Document) {
-    
-  }
-
-  deleteUser(document: Document) {
-  }
 
 
   isClicked = false;

@@ -31,20 +31,26 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AddpropertyComponent } from './addproperty/addproperty.component';
 import { AddUserComponent } from './add-user/add-user.component'
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
+import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
+import { TenantDocumentsComponent } from './tenant-documents/tenant-documents.component';
+import { OwnerPropertyComponent } from './owner-property/owner-property.component';
+import { OwnerDocumentComponent } from './owner-document/owner-document.component';
+import { OwnerUserComponent } from './owner-user/owner-user.component';
+import { TenantDocumentComponent } from './tenant-document/tenant-document.component';
+import { TenantPropertyComponent } from './tenant-property/tenant-property.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
- 
     SidenavComponent,
     LoginComponent,
     LoginLayoutComponent,
@@ -52,7 +58,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     TableComponent,
     UsersComponent,
     ButtonComponent,
-
     DocumentDetailsComponent,
     HistoryComponent,
     AddDocumentComponent,
@@ -60,12 +65,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     DashboardComponent,
     AddpropertyComponent,
     AddUserComponent,
+    PropertyOwnerDashboardComponent,
+    TenantDashboardComponent,
+    TenantDocumentsComponent,
+    OwnerPropertyComponent,
+    OwnerDocumentComponent,
+    OwnerUserComponent,
+    TenantDocumentComponent,
+    TenantPropertyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // * MATERIAL IMPORTS
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
@@ -82,14 +94,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatDatepickerModule,
     MatRadioModule,
     MatGridListModule,
- 
+    MatSnackBarModule,
     HttpClientModule,
- 
     MatSelectModule,
     MatTabsModule,
 
   ],
-  providers: [],
+  providers: [
+  //   SocialAuthService,{
+  //  provide: 'SocialAuthServiceConfig',
+  // useValue: {
+  //     autoLogin: false,
+  //    providers: [
+  //    {
+  //     id: GoogleLoginProvider.PROVIDER_ID,
+  //      provider: new GoogleLoginProvider(
+  //      '248604648421-gu3ja2c5e8po1uapmfqo1p2t54tskpkt.apps.googleusercontent.com'
+  //     )
+  //      },
+  //      ],
+  //     } as SocialAuthServiceConfig,
+  //     }],
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

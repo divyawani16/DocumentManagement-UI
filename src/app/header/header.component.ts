@@ -16,10 +16,10 @@ export class HeaderComponent implements OnInit {
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
   }
-  logout() {
- 
 
+   logout() {
 
-    this.router.navigate(['/login']);
-  }
+this.router.navigate(['/login']);
+    
+      }
 }
