@@ -7,28 +7,28 @@
         <figure class="col-md-4 col-sm-4 col-xs-6">
           <mat-card class="back-widget-set text-center">
             <mat-icon>business</mat-icon>
-            <h3>{{ propertyCount }}</h3>
+            <div class="count">{{ propertyCount }}</div>
             <a routerLink="/property">Total Properties</a>
           </mat-card>
         </figure>
         <figure class="col-md-4 col-sm-4 col-xs-6">
           <mat-card class="back-widget-set text-center">
             <mat-icon class="mat-5x">people</mat-icon>
-            <h3>{{ propertyCount }}</h3>
+            <div class="count">{{ propertyCount }}</div>
             <a routerLink="/users">Total Users</a>
           </mat-card>
         </figure>
         <figure class="col-md-4 col-sm-4 col-xs-6">
           <mat-card class="back-widget-set text-center">
             <mat-icon>assignment</mat-icon>
-            <h3>{{ documentCount }}</h3>
+            <div class="count">{{ documentCount }}</div>
             <a routerLink="/home">Total Documents</a>
           </mat-card>
         </figure>
         <figure class="col-md-4 col-sm-4 col-xs-6">
           <mat-card class="back-widget-set text-center">
             <mat-icon class="mat-5x">history</mat-icon>
-            <h3>0</h3>
+            <div class="count">0</div>
             <a routerLink="/document-details">Pending Approvals</a>
           </mat-card>
         </figure>
@@ -37,3 +37,4 @@
     </div>
   </div>
 </div>
+
