@@ -32,21 +32,21 @@
 
   
   <ng-container *ngIf="isTenantDashboardNavigation()">
-    <!-- Tenant Dashboard Navigation -->
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" style="margin-top: 30px;">
+    
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/tenant" style="margin-top: 30px;">
       <mat-icon>dashboard</mat-icon> Dashboard
     </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/tenant-documents">
       <mat-icon>assignment</mat-icon> Tenant Documents
     </a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/history">
-      <mat-icon>history</mat-icon> Tenant History
+      <mat-icon>business</mat-icon> Properties
     </a>
   </ng-container>
 
 
   <ng-container *ngIf="isOwnerDashboardNavigation()">
-    <!-- Owner Dashboard Navigation -->
+   
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" style="margin-top: 30px;">
       <mat-icon>dashboard</mat-icon> Dashboard
     </a>
