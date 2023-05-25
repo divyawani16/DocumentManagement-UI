@@ -24,6 +24,12 @@
                   <mat-icon>delete</mat-icon>
                 </button>
               </div> 
+
+              <div *ngIf="head.FieldName === 'download'" class="text-center">
+                <button mat-icon-button color="primary" (click)="download(item)" title="Download">
+                  <mat-icon>cloud_download</mat-icon>
+                </button>
+              </div>
             </td>
           </tr> 
         </tbody>

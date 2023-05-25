@@ -60,7 +60,8 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': 'action' } 
+    {'Head': 'Action', 'FieldName': 'action' } ,
+    { 'Head': 'View', 'FieldName': 'download' },
 
   ];
 

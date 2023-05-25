@@ -38,6 +38,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AddpropertyComponent } from './addproperty/addproperty.component';
 import { AddUserComponent } from './add-user/add-user.component'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
+import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +59,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DashboardComponent,
     AddpropertyComponent,
     AddUserComponent,
+    PropertyOwnerDashboardComponent,
+    TenantDashboardComponent,
   ],
   imports: [
     BrowserModule,
