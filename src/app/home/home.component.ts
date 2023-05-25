@@ -78,7 +78,8 @@ export class HomeComponent implements OnInit {
     console.log('Search value:', this.searchValue);
     this.filterData();
   }
-
+  editDocument(document: Document) {
+  }
  
   deleteDocument(item: any) {
     const index = this.documentsList.indexOf(item);
