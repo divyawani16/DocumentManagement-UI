@@ -1,4 +1,4 @@
-  export class Document {
+export class Document {
     constructor(
       //public documentId:number = 0,
         public documentName: string = '',
