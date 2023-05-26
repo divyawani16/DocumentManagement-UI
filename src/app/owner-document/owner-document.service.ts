@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OwnerDocumentService {
+  getAllUser() {
+    throw new Error('Method not implemented.');
+  }
   
   private baseUrl:string;
 

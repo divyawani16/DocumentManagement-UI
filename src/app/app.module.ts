@@ -46,6 +46,9 @@ import { OwnerDocumentComponent } from './owner-document/owner-document.componen
 import { OwnerUserComponent } from './owner-user/owner-user.component';
 import { TenantDocumentComponent } from './tenant-document/tenant-document.component';
 import { TenantPropertyComponent } from './tenant-property/tenant-property.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { OwnerSidenavComponent } from './owner-sidenav/owner-sidenav.component';
+import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +76,8 @@ import { TenantPropertyComponent } from './tenant-property/tenant-property.compo
     OwnerUserComponent,
     TenantDocumentComponent,
     TenantPropertyComponent,
+    OwnerSidenavComponent,
+    TenantSidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +103,7 @@ import { TenantPropertyComponent } from './tenant-property/tenant-property.compo
     HttpClientModule,
     MatSelectModule,
     MatTabsModule,
+    MatPaginatorModule
 
   ],
   providers: [

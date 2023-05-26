@@ -156,7 +156,7 @@ h2 {
   
   #hero:before {
     content: "";
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(214, 212, 212, 0.8);
     position: absolute;
     bottom: 0;
     top: 0;

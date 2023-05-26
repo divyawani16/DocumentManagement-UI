@@ -10,14 +10,14 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class TenantDocumentsComponent  {
 
-  searchValue: string = '';
+  // searchValue: string = '';
 
-  documentsList: Document[] | undefined;
+  // documentsList: Document[] | undefined;
 
-  constructor(
-    private dialog: MatDialog,
-    private homeService: HomeService
-  ) {}
+  // constructor(
+  //   private dialog: MatDialog,
+  //   private homeService: HomeService
+  // ) {}
 
   // ngOnInit() {
   //   this.loadData();
@@ -32,34 +32,34 @@ export class TenantDocumentsComponent  {
   //   }
   // }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(AddDocumentComponent, {
-      width: '450px',
-      height: '500px',
-      data: {},
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(AddDocumentComponent, {
+  //     width: '450px',
+  //     height: '500px',
+  //     data: {},
 
-    });
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     console.log(result);
+  //   });
+  // }
 
-  editDocument(document: Document) {
+  // editDocument(document: Document) {
   
-  }
+  // }
 
-  headArray = [  
-    { 'Head': 'Document Name', 'FieldName': 'documentName' },  
-    { 'Head': 'User Name ', 'FieldName': 'userName' }, 
-    { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
-    { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': 'action' } ,
-    { 'Head': 'View', 'FieldName': 'download' },
+  // headArray = [  
+  //   { 'Head': 'Document Name', 'FieldName': 'documentName' },  
+  //   { 'Head': 'User Name ', 'FieldName': 'userName' }, 
+  //   { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
+  //   { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
+  //   { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
+  //   {'Head': 'Action', 'FieldName': 'action' } ,
+  //   { 'Head': 'View', 'FieldName': 'download' },
 
-  ];
+  // ];
 
   // filterData() {
   //   console.log('Search value:', this.searchValue);
@@ -110,14 +110,31 @@ deleteDocument(item:any){
   }
 
 
-
-  isClicked = false;
-  onSearchBoxClick() {
-
-    this.isClicked = true;
-  }
   
+  showTable = false;
+  searchTerm = '';
 
+  users = [
+    { name: 'John Doe', property: 'Property 1', document: 'Document 1' },
+    { name: 'Jane Smith', property: 'Property 2', document: 'Document 2' },
+    { name: 'Alice Johnson', property: 'Property 3', document: 'Document 3' }
+  ];
+
+  displayedColumns: string[] = ['name', 'property', 'document'];
+
+  showTableUsers = false;
+  showTableDocuments = false;
+
+  toggleTable(tableType: string) {
+    if (tableType === 'users') {
+      this.showTableUsers = !this.showTableUsers;
+    } else if (tableType === 'documents') {
+      this.showTableDocuments = !this.showTableDocuments;
+    }
+  }
+documents=[
+ 
+]
 }
 
 
