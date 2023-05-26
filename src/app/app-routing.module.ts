@@ -10,7 +10,7 @@ import { HistoryComponent } from './history/history.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
 import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
-import { TenantDocumentsComponent } from './tenant-documents/tenant-documents.component';
+import { TenantDocumentComponent } from './tenant-document/tenant-document.component';
 import { OwnerDocumentComponent } from './owner-document/owner-document.component';
 import { OwnerPropertyComponent } from './owner-property/owner-property.component';
 import { OwnerUserComponent } from './owner-user/owner-user.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'document-details', component: DocumentDetailsComponent, data: { layout: 'default' } },
   { path: 'history', component: HistoryComponent, data: { layout: 'default' } },
   { path:'tenant',component: TenantDashboardComponent,data: { layout: 'default' } },
-  { path: 'your-document',component: TenantDocumentsComponent,data: { layout: 'default' }  },
+  { path: 'your-document',component: TenantDocumentComponent,data: { layout: 'default' }  },
   { path: 'your-property',component: TenantPropertyComponent,data: { layout: 'default' }  },
   { path: 'owner', component: PropertyOwnerDashboardComponent,data: { layout: 'default' } },
   { path: 'owner-document',component: OwnerDocumentComponent, data: { layout: 'default' }  },

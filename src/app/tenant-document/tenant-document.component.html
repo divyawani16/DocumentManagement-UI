@@ -2,6 +2,33 @@
     <div class="page__box" style="text-align: center">Your Documents</div>
     <div class="page__content shadow p-3 position-relative">
       <div class="d-flex justify-content-between align-items-center mb-3">
+       
+        <div class="container-fluid">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">  
+  
+                  <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                     (onEdit)="editDocument($event)" > </app-table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+          <!-- <div class="card-container" (click)="toggleTable('documents')">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Documents</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="search-container"> -->
+                  <!-- <input type="text" placeholder="Search" [(ngModel)]="searchTermDocuments" (input)="applyFilter('documents')" /> -->
+                <!-- </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+       -->
       </div>
-      </div>
-      </div>  
+      

@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-table',
@@ -11,7 +12,7 @@ export class TableComponent<T> implements OnInit {
   @Input() GridHeadArray: any[];
   @Input() filteredData!: any[];
   @Input() HeadArray :any[] = [];
-  
+  @ViewChild(MatPaginator) paginator: MatPaginator; 
   private _gridArray: any[] = [];
   dataSource: MatTableDataSource<any>;
   @Output() onEdit = new EventEmitter<any>();
