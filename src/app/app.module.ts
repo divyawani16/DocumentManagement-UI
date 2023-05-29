@@ -37,7 +37,18 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AddpropertyComponent } from './addproperty/addproperty.component';
 import { AddUserComponent } from './add-user/add-user.component'
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
+import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
+
+import { OwnerPropertyComponent } from './owner-property/owner-property.component';
+import { OwnerDocumentComponent } from './owner-document/owner-document.component';
+import { OwnerUserComponent } from './owner-user/owner-user.component';
+import { TenantDocumentComponent } from './tenant-document/tenant-document.component';
+import { TenantPropertyComponent } from './tenant-property/tenant-property.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { OwnerSidenavComponent } from './owner-sidenav/owner-sidenav.component';
+import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +68,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DashboardComponent,
     AddpropertyComponent,
     AddUserComponent,
+    PropertyOwnerDashboardComponent,
+    TenantDashboardComponent,
+
+    OwnerPropertyComponent,
+    OwnerDocumentComponent,
+    OwnerUserComponent,
+    TenantDocumentComponent,
+    TenantPropertyComponent,
+    OwnerSidenavComponent,
+    TenantSidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +103,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     MatSelectModule,
     MatTabsModule,
+    MatPaginatorModule
 
   ],
   providers: [

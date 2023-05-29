@@ -16,8 +16,6 @@ export class HomeService {
    public getDocuments(): Observable<Document[]> {
     return this.http.get<Document[]>(`${this.baseUrl}/getalldocumentsdetails`);
   }
-
-
   public createDocument(formData: FormData): Observable<any> {
     return this.http.post<any>(this.baseUrl, formData);
   }
@@ -25,5 +23,4 @@ export class HomeService {
     const url = `${this.baseUrl}/${documentId}`;
     return this.http.delete<void>(url);
   }
-  
 }

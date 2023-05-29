@@ -24,9 +24,6 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadData();
-  }
-  loadData(){
     try{
       this.homeService.getDocuments()
       .subscribe(documents => this.documentsList = documents);
@@ -50,6 +47,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  editDocument(document: Document) {
+  
+  }
 
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
@@ -57,7 +57,8 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': 'action' } 
+    {'Head': 'Action', 'FieldName': 'action' } ,
+    { 'Head': 'View', 'FieldName': 'download' },
 
   ];
 
@@ -90,13 +91,13 @@ export class HomeComponent implements OnInit {
     this.homeService.deleteDocument(item.documentId).subscribe(
       () => {
         console.log('Record deleted successfully from the database');
-        this.loadData(); 
       },
       (error) => {
         console.error('Error deleting record from the database:', error);
       }
     );
   }
+  
 
 
 

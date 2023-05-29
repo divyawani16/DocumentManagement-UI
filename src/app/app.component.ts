@@ -10,21 +10,39 @@ export class AppComponent {
   title = 'admin-panel-layout';
   sideBarOpen = true;
   showHeader = true;
-currentRoute: any;
-  
-  constructor(private router: Router, private route: ActivatedRoute) { }
-   ngOnInit() {
-    
-  console.log('AppComponent constructor');
-    this.router.events.subscribe(event => {
+  currentLayout: string;
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        const layout = this.route.root.firstChild.snapshot.data.layout;
+        this.currentLayout = event?.url?.split('/')[1];
+      }
+    });
+  }
+
+  ngOnInit() {
+    console.log('AppComponent constructor');
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const layout = this.router.routerState.snapshot.root.firstChild?.data.layout;
         this.showHeader = layout !== 'login-layout';
         this.sideBarOpen = layout !== 'login-layout';
       }
     });
   }
+  
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
+  }
+
+  isDefaultLayout(): boolean {
+    return this.currentLayout === 'dashboard' || this.currentLayout === 'home' || this.currentLayout === 'users' || this.currentLayout === 'property' || this.currentLayout === 'document-details' || this.currentLayout === 'history';
+  }
+
+  isTenantLayout(): boolean {
+    return this.currentLayout === 'tenant' || this.currentLayout === 'your-document' || this.currentLayout === 'your-property';
+  }
+
+  isOwnerLayout(): boolean {
+    return this.currentLayout === 'owner' || this.currentLayout === 'owner-document' || this.currentLayout === 'owner-user' || this.currentLayout === 'owner-property';
   }
 }

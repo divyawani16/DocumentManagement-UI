@@ -1,7 +1,15 @@
 
 <mat-drawer-container>
   <mat-drawer mode="side" [opened]="sideBarOpen">
-    <app-sidenav *ngIf="sideBarOpen"></app-sidenav>
+    <ng-container *ngIf="isDefaultLayout()">
+    <app-sidenav></app-sidenav>
+  </ng-container>
+  <ng-container *ngIf="isTenantLayout()">
+    <app-tenant-sidenav></app-tenant-sidenav>
+  </ng-container>
+  <ng-container *ngIf="isOwnerLayout()">
+    <app-owner-sidenav></app-owner-sidenav>
+  </ng-container>
   </mat-drawer>
   
   <mat-drawer-content>

@@ -45,3 +45,19 @@
   font-size: 2px;
   margin-top: 20px;
 }
+.page{
+  display: flex;
+  justify-content: flex-end;
+}
+.example-container {
+  margin-top: 0px;
+  height: 400px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.table-container {
+  margin-top: 20px;
+  // max-height: 300px;
+  // overflow-y: auto;
+}
