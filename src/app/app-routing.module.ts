@@ -8,6 +8,9 @@ import { UsersComponent } from './users/users.component';
 import { DocumentDetailsComponent } from './document-details/document-details.component';
 import { HistoryComponent } from './history/history.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
+import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
+import { TenantDocumentsComponent } from './tenant-documents/tenant-documents.component';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent, pathMatch: 'full', data: { layout: 'login-layout' } },
@@ -17,6 +20,9 @@ const routes: Routes = [
   { path: 'property', component: PropertyComponent, data: { layout: 'default' } },
   { path: 'document-details', component: DocumentDetailsComponent, data: { layout: 'default' } },
   { path: 'history', component: HistoryComponent, data: { layout: 'default' } },
+  { path:'tenant',component: TenantDashboardComponent, data: { layout:'default'} },
+  { path: 'owner', component: PropertyOwnerDashboardComponent, data :{ layout: 'default'} },
+  { path: 'tenant-documents',component: TenantDocumentsComponent, data: { layout:'default'}},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 

@@ -28,7 +28,6 @@ export class AddDocumentComponent implements OnInit {
       console.error('No file selected.');
       return;
     }
-  
     const formData = new FormData();
     formData.append('documentName', this.document.documentName);
     formData.append('username', this.document.userName);

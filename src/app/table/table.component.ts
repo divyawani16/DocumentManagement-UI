@@ -25,7 +25,7 @@ export class TableComponent<T> implements OnInit {
 
   }
   edit(item: any) {
-    debugger;
+   
     this.onEdit.emit(item);
   }
   delete(item: any) {

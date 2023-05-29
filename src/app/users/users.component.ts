@@ -71,12 +71,6 @@ export class UsersComponent implements OnInit {
     this.filterData();
   }
 
-  editUser(document: Document) {
-    
-  }
-
-  deleteUser(document: Document) {
-  }
 
 
   isClicked = false;

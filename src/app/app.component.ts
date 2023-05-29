@@ -27,4 +27,16 @@ currentRoute: any;
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
+
+  isTenantDashboardRoute(): boolean {
+    const routePath = this.router.url.split('/')[1];
+    const isTenantDashboard = routePath === 'tenant';
+    return isTenantDashboard;
+  }
+
+  isOwnerDashboardRoute(): boolean {
+    const routePath = this.router.url.split('/')[1];
+    const isOwnerDashboard = routePath === 'owner';
+    return isOwnerDashboard;
+  }
 }
