@@ -47,9 +47,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  editDocument(document: Document) {
-  
-  }
 
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
@@ -59,7 +56,6 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'View', 'FieldName': 'download' },
-
   ];
 
   filterData() {
@@ -80,6 +76,7 @@ export class HomeComponent implements OnInit {
     this.filterData();
   }
   editDocument(document: Document) {
+
   }
  
   deleteDocument(item: any) {
@@ -102,11 +99,11 @@ export class HomeComponent implements OnInit {
 
 
   download(item: any): void {
-    // Implement download functionality
+  
   }
 
   print(item: any): void {
-    // Implement print functionality
+  
   }
 
 

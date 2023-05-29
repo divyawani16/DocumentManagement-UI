@@ -16,7 +16,7 @@ export class OwnerDocumentService {
     this.baseUrl = 'http://localhost:8089/api/documents';
   }
 
-   public getDocuments(): Observable<Document[]> {
-    return this.http.get<Document[]>(`${this.baseUrl}/propertyname`);
+  public getDocuments(): Observable<Document[]> {
+    return this.http.get<Document[]>(`${this.baseUrl}/documentsdetails`);
   }
 }
