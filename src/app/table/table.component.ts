@@ -12,7 +12,7 @@ export class TableComponent<T> implements OnInit {
   @Input() GridHeadArray: any[];
   @Input() filteredData!: any[];
   @Input() HeadArray :any[] = [];
-  @ViewChild(MatPaginator) paginator: MatPaginator; 
+  // @ViewChild(MatPaginator) paginator: MatPaginator; 
   private _gridArray: any[] = [];
   dataSource: MatTableDataSource<any>;
   @Output() onEdit = new EventEmitter<any>();
@@ -20,6 +20,8 @@ export class TableComponent<T> implements OnInit {
   @Output() onDownload = new EventEmitter<any>();
   @Output() onPrint = new EventEmitter<any>();
 
+  // totalRecords: number = 0;
+  // pageSize: number = 5;
   constructor() { }
 
   ngOnInit(): void {
