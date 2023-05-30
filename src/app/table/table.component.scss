@@ -61,3 +61,16 @@
   // max-height: 300px;
   // overflow-y: auto;
 }
+
+.approved {
+  color: green;
+}
+
+.not-approved {
+  color: red;
+}
+
+.mat-slide-toggle .mat-slide-toggle-content,
+.slider {
+  display: none;
+}
