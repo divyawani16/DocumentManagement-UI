@@ -31,7 +31,7 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -49,9 +49,12 @@ import { TenantPropertyComponent } from './tenant-property/tenant-property.compo
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { OwnerSidenavComponent } from './owner-sidenav/owner-sidenav.component';
 import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.component';
-import { GoogleLoginProvider } from 'angularx-social-login';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './_services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +84,7 @@ import { environment } from '../environments/environment';
     TenantPropertyComponent,
     OwnerSidenavComponent,
     TenantSidenavComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,7 +112,7 @@ import { environment } from '../environments/environment';
     MatTabsModule,
     MatPaginatorModule,
     MatSlideToggleModule,
-    SocialLoginModule,
+    RouterModule,
 
 
   ],
@@ -127,6 +131,12 @@ import { environment } from '../environments/environment';
   //      ],
   //     } as SocialAuthServiceConfig,
   //     }],
+  AuthGuard,{
+    provide: HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  },
+  UserService
   ],
   bootstrap: [AppComponent],
 })

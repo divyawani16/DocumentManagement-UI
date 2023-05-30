@@ -15,22 +15,25 @@ import { OwnerDocumentComponent } from './owner-document/owner-document.componen
 import { OwnerPropertyComponent } from './owner-property/owner-property.component';
 import { OwnerUserComponent } from './owner-user/owner-user.component';
 import { TenantPropertyComponent } from './tenant-property/tenant-property.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent, pathMatch: 'full', data: { layout: 'login-layout' } },
- { path: 'dashboard', component: DashboardComponent, data: { layout: 'default' } },
+ { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
   { path: 'home', component: HomeComponent, data: { layout: 'default' } },
   { path: 'users', component: UsersComponent, data: { layout: 'default' } },
   { path: 'property', component: PropertyComponent, data: { layout: 'default' } },
   { path: 'document-details', component: DocumentDetailsComponent, data: { layout: 'default' } },
   { path: 'history', component: HistoryComponent, data: { layout: 'default' } },
-  { path:'tenant',component: TenantDashboardComponent,data: { layout: 'default' } },
+  { path:'tenant',component: TenantDashboardComponent,canActivate:[AuthGuard], data:{roles:['tenant']}  },
   { path: 'your-document',component: TenantDocumentComponent,data: { layout: 'default' }  },
   { path: 'your-property',component: TenantPropertyComponent,data: { layout: 'default' }  },
-  { path: 'owner', component: PropertyOwnerDashboardComponent,data: { layout: 'default' } },
+  { path: 'owner', component: PropertyOwnerDashboardComponent,canActivate:[AuthGuard], data:{roles:['User']}  },
   { path: 'owner-document',component: OwnerDocumentComponent, data: { layout: 'default' }  },
   { path: 'owner-property',component: OwnerPropertyComponent,data: { layout: 'default' }  },
   { path: 'owner-user',component: OwnerUserComponent,data: { layout: 'default' }  },
+  { path: 'forbidden', component:ForbiddenComponent},
  
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
