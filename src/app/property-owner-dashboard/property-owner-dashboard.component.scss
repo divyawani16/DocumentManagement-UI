@@ -1,1 +1,30 @@
 @import "../home/home.component.scss";
+
+.example-card {
+    margin-top: 150px;
+    max-width: 300px;
+    max-height:250px;
+    // display:flex;
+    margin-left: 200px;
+  }
+.example-image{
+//   background-image: url("\assets\pxfuel.jpg");
+//   background-size: cover;
+// background-color:rgb(237, 217, 248)
+} 
+.example-card-2{
+    margin-top: 160px;
+    max-width: 300px;
+    max-height:250px;
+    // display:flex;
+    margin-left: 1rem;
+}
+
+.example-card-3{
+    margin-top: 160px;
+    max-width: 300px;
+    max-height:250px;
+    // display:flex;
+    margin-right: 8rem;
+}
+

@@ -6,7 +6,11 @@ import { HomeService } from './home.service';
 import { Document } from './home.model';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
 import { HttpEventType } from '@angular/common/http';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { HttpResponse } from '@angular/common/http';
+
 
 
 @Component({
@@ -20,7 +24,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private homeService: HomeService
+    private homeService: HomeService,
+    private snackBar: MatSnackBar,
   ) {}
 
   ngOnInit() {
@@ -31,20 +36,23 @@ export class HomeComponent implements OnInit {
     } catch (err) {
       console.log(err);
     }
+    
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(AddDocumentComponent, {
-      width: '450px',
-      height: '500px',
-      data: {},
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
-  }
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(AddDocumentComponent, {
+  //     width: '450px',
+  //     height: '500px',
+  //     data: {},
+
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     console.log(result);
+  //   });
+  // }
 
   headArray = [
     { 'Head': 'Document Name', 'FieldName': 'documentName' },
@@ -54,6 +62,10 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     { 'Head': 'Action', 'FieldName': 'action' },
     { 'Head': 'View', 'FieldName': 'download' },
+
+    {'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' }
+
+
   ];
 
   filterData() {
@@ -92,6 +104,35 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+=
+  
+  // updateApproval(document: Document) {
+  //   const newApprovalStatus = !document.status; 
+
+  //   this.homeService.updateDocumentApproval(document.documentId, newApprovalStatus).subscribe(
+  //     () => {
+  //       console.log('Document approval status updated successfully');
+  //       document.status = newApprovalStatus;
+  //       this.notifyUser(document); 
+  //     },
+  //     (error) => {
+  //       console.error('Error updating document approval status:', error);
+  //     }
+  //   );
+  // }
+
+  // notifyUser(document: Document) {
+  //   // Implement user notification logic here
+  //   const message = document.status ? 'Your document has been approved' : 'Your document has been disapproved';
+  //   this.snackBar.open(message, 'Dismiss', {
+  //     duration: 3000
+  //   });
+  // }
+
+  // download(item: any): void {
+    
+  // }
+=
 
   public download(documentId: number){
     console.log(documentId);

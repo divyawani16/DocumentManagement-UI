@@ -39,34 +39,28 @@
   </mat-card>
 </div> -->
 
-<mat-drawer-content>
+ <!-- <mat-drawer-content>
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom bg">
   <div class="col-md-3 mb-2 mb-md-0">
   </div>
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <!-- <img src="assets/voting-and-approval-system-website-favicon-color.png" height="35" /> -->
+  
       <p class="title">Document Management System</p>
-  </ul>
-    <!-- <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2" (click)="logout()">Logout</button>
-    </div> -->
+  </ul> 
+ <button>Login</button>
 </header>
 <div class="has-bg-img">
-  <!-- <img class="demo" src='/assets/blog-3.jpg'> -->
+
 
 <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center">
           <h1>An Efficient Document Management system </h1>
-          <!-- <h2>We are team of talented designers @bbd software</h2> -->
+         
         </div>
       </div>
-      <!-- <div class="text-center google-login">
-        <button  class="btn btn-login btn-info" type="button" *ngIf="!isLoggedIn()" (click)="ls.signInWithGoogle()">
-          <img src="assets/google.png" alt="Google" class="google-icon"> Sign in with Google
-        </button>
-      </div> -->
+    
 
       <div class="row icon-boxes">
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
@@ -108,9 +102,31 @@
   </section>
  
 </div>
-<footer>
-  <div class="footer-container">
-    
+
+</mat-drawer-content>  -->
+
+<div class="container mt-5">
+  <div class="card" style="padding: 20px;">
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <input type="text"
+          ngModel
+          name="userName"
+          id="userName"
+          placeholder="Enter your username"
+          class="form-control mb-3"
+          >
+
+          <input type="password"
+          ngModel
+          name="userPassword"
+          id="userPassword"
+          placeholder="Enter your password"
+          class="form-control mb-3"
+          >
+
+          <input type="submit"
+          value="Login"
+          class="btn btn-outline-primary form-control rounded-0">
+      </form>
   </div>
-</footer>
-</mat-drawer-content>
+</div>

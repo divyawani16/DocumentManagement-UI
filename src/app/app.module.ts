@@ -31,7 +31,7 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -40,7 +40,7 @@ import { AddUserComponent } from './add-user/add-user.component'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
 import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { OwnerPropertyComponent } from './owner-property/owner-property.component';
 import { OwnerDocumentComponent } from './owner-document/owner-document.component';
 import { OwnerUserComponent } from './owner-user/owner-user.component';
@@ -49,6 +49,12 @@ import { TenantPropertyComponent } from './tenant-property/tenant-property.compo
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { OwnerSidenavComponent } from './owner-sidenav/owner-sidenav.component';
 import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.component';
+import { RouterModule } from '@angular/router';
+import { environment } from '../environments/environment';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './_services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +84,7 @@ import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.componen
     TenantPropertyComponent,
     OwnerSidenavComponent,
     TenantSidenavComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +110,10 @@ import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.componen
     HttpClientModule,
     MatSelectModule,
     MatTabsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSlideToggleModule,
+    RouterModule,
+
 
   ],
   providers: [
@@ -121,6 +131,12 @@ import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.componen
   //      ],
   //     } as SocialAuthServiceConfig,
   //     }],
+  AuthGuard,{
+    provide: HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  },
+  UserService
   ],
   bootstrap: [AppComponent],
 })

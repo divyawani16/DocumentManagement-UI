@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Document } from './tenant-document.model';
 import { TenantDocumentService } from './tenant-document.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { AddDocumentComponent } from '../add-document/add-document.component';
+=
 @Component({
   selector: 'app-tenant-document',
   templateUrl: './tenant-document.component.html',
@@ -14,7 +16,8 @@ export class TenantDocumentComponent implements OnInit {
   documentsList: Document[] | undefined;
 
   constructor(
-    private TenantDocumentService : TenantDocumentService
+    private TenantDocumentService : TenantDocumentService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +29,20 @@ export class TenantDocumentComponent implements OnInit {
       console.log(err)
     }
   }
+
+  openDialog(): void {
+      const dialogRef = this.dialog.open(AddDocumentComponent, {
+        width: '450px',
+        height: '500px',
+        data: {},
+  
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        console.log(result);
+      });
+    }
 
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
