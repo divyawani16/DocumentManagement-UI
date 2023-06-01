@@ -23,11 +23,40 @@
           </span>
         </div>
 
+<!-- <div class="row">
+
+  <div class="col-md-12">
+    <div class="table-container">
+      <div *ngIf="GridArray.length === 0" class="no-results">No results found.</div>
+      <table class="demo-table mat-elevation-z8">
+        <thead>
+          <tr class="mat-header-row">
+            <th>Sr</th>
+            <th *ngFor="let head of HeadArray" class="mat-header-cell">{{head.Head}}</th>  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of GridArray; let sr=index">
+            <td>{{ sr+1 }}</td>
+            <td *ngFor="let head of HeadArray" class="mat-cell">
+              <div *ngIf="head.FieldName !== ''">{{ item[head.FieldName] }}</div>
+              <div *ngIf="head.FieldName == 'action'" class="text-center">
+               
+                <mat-icon color="primary" (click)="edit(item)" title="edit">
+                  edit</mat-icon>
+              
+                <mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">
+                  delete</mat-icon>
+             
+              </div>  -->
+
+
         <div *ngIf="head.FieldName === 'action'" class="text-center">
           <mat-icon color="primary" (click)="edit(item)" title="edit">edit</mat-icon>
           <mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">delete</mat-icon>
         </div>
         
+
         <div *ngIf="head.FieldName === 'download'" class="text-center">
           <mat-icon color="primary" (click)="download(item)" title="Download">cloud_download</mat-icon>
         </div>
@@ -35,3 +64,17 @@
     </tr>
   </tbody>
 </table>
+
+        
+      </table>
+      <!-- <mat-paginator
+      class="page"
+      [pageSizeOptions]="[2, 3, 5, 10, 25, 100]"
+      [length]="dataSource?.data.length"
+      [pageSize]="2"
+    ></mat-paginator> -->
+    </div>
+    </div>
+  </div>
+
+

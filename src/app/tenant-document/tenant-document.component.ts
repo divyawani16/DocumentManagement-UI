@@ -3,14 +3,18 @@ import { Document } from './tenant-document.model';
 import { TenantDocumentService } from './tenant-document.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
+=
 @Component({
   selector: 'app-tenant-document',
   templateUrl: './tenant-document.component.html',
   styleUrls: ['./tenant-document.component.scss']
 })
+
 export class TenantDocumentComponent implements OnInit {
   searchValue: string = '';
+
   documentsList: Document[] | undefined;
+
   constructor(
     private TenantDocumentService : TenantDocumentService,
     private dialog: MatDialog,
@@ -39,7 +43,7 @@ export class TenantDocumentComponent implements OnInit {
         console.log(result);
       });
     }
-  
+
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
@@ -48,12 +52,11 @@ export class TenantDocumentComponent implements OnInit {
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'View', 'FieldName': 'download' },
-
   ];
 
   editDocument(document: Document) {
-  
   }
+
   filterData() {
     console.log('Search value:', this.searchValue);
     if (!this.searchValue) {
