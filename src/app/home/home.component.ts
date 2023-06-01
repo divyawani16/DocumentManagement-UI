@@ -36,19 +36,19 @@ export class HomeComponent implements OnInit {
     
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(AddDocumentComponent, {
-      width: '450px',
-      height: '500px',
-      data: {},
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(AddDocumentComponent, {
+  //     width: '450px',
+  //     height: '500px',
+  //     data: {},
 
-    });
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     console.log(result);
+  //   });
+  // }
 
   editDocument(document: Document) {
   

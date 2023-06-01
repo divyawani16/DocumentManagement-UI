@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OwnerPropertyService } from './owner-property.service';
 import { Document } from './owner-property.model';
+import { MatDialog } from '@angular/material/dialog';
+import { AddpropertyComponent } from '../addproperty/addproperty.component';
 
 @Component({
   selector: 'app-owner-property',
@@ -11,7 +13,8 @@ export class OwnerPropertyComponent implements OnInit {
   Propertylist: Document[] | undefined;
   searchValue: any;
   constructor(
-    private OwnerPropertyService:OwnerPropertyService
+    private OwnerPropertyService:OwnerPropertyService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +26,20 @@ export class OwnerPropertyComponent implements OnInit {
       console.log(err)
     }
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddpropertyComponent, {
+      width: '500px',
+      height: '700px',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
+  }
+
 
   headArray = [  
     { 'Head': 'Document Name', 'FieldName': 'documentName' },  

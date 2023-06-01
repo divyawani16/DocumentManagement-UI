@@ -7,8 +7,8 @@ export class UserAuthService {
 
   constructor() { }
 
-  public setRoles(roles: any[]){
-    localStorage.setItem("roles",JSON.stringify(roles));
+  public setRoles(roles: string){
+    localStorage.setItem("roles",roles);
   }
 
   public getRoles(): any[]{

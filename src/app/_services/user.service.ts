@@ -12,8 +12,8 @@ export class UserService {
 
   PATH_OF_API= "http://localhost:8012";
   
-  // requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
-  requestHeader = new HttpHeaders();
+  requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
+  // requestHeader = new HttpHeaders();
 
   constructor(private httpclient: HttpClient, private userAuthService: UserAuthService) { }
     
