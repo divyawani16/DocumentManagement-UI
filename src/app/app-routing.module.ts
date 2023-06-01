@@ -20,7 +20,7 @@ import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent, pathMatch: 'full', data: { layout: 'login-layout' } },
- { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
+ { path: 'dashboard', component: DashboardComponent, },
   { path: 'home', component: HomeComponent, data: { layout: 'default' } },
   { path: 'users', component: UsersComponent, data: { layout: 'default' } },
   { path: 'property', component: PropertyComponent, data: { layout: 'default' } },

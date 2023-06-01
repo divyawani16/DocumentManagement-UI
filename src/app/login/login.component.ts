@@ -22,13 +22,14 @@ export class LoginComponent implements OnInit {
   login(loginForm:NgForm) {
    this.userService.login(loginForm.value).subscribe(
     (response:any)=>{
-      // console.log(response.jwtToken);
-      // console.log(response.userRoles);
+      console.log(response.jwtToken);
+      console.log(response.userRoles);
 
-      this.userAuthService.setRoles(response.userRoles);
-      this.userAuthService.setToken(response.jwtToken);
+     this.userAuthService.setRoles(response.userRoles);
+     this.userAuthService.setToken(response.jwtToken);
       console.log(response);
      const role= response.userRoles[0].roleId;
+     console.log(role);
      if(role ==="Admin"){
      this.router.navigate(['/dashboard']);
      }
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
     }
    );
   }
+
 
 //   username = '';
 //   password = '';
