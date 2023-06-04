@@ -19,6 +19,7 @@ export class OwnerDocumentComponent implements OnInit {
 
   ngOnInit(): void {
     try{
+      
       this.OwnerDocumentService.getDocuments()
       .subscribe(documents => this.documentsList = documents);
       console.log(this.documentsList)
@@ -49,8 +50,8 @@ export class OwnerDocumentComponent implements OnInit {
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'View', 'FieldName': 'download' },
-
   ];
+
 
   editDocument(document: Document) {
   

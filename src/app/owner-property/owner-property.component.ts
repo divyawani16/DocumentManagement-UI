@@ -27,6 +27,7 @@ export class OwnerPropertyComponent implements OnInit {
     }
   }
 
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddpropertyComponent, {
       width: '500px',
@@ -41,14 +42,16 @@ export class OwnerPropertyComponent implements OnInit {
   }
 
 
-  headArray = [  
-    { 'Head': 'Document Name', 'FieldName': 'documentName' },  
-    { 'Head': 'User Name ', 'FieldName': 'userName' }, 
-    { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
-    { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
-    {'Head': 'Action', 'FieldName': 'action' } ,
-    { 'Head': 'View', 'FieldName': 'download' },
+
+  headArray = [
+    { 'Head': 'Property Name', 'FieldName': 'propertyName' },
+    { 'Head': 'Building', 'FieldName': 'building' },
+    { 'Head': 'Floor Number', 'FieldName': 'floorNumber' },
+    { 'Head': 'Flat Number', 'FieldName': 'flatNumber' },
+    { 'Head': 'Address', 'FieldName': 'address' },
+    { 'Head': 'City', 'FieldName': 'city' },
+    { 'Head': 'Pincode', 'FieldName': 'pincode' },
+    { 'Head': 'Action', 'FieldName': 'action' }
 
   ];
 

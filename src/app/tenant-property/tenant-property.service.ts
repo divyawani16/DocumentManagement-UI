@@ -14,7 +14,7 @@ export class TenantPropertyService {
   }
 
   public getProperty(): Observable<Document[]> {
-    return this.http.get<Document[]>(`${this.baseUrl}/propertyname`);
+    return this.http.get<Document[]>(`${this.baseUrl}/get`);
   }
 
 }
