@@ -12,7 +12,8 @@ import { AddDocumentComponent } from '../add-document/add-document.component';
 
 export class TenantDocumentComponent implements OnInit {
   searchValue: string = '';
-
+  public usernames: string[] = ['User 1', 'User 2', 'User 3'];
+  public dropdownOpen: boolean = false;
   documentsList: Document[] | undefined;
 
   constructor(
@@ -20,6 +21,14 @@ export class TenantDocumentComponent implements OnInit {
     private dialog: MatDialog,
   ) { }
 
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  selectUsername(username: string) {
+    // Handle username selection
+  }
   ngOnInit(): void {
     try{
       this.TenantDocumentService.getDocuments()
