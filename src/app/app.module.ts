@@ -52,9 +52,8 @@ import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.componen
 import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import { AuthGuard } from './_auth/auth.guard';
-import { AuthInterceptor } from './_auth/auth.interceptor';
-import { UserService } from './_services/user.service';
+
+import { LandingPageComponent } from './landing-page/landing-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +84,7 @@ import { UserService } from './_services/user.service';
     OwnerSidenavComponent,
     TenantSidenavComponent,
     ForbiddenComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -131,12 +131,12 @@ import { UserService } from './_services/user.service';
   //      ],
   //     } as SocialAuthServiceConfig,
   //     }],
-  AuthGuard,{
-    provide: HTTP_INTERCEPTORS,
-    useClass:AuthInterceptor,
-    multi:true
-  },
-  UserService
+  // AuthGuard,{
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass:AuthInterceptor,
+  //   multi:true
+  // },
+  // UserService
   ],
   bootstrap: [AppComponent],
 })

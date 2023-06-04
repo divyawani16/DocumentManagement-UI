@@ -1,8 +1,46 @@
 <div class="container-fluid page">
-    <div class="page__box" style="text-align: center">Tenant-Dashboard</div>
-    <div class="page__content shadow p-3 position-relative">
-      <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="page__box header">
+    <div class="header__title">
+      Tenant Dashboard
+    </div>
+    <div class="header__notification" (click)="toggleNotificationCard()">
+      <span class="notification-icon">
+        <i class="material-icons">notifications</i>
+        <span class="notification-count">{{ notificationCount }}</span>
+      </span>
+    </div>
+  </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="feature-card">
+        <i class="material-icons">home</i>
+        <div class="card-content">
+          <h4 class="card-title">Properties</h4>
+          <p class="card-description">Manage your properties and flats</p>
         </div>
+      </div>
+
+      <div class="feature-card">
+        <i class="material-icons">description</i>
+        <div class="card-content">
+          <h4 class="card-title">Documents</h4>
+          <p class="card-description">Access and manage your documents</p>
         </div>
+      </div>
+
+      <div class="feature-card">
+        <i class="material-icons">people</i>
+        <div class="card-content">
+          <h4 class="card-title">Tenants</h4>
+          <p class="card-description">Manage tenants and leases</p>
         </div>
-        
+      </div>
+    </div>
+  </div>
+  <div class="notification-card" [ngClass]="{'show': showNotificationCard}">
+    <!-- Notifications content goes here -->
+    <div class="notification">Notification 1</div>
+    <div class="notification">Notification 2</div>
+    <div class="notification">Notification 3</div>
+  </div>
+</div>

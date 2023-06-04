@@ -20,3 +20,11 @@ mat-drawer {
 .mat-drawer-content{
   overflow: hidden;
 }
+.drawer-scroll {
+  overflow-y: auto;
+}
+
+.content-scroll {
+  height: calc(100vh - 64px); /* Adjust the height as per your layout */
+  overflow-y: auto;
+}

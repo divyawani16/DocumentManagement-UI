@@ -16,7 +16,8 @@ import { OwnerPropertyComponent } from './owner-property/owner-property.componen
 import { OwnerUserComponent } from './owner-user/owner-user.component';
 import { TenantPropertyComponent } from './tenant-property/tenant-property.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import { AuthGuard } from './_auth/auth.guard';
+
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
  { path: 'login', component: LoginComponent, pathMatch: 'full', data: { layout: 'login-layout' } },
@@ -35,8 +36,9 @@ const routes: Routes = [
   { path: 'owner-user',component: OwnerUserComponent,data: { layout: 'default' }  },
   { path: 'forbidden', component:ForbiddenComponent},
  
-
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+{ path :'landing-page', component:LandingPageComponent,pathMatch: 'full', data: { layout: 'login-layout' }},
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
 ];
 
 @NgModule({

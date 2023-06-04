@@ -11,5 +11,13 @@ export class TenantDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  notificationCount = 0;
+  showNotificationCard = false;
 
+  toggleNotificationCard() {
+    this.showNotificationCard = !this.showNotificationCard;
+    if (this.showNotificationCard) {
+      this.notificationCount = 0; // Reset the notification count upon opening the card
+    }
+  }
 }
