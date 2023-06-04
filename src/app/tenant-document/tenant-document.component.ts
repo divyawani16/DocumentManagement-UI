@@ -3,7 +3,7 @@ import { Document } from './tenant-document.model';
 import { TenantDocumentService } from './tenant-document.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
-=
+
 @Component({
   selector: 'app-tenant-document',
   templateUrl: './tenant-document.component.html',

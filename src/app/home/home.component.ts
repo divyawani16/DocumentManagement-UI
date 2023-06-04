@@ -104,7 +104,7 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-=
+
   
   // updateApproval(document: Document) {
   //   const newApprovalStatus = !document.status; 
@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
   // download(item: any): void {
     
   // }
-=
+
 
   public download(documentId: number){
     console.log(documentId);
