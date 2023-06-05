@@ -50,6 +50,7 @@ export class OwnerDocumentComponent implements OnInit {
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'View', 'FieldName': 'download' },
+    {'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' },
   ];
 
 

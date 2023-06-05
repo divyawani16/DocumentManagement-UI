@@ -14,7 +14,7 @@ export class AddDocumentComponent implements OnInit {
   fileNames: string[] = [];
   successMessageVisible: boolean = false;
   public isFormVisible = true;
-  userNames: string[] = ['John', 'Jane', 'Alice', 'Bob']; 
+  userNames: string[] = ['anj', 'divi', 'owner', 'Bob']; 
   selectedUserName: string;
   constructor(
     public dialogRef: MatDialogRef<AddDocumentComponent>,

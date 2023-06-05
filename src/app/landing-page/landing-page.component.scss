@@ -2,14 +2,17 @@
     background-image: url('/assets/features.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 250px;
+    padding: 200px;
     color: #fff;
+    padding-top: 105px;
   }
-  
+  .start{
+    height: 2000px;
+  }
   #hero h1 {
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color:rgba(2, 9, 14, 0.8);
   }
   
@@ -20,7 +23,7 @@
     border-radius: 8px;
     padding: 30px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   #hero .icon {
@@ -79,6 +82,83 @@
   }
     
  
+footer {
+  padding: 40px 0;
+  background-color:  #1e293b;
+  border-radius: 30px;
+}
+
+footer h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+footer p {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #124265;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #3194db;
+}
+
+.social-icons .fa {
+  font-size: 20px;
+}
+
+.quick-links .row .col {
+  padding: 0;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links ul li {
+  margin-bottom: 5px;
+}
+
+.quick-links ul li a {
+  display: block;
+  padding-left: 30px;
+  position: relative;
+  color:#d3dce2;
+  // background-color: #124265;
+  transition: 0.3s;
+}
+
+.quick-links ul li a i {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  
+}
+
+.quick-links ul li a:hover {
+  color: #3194db;
+}
+
+@media (max-width: 767px) {
+  .quick-links .row .col {
+    margin-bottom: 15px;
+  }
+}
 
 
 // #hero {

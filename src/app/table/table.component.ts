@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource} from '@angular/material/table';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -24,7 +25,7 @@ export class TableComponent<T> implements OnInit {
 
   // totalRecords: number = 0;
   // pageSize: number = 5;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -55,5 +56,13 @@ export class TableComponent<T> implements OnInit {
   
   onUpdateApproval(document: Document) {
     this.updateApproval.emit(document);
+  }
+  isHomeRoute(): boolean {
+    return this.router.url === '/home';
+  }
+
+  isDocumentRoute(): boolean {
+    const currentUrl = this.router.url;
+    return currentUrl === '/your-document' || currentUrl === '/owner-document';
   }
 }
