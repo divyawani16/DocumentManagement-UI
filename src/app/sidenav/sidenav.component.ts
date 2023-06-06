@@ -16,14 +16,22 @@ export class SidenavComponent implements OnInit {
   }
 
   isDefaultNavigation(): boolean {
-    return !this.isTenantDashboard && !this.isOwnerDashboard;
+    
+   return  !this.isTenantDashboard && !this.isOwnerDashboard;
+     
+    
   }
 
   isTenantDashboardNavigation(): boolean {
-    return this.isTenantDashboard && !this.isOwnerDashboard;
+    !this.isOwnerDashboard;
+    !this.isDefaultNavigation();
+    return this.isTenantDashboard ;
+
   }
 
   isOwnerDashboardNavigation(): boolean {
+    !this.isTenantDashboard;
+    !this.isDefaultNavigation();
     return this.isOwnerDashboard;
   }
 }

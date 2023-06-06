@@ -1,1 +1,20 @@
-<p>owner-document works!</p>
+<div class="container-fluid page">
+    <div class="page__box" style="text-align: center">Documents</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <app-button (click)="openDialog()" title="Add Document"> </app-button>
+
+        <div class="container-fluid">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">  
+  
+                  <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                     (onEdit)="editDocument($event)" (onDelete)="deleteDocument($event)" (onDownload)="download($event)"> </app-table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>

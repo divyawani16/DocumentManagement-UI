@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Document } from './users.model';
 import { UsersService } from './users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUserComponent } from '../add-user/add-user.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-users',
@@ -12,11 +14,19 @@ import { AddUserComponent } from '../add-user/add-user.component';
 export class UsersComponent implements OnInit {
   searchValue: string = '';
   userslist: Document[] | undefined;
+  filteredUsersList: Document[] | undefined;
+  
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  // @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private dialog: MatDialog,
     private usersService: UsersService) { }
 
+    // ngAfterViewInit(): void {
+    //   this.dataSource.sort=this.sort;
+    //   this.dataSource.paginator=this.paginator;
+    // }
   ngOnInit() {
     try{
       this.usersService.getUsers()

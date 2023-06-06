@@ -31,7 +31,7 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteComponent } from './delete/delete.component'
 import { MatRadioModule } from '@angular/material/radio';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -40,12 +40,23 @@ import { AddUserComponent } from './add-user/add-user.component'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PropertyOwnerDashboardComponent } from './property-owner-dashboard/property-owner-dashboard.component';
 import { TenantDashboardComponent } from './tenant-dashboard/tenant-dashboard.component';
-import { TenantDocumentsComponent } from './tenant-documents/tenant-documents.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { OwnerPropertyComponent } from './owner-property/owner-property.component';
 import { OwnerDocumentComponent } from './owner-document/owner-document.component';
 import { OwnerUserComponent } from './owner-user/owner-user.component';
 import { TenantDocumentComponent } from './tenant-document/tenant-document.component';
 import { TenantPropertyComponent } from './tenant-property/tenant-property.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { OwnerSidenavComponent } from './owner-sidenav/owner-sidenav.component';
+import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.component';
+import { RouterModule } from '@angular/router';
+import { environment } from '../environments/environment';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './_services/user.service';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
+import { CorsInterceptor } from './cors.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,12 +78,15 @@ import { TenantPropertyComponent } from './tenant-property/tenant-property.compo
     AddUserComponent,
     PropertyOwnerDashboardComponent,
     TenantDashboardComponent,
-    TenantDocumentsComponent,
     OwnerPropertyComponent,
     OwnerDocumentComponent,
     OwnerUserComponent,
     TenantDocumentComponent,
     TenantPropertyComponent,
+    OwnerSidenavComponent,
+    TenantSidenavComponent,
+    ForbiddenComponent,
+    EditDocumentComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,24 +112,21 @@ import { TenantPropertyComponent } from './tenant-property/tenant-property.compo
     HttpClientModule,
     MatSelectModule,
     MatTabsModule,
+    MatPaginatorModule,
+    MatSlideToggleModule,
+    RouterModule,
+
 
   ],
   providers: [
-  //   SocialAuthService,{
-  //  provide: 'SocialAuthServiceConfig',
-  // useValue: {
-  //     autoLogin: false,
-  //    providers: [
-  //    {
-  //     id: GoogleLoginProvider.PROVIDER_ID,
-  //      provider: new GoogleLoginProvider(
-  //      '248604648421-gu3ja2c5e8po1uapmfqo1p2t54tskpkt.apps.googleusercontent.com'
-  //     )
-  //      },
-  //      ],
-  //     } as SocialAuthServiceConfig,
-  //     }],
-  ],
-  bootstrap: [AppComponent],
+    
+      AuthGuard,{
+        provide: HTTP_INTERCEPTORS,
+        useClass:AuthInterceptor,
+        multi:true
+      },
+      UserService
+      ],
+      bootstrap: [AppComponent],
 })
 export class AppModule {}

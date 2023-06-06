@@ -6,6 +6,5 @@ export class Document {
         public propertyName: string = '',
         public docTypeName: string = '',
         public docMimeTypeName: string = '',
-       
       ) {}
   }
