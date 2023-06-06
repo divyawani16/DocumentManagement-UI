@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Edit Document</h2>
+<mat-dialog-content>
+    <form [formGroup]="editForm">
+        <mat-form-field>
+          <input matInput placeholder="Document Name" formControlName="documentName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="User Name" formControlName="userName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Property Name" formControlName="propertyName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Document Type" formControlName="docTypeName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Document Mime Type" formControlName="docMimeTypeName">
+        </mat-form-field>
+        <!-- Add other form fields as needed -->
+      </form>
+      
+      
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="onSubmit()" class="btn">Save</button>
+    <button mat-raised-button color="warn" (click)="onCancel()" class="btn">Close</button>
+
+  </div>
+ <!-- <-- <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSubmit()">Save</button> --> 
+</mat-dialog-actions>

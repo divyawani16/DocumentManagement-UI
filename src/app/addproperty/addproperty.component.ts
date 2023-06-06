@@ -29,12 +29,12 @@ export class AddpropertyComponent implements OnInit {
   openDialog():void{
     this.isFormVisible=true;
   }
-
   uploadProperty(): void {
     this.propertyService.createProperty(this.property).subscribe(
       (createdProperty) => {
         console.log('Property created successfully:', createdProperty);
-        this.closeDialog();
+        this.successMessageVisible = true; 
+        this.property = new Document(); 
       },
       (error) => {
         console.error('Error creating property:', error);
@@ -45,5 +45,5 @@ export class AddpropertyComponent implements OnInit {
   closeForm():void{
     this.closeDialog();
   }
-  
+
 }

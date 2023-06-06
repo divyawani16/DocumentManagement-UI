@@ -27,7 +27,6 @@ export class OwnerPropertyComponent implements OnInit {
     }
   }
 
-
   openDialog(): void {
     const dialogRef = this.dialog.open(AddpropertyComponent, {
       width: '500px',
@@ -41,7 +40,22 @@ export class OwnerPropertyComponent implements OnInit {
     });
   }
 
-
+  deleteProperty(item: any) {
+    const index = this.Propertylist.indexOf(item);
+    if (index > -1) {
+      this.Propertylist.splice(index, 1);
+    }
+  
+    this.OwnerPropertyService.deleteProperty(item.propertyId).subscribe(
+      () => {
+        console.log('Record deleted successfully from the database');
+      },
+      (error) => {
+        console.error('Error deleting record from the database:', error);
+      }
+    );
+  }
+  
 
   headArray = [
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },

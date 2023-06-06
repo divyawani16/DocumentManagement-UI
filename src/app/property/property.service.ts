@@ -21,8 +21,10 @@ export class PropertyService {
     return this.http.delete<void>(url);
   }
   
+  
   public createProperty(property: Document): Observable<Document> {
-    return this.http.post<Document>(this.baseUrl, property);
+    return this.http.post<Document>(`${this.baseUrl}/post`, property);
   }
+
   
 }

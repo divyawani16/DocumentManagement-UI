@@ -3,6 +3,7 @@ import { OwnerDocumentService } from './owner-document.service';
 import { Document } from './owner-document.model';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
 @Component({
   selector: 'app-owner-document',
   templateUrl: './owner-document.component.html',
@@ -18,16 +19,16 @@ export class OwnerDocumentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    try{
-      
-      this.OwnerDocumentService.getDocuments()
-      .subscribe(documents => this.documentsList = documents);
-      console.log(this.documentsList)
-    }catch(err){
-      console.log(err)
+    try {
+      const propertyName = 'Smartworks'; // Replace 'yourPropertyName' with the actual property name
+      this.OwnerDocumentService.getSmartworksDocuments(propertyName)
+        .subscribe(documents => this.documentsList = documents);
+      console.log(this.documentsList);
+    } catch (err) {
+      console.log(err);
     }
   }
-
+  
   openDialog(): void {
       const dialogRef = this.dialog.open(AddDocumentComponent, {
         width: '450px',
@@ -52,23 +53,59 @@ export class OwnerDocumentComponent implements OnInit {
     { 'Head': 'View', 'FieldName': 'download' },
     {'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' },
   ];
-
-
+  deleteDocument(item: any) {
+    const index = this.documentsList.indexOf(item);
+    if (index > -1) {
+      this.documentsList.splice(index, 1);
+    }
+  
+    const documentId = parseInt(item.documentId); // Parse as an integer
+  
+    this.OwnerDocumentService.deleteDocument(documentId).subscribe(
+      () => {
+        console.log('Record deleted successfully from the database');
+      },
+      (error) => {
+        console.error('Error deleting record from the database:', error);
+      }
+    );
+  }
+  
   editDocument(document: Document) {
   
   }
-
   filterData() {
     console.log('Search value:', this.searchValue);
     if (!this.searchValue) {
-      return this.Propertylist;
+      return this.documentsList;
     }
-  //   const filteredList = this.Propertylist.filter(document => {
-  //     return document.documentName.toLowerCase().includes(this.searchValue.toLowerCase());
-  //   });
-  //   console.log('Filtered list:', filteredList);
-  //   return filteredList;
-  // }
+    const filteredList = this.documentsList.filter(document => {
+      return document.documentName.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+    console.log('Filtered list:', filteredList);
+    return filteredList;
+  }
+
+  public download(documentId: any) {
+    console.log('Download method called with documentId:', documentId);
+    const headers = new HttpHeaders({
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': 'true'
+    });
+  
+    this.OwnerDocumentService.download(documentId)
+      .subscribe((response: HttpResponse<Blob>) => {
+        const contentDispositionHeader = response.headers.get('content-disposition');
+        const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
+        const url = window.URL.createObjectURL(response.body);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName ?? 'file';
+        link.click();
+        window.URL.revokeObjectURL(url);
+      });
+  }
+  
  
 }
-}
+
