@@ -2,15 +2,13 @@
     <div class="page__box" style="text-align: center">Owner Properties</div>
     <div class="page__content shadow p-3 position-relative">
       <app-button (click)="openDialog()" title="Add Properties"> </app-button>
-      
       <div class="d-flex justify-content-between align-items-center mb-3">
         <div class="container-fluid">
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">  
-  
                   <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
-                     (onEdit)="editDocument($event)" > </app-table>
+                     (onEdit)="editDocument($event)" (onDelete)="deleteProperty($event)" > </app-table>
                     </div>
                   </div>
                 </div>
