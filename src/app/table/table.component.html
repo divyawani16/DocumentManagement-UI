@@ -13,14 +13,29 @@
           {{ item[head.FieldName] }}
         </ng-container>
 
+    
         <div *ngIf="head.FieldName === 'status'" class="text-center">
-          <mat-slide-toggle [color]="item.status ? 'accent' : 'warn'" [(ngModel)]="item.status">
-            <span class="slider"></span>
-          </mat-slide-toggle>
-          <span [ngClass]="{ 'approved': item.status, 'not-approved': !item.status }">
-            <ng-container *ngIf="item.status; else notApprovedText">Approved</ng-container>
-            <ng-template #notApprovedText>Not Approved</ng-template>
-          </span>
+          <ng-container *ngIf="isHomeRoute(); else notHomeRoute">
+            <mat-slide-toggle [color]="item.status ? 'accent' : 'warn'" [(ngModel)]="item.status">
+              <span class="slider"></span>
+            </mat-slide-toggle>
+            <span [ngClass]="{ 'approved': item.status, 'not-approved': !item.status }">
+              <ng-container *ngIf="item.status; else notApprovedText">Approved</ng-container>
+              <ng-template #notApprovedText>Pending</ng-template>
+            </span>
+          </ng-container>
+          <ng-template #notHomeRoute>
+            <ng-container *ngIf="isDocumentRoute(); else otherRoute">
+              <button [ngClass]="{ 'approved-button': item.status, 'pending-button': !item.status }">
+                <ng-container *ngIf="item.status; else pendingText">Approved</ng-container>
+                <ng-template #pendingText>Pending</ng-template>
+              </button>
+            </ng-container>
+            <ng-template #otherRoute>
+              <!-- Show other content for routes that are not /home or /your-document/owner-document -->
+              <span>Other Content</span>
+            </ng-template>
+          </ng-template>
         </div>
 
         <div *ngIf="head.FieldName === 'action'" class="text-center">
@@ -35,3 +50,19 @@
     </tr>
   </tbody>
 </table>
+
+
+        
+      <!-- </table> -->
+      <!-- <mat-paginator
+      class="page"
+      [pageSizeOptions]="[2, 3, 5, 10, 25, 100]"
+      [length]="dataSource?.data.length"
+      [pageSize]="2"
+    ></mat-paginator> -->
+    <!-- </div>
+    </div>
+  </div> -->
+
+
+

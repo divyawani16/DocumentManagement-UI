@@ -11,6 +11,20 @@ export class HomeService {
 
   private baseUrl: string;
 
+
+    public download(documentId: number): Observable<HttpResponse<Blob>> {
+      const url = `${this.baseUrl}/${documentId}/download`;
+      console.log(documentId);
+      return this.http.get(url, { observe: 'response', responseType: 'blob' });
+    }
+
+    public updateDocumentApproval(documentId: number, approved: boolean): Observable<Document> {
+      const url = `${this.baseUrl}/${documentId}/approval?approved=${approved}`;
+      return this.http.put<Document>(url, {});
+    }
+  }
+
+
   constructor(private http: HttpClient) { 
     this.baseUrl = 'http://localhost:8089/api/documents';
   }
@@ -45,3 +59,4 @@ export class HomeService {
     return this.http.put<Document>(url, {});
   }
 }
+

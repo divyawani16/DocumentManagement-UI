@@ -9,8 +9,11 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label class="input_label">User Name</mat-label>
-          <input matInput [(ngModel)]="document.userName">
+          <mat-select [(ngModel)]="selectedUserName">
+            <mat-option *ngFor="let userName of userNames" [value]="userName">{{ userName }}</mat-option>
+          </mat-select>
         </mat-form-field>
+        
         <mat-form-field appearance="outline">
           <mat-label class="input_label">Property Name</mat-label>
           <input matInput [(ngModel)]="document.propertyName">

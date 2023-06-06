@@ -6,6 +6,9 @@ import { UsersService } from '../users/users.service';
 import { UserService } from '../_services/user.service';
 import { UserAuthService } from '../_services/user-auth.service';
 
+// import { UserService } from '../_services/user.service';
+// import { UserAuthService } from '../_services/user-auth.service';
+
 // import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 // import { HttpClient } from '@angular/common/http';
 @Component({
@@ -16,64 +19,93 @@ import { UserAuthService } from '../_services/user-auth.service';
 export class LoginComponent implements OnInit {
   role : string;
 
-  constructor(private userService: UserService, private userAuthService: UserAuthService, private router: Router) { }
+  constructor(private router: Router,private userService: UserService, private userAuthService: UserAuthService) { }
 
   ngOnInit(): void { }
 
-  // login(loginForm: NgForm) {
-  //   this.userService.login(loginForm.value).subscribe(
-  //     (response: any) => {
-  //       console.log(response.jwtToken);
-  //       console.log(response.userRoles);
+  login(loginForm: NgForm) {
+    this.userService.login(loginForm.value).subscribe(
+      (response:any) => {
+        console.log(response.jwtToken);
+        console.log(response.userRoles);
 
-  //       this.userAuthService.setRoles(response.userRoles);
-  //       this.userAuthService.setToken(response.jwtToken);
+        this.userAuthService.setRoles(response.userRoles);
+        this.userAuthService.setToken(response.jwtToken);
 
-  //       console.log(response);
-  //       this.role = response.userRoles[0].roleId;
-  //       console.log("role " + this.role);
-  //       localStorage.setItem("Role",this.role);
-
-  //       console.log("Role form ls : " + localStorage.getItem("Role"));
-
-  //       if (this.role === "Admin") {
-  //         this.router.navigate(['/dashboard']);
-  //       }
-  //       else {
-  //         this.router.navigate(['/owner']);
-  //       }
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
-
-  async login(loginForm: NgForm) {
-    try {
-      const response: any = await this.userService.login(loginForm.value).toPromise();
-  
-      console.log(response.jwtToken);
-      console.log(response.userRoles);
-  
-      this.userAuthService.setRoles(response.userRoles);
-      this.userAuthService.setToken(response.jwtToken);
-  
-      console.log(response);
-      this.role = response.userRoles[0].roleId;
-      console.log("role " + this.role);
-        
-      console.log("Role from ls: " + localStorage.getItem("Role"));
-  
-      if (this.role === "Admin") {
-        this.router.navigate(['/dashboard']);
-      } else {
-        this.router.navigate(['/owner']);
+      const role =  response.userRoles[0];
+      switch (role) {
+        case 'Admin':
+          this.router.navigate(['/dashboard']);
+          break;
+        case 'tenant':
+          this.router.navigate(['/tenant']);
+          break;
+        case 'owner':
+          this.router.navigate(['/owner']);
+          break;
+        default:
+          console.log('Invalid role');
       }
-    } catch (error) {
+    },
+    (error) => {
       console.log(error);
     }
+    );
   }
+
+    // this.userService.login(loginForm.value).subscribe(
+    //   (response: any) => {
+    //     console.log(response.jwtToken);
+    //     console.log(response.userRoles);
+
+    //     this.userAuthService.setRoles(response.userRoles);
+    //     this.userAuthService.setToken(response.jwtToken);
+
+    //     console.log(response);
+    //     this.role = response.userRoles[0].roleId;
+    //     console.log("role " + this.role);
+    //     localStorage.setItem("Role",this.role);
+
+    //     console.log("Role form ls : " + localStorage.getItem("Role"));
+
+    //     if (this.role === "Admin") {
+    //       this.router.navigate(['/dashboard']);
+    //     }
+    //     else {
+    //       this.router.navigate(['/owner']);
+    //     }
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
+  }
+
+  // async login(loginForm: NgForm) {
+  //   try {
+  //     const response: any = await this.userService.login(loginForm.value).toPromise();
+  
+  //     console.log(response.jwtToken);
+  //     console.log(response.userRoles);
+  
+  //     this.userAuthService.setRoles(response.userRoles);
+  //     this.userAuthService.setToken(response.jwtToken);
+  
+  //     console.log(response);
+  //     this.role = response.userRoles[0].roleId;
+  //     console.log("role " + this.role);
+        
+  //     console.log("Role from ls: " + localStorage.getItem("Role"));
+  
+  //     if (this.role === "Admin") {
+  //       this.router.navigate(['/dashboard']);
+  //     } else {
+  //       this.router.navigate(['/owner']);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
   
 
 
@@ -120,5 +152,5 @@ export class LoginComponent implements OnInit {
   //     // this.router.navigate(['/dashboard']);
   //     this.router.navigateByUrl('/dashboard');
   //   }
-}
+
 

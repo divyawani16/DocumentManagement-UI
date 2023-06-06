@@ -52,11 +52,13 @@ import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.componen
 import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { CorsInterceptor } from './cors.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,7 +88,9 @@ import { CorsInterceptor } from './cors.interceptor';
     OwnerSidenavComponent,
     TenantSidenavComponent,
     ForbiddenComponent,
+    LandingPageComponent,
     EditDocumentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -119,6 +123,28 @@ import { CorsInterceptor } from './cors.interceptor';
 
   ],
   providers: [
+  //   SocialAuthService,{
+  //  provide: 'SocialAuthServiceConfig',
+  // useValue: {
+  //     autoLogin: false,
+  //    providers: [
+  //    {
+  //     id: GoogleLoginProvider.PROVIDER_ID,
+  //      provider: new GoogleLoginProvider(
+  //      '248604648421-gu3ja2c5e8po1uapmfqo1p2t54tskpkt.apps.googleusercontent.com'
+  //     )
+  //      },
+  //      ],
+  //     } as SocialAuthServiceConfig,
+  //     }],
+  // AuthGuard,{
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass:AuthInterceptor,
+  //   multi:true
+  // },
+  // UserService
+  ],
+  bootstrap: [AppComponent],
     
       AuthGuard,{
         provide: HTTP_INTERCEPTORS,

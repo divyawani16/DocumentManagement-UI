@@ -136,6 +136,7 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
   public download(documentId: any) {
     console.log('Download method called with documentId:', documentId);
     const headers = new HttpHeaders({
@@ -167,6 +168,7 @@ export class HomeComponent implements OnInit {
     this.isClicked = true;
   }
 }
+
   
   // updateApproval(document: Document) {
   //   const newApprovalStatus = !document.status; 
@@ -194,6 +196,50 @@ export class HomeComponent implements OnInit {
   // download(item: any): void {
     
   // }
+
+
+
+  public download(documentId: number){
+    console.log(documentId);
+    const documentt = this.documentsList.find(doc => doc.documentId === documentId);
+    
+    if (documentId) {
+      this.homeService.download (documentId).subscribe(
+        (response: HttpResponse<Blob>) => {
+          const contentDispositionHeader = response.headers.get('content-disposition');
+          const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
+          const url = window.URL.createObjectURL(response.body);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = fileName || 'document';
+          a.click();
+          window.URL.revokeObjectURL(url);
+        },
+        (error: any) => {
+          console.error('Error downloading document:', error);
+        }
+      );
+    } else {
+      console.error('Invalid documentId');
+    }
+  }
+  
+  
+  
+
+  print(item: any): void {
+    // Handle printing
+  }
+
+  isClicked = false;
+
+  onSearchBoxClick() {
+    this.isClicked = true;
+  }
+}
+
+
+
 
 
 

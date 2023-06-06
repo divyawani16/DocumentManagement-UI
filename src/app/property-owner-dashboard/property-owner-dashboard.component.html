@@ -1,47 +1,35 @@
 <div class="container-fluid page">
   <div class="page__box mat-display-1" style="text-align: center">Dashboard</div>
-  <div class="page__content shadow p-3 position-relative example-image">
-    <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="page__content shadow p-3">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" (click)="redirectToPage('/owner-property')">
+          <img src="\assets\pexels-binyamin-mellish-186077.jpg" class="card-img-top" alt="Properties">
+          <div class="card-body">
+            <h5 class="card-title">Properties</h5>
+            <p class="card-text">Manage your properties and associated documents.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" (click)="redirectToPage('/owner-document')">
+          <img src="\assets\pexels-lukas-669619.jpg" class="card-img-top" alt="Documents">
+          <div class="card-body">
+            <h5 class="card-title">Documents</h5>
+            <p class="card-text">Access and organize your documents efficiently.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" (click)="redirectToPage('/owner-user')">
+          <img src="\assets\businesspeople-office-meeting.jpg" class="card-img-top" alt="Tenants">
+          <div class="card-body">
+            <h5 class="card-title">Tenants</h5>
+            <p class="card-text">Manage your tenants and their information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 
-      <mat-card class="example-card"  (click)="redirectToPage('/owner-property')">
-        <mat-card-header>
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          
-          <mat-card-subtitle></mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="\assets\pexels-binyamin-mellish-186077.jpg">
-        <mat-card-title> Properties</mat-card-title>
-        <mat-card-content>
-     
-        </mat-card-content>
-       
-      </mat-card>
-
-      <mat-card class="example-card-2" (click)="redirectToPage('/owner-document')">
-        <mat-card-header>
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          
-          <mat-card-subtitle></mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="\assets\pexels-lukas-669619.jpg">
-        <mat-card-title>Documents</mat-card-title>
-        <mat-card-content>
-     
-        </mat-card-content>
-       
-      </mat-card>
-      
-      <mat-card class="example-card-3" (click)="redirectToPage('/owner-user')">
-        <mat-card-header>
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          
-          <mat-card-subtitle></mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="\assets\businesspeople-office-meeting.jpg">
-
-        <mat-card-title>Tenants</mat-card-title>
-        <mat-card-content>
-     
-        </mat-card-content>
-       
-      </mat-card>
