@@ -30,7 +30,7 @@ export class HomeService {
   
   public download(documentId: number): Observable<HttpResponse<Blob>> {
     console.log(documentId);
-    const url = this.baseUrl+"/"+9+"/download";
+    const url = this.baseUrl+"/"+1+"/download";
     console.log(documentId);
     return this.http.get(url, { observe: 'response', responseType: 'blob' });
   }

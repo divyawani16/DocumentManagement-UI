@@ -22,8 +22,13 @@ export class TenantDocumentService {
 
   public download(documentId: number): Observable<HttpResponse<Blob>> {
     console.log(documentId);
-    const url = this.baseUrl+"/"+9+"/download";
+    const url = this.baseUrl+"/"+3+"/download";
     console.log(documentId);
     return this.http.get(url, { observe: 'response', responseType: 'blob' });
   }
+  // public download(documentId: number): Observable<HttpResponse<Blob>> {
+  //   const url = `${this.baseUrl}/${documentId}/download`;
+  //   return this.http.get(url, { observe: 'response', responseType: 'blob' });
+  // }
+  
 }
