@@ -12,23 +12,18 @@
         <ng-container *ngIf="head.FieldName !== '' && head.FieldName !== 'status' && head.FieldName !== 'action' && head.FieldName !== 'download'">
           {{ item[head.FieldName] }}
         </ng-container>
-
-    
+        
         <div *ngIf="head.FieldName === 'status'" class="text-center">
           <ng-container *ngIf="isHomeRoute(); else notHomeRoute">
-            <mat-slide-toggle [color]="item.status ? 'accent' : 'warn'" [(ngModel)]="item.status">
+            <mat-slide-toggle [(ngModel)]="item.status" [color]="item.status ? 'accent' : 'warn'" (click)="form(item.status, item.document?.documentId || null)">
               <span class="slider"></span>
             </mat-slide-toggle>
-            <span [ngClass]="{ 'approved': item.status, 'not-approved': !item.status }">
-              <ng-container *ngIf="item.status; else notApprovedText">Approved</ng-container>
-              <ng-template #notApprovedText>Pending</ng-template>
-            </span>
+            <span>{{ item.status ? 'Approved' : 'Pending' }}</span>
           </ng-container>
           <ng-template #notHomeRoute>
             <ng-container *ngIf="isDocumentRoute(); else otherRoute">
               <button [ngClass]="{ 'approved-button': item.status, 'pending-button': !item.status }">
-                <ng-container *ngIf="item.status; else pendingText">Approved</ng-container>
-                <ng-template #pendingText>Pending</ng-template>
+                {{ item.status ? 'Approved' : 'Pending' }}
               </button>
             </ng-container>
             <ng-template #otherRoute>
@@ -37,42 +32,12 @@
             </ng-template>
           </ng-template>
         </div>
-
-<!-- <div class="row">
-
-  <div class="col-md-12">
-    <div class="table-container">
-      <div *ngIf="GridArray.length === 0" class="no-results">No results found.</div>
-      <table class="demo-table mat-elevation-z8">
-        <thead>
-          <tr class="mat-header-row">
-            <th>Sr</th>
-            <th *ngFor="let head of HeadArray" class="mat-header-cell">{{head.Head}}</th>  
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of GridArray; let sr=index">
-            <td>{{ sr+1 }}</td>
-            <td *ngFor="let head of HeadArray" class="mat-cell">
-              <div *ngIf="head.FieldName !== ''">{{ item[head.FieldName] }}</div>
-              <div *ngIf="head.FieldName == 'action'" class="text-center">
-               
-                <mat-icon color="primary" (click)="edit(item)" title="edit">
-                  edit</mat-icon>
-              
-                <mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">
-                  delete</mat-icon>
-             
-              </div>  -->
-
-
+        
         <div *ngIf="head.FieldName === 'action'" class="text-center">
           <mat-icon color="primary" (click)="edit(item)" title="edit">edit</mat-icon>
           <mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">delete</mat-icon>
         </div>
-        
-
-        <div *ngIf="head.FieldName === 'download'" class="text-center">
+       <div *ngIf="head.FieldName === 'download'" class="text-center">
           <mat-icon color="primary" (click)="download(item)" title="Download">cloud_download</mat-icon>
         </div>
       </td>

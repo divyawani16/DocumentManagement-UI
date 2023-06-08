@@ -54,6 +54,9 @@ import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UserService } from './_services/user.service';
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -131,12 +134,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   //      ],
   //     } as SocialAuthServiceConfig,
   //     }],
-  // AuthGuard,{
-  //   provide: HTTP_INTERCEPTORS,
-  //   useClass:AuthInterceptor,
-  //   multi:true
-  // },
-  // UserService
+  AuthGuard,{
+    provide: HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  },
+  UserService
   ],
   bootstrap: [AppComponent],
 })

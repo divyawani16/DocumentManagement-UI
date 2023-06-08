@@ -1,14 +1,30 @@
   export class Document {
+  
    
-    constructor(
+    // constructor(
 
-      public documentId:number = 0,
+    //   public documentId:number = 0,
 
-        public documentName: string = '',
-        public userName: string = '',
-        public propertyName: string = '',
-        public docTypeName: string = '',
-        public docMimeTypeName: string = '',
-        // public status:boolean
+    //     public documentName: string = '',
+    //     public userName: string = '',
+    //     public propertyName: string = '',
+    //     public docTypeName: string = '',
+    //     public docMimeTypeName: string = '',
+    //     public status:boolean
+    //   ) {}
+
+
+      constructor(
+        public documentId?: number,
+        public documentName?: string,
+        public userName?: string,
+        public propertyName?: string,
+        public docTypeName?: string,
+        public docMimeTypeName?: string,
+        public status?: boolean
       ) {}
-  }
+    }
+    
+  
+
+

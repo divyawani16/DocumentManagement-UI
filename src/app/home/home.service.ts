@@ -31,12 +31,15 @@
       return this.http.get(url, { observe: 'response', responseType: 'blob' });
     }
 
+    // public updateDocumentApproval(documentId: number, approved: boolean): Observable<Document> {
+    //   const url = `${this.baseUrl}/${documentId}/approval?approved=${approved}`;
+    //   return this.http.put<Document>(url, {});
+    // }
+  
     public updateDocumentApproval(documentId: number, approved: boolean): Observable<Document> {
       const url = `${this.baseUrl}/${documentId}/approval?approved=${approved}`;
       return this.http.put<Document>(url, {});
     }
-  
-  
   
   }
 
