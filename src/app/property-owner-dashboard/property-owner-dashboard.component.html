@@ -4,17 +4,21 @@
     <div class="row">
       <div class="col-md-4">
         <div class="card" (click)="redirectToPage('/owner-property')">
-          <img src="\assets\pexels-binyamin-mellish-186077.jpg" class="card-img-top" alt="Properties">
-          <div class="card-body">
+          <div class="card__image">
+            <img src="\assets\pexels-binyamin-mellish-186077.jpg" class="card-img-top" alt="Properties">
+          </div>
+          <div class="card__content">
             <h5 class="card-title">Properties</h5>
             <p class="card-text">Manage your properties and associated documents.</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card" (click)="redirectToPage('/owner-document')">
-          <img src="\assets\pexels-lukas-669619.jpg" class="card-img-top" alt="Documents">
-          <div class="card-body">
+        <div class="card"  (click)="redirectToPage('/owner-document')">
+          <div class="card__image">
+            <img src="\assets\pexels-lukas-669619.jpg" class="card-img-top" alt="Documents">
+          </div>
+          <div class="card__content">
             <h5 class="card-title">Documents</h5>
             <p class="card-text">Access and organize your documents efficiently.</p>
           </div>
@@ -22,14 +26,15 @@
       </div>
       <div class="col-md-4">
         <div class="card" (click)="redirectToPage('/owner-user')">
-          <img src="\assets\businesspeople-office-meeting.jpg" class="card-img-top" alt="Tenants">
-          <div class="card-body">
+          <div class="card__image">
+            <img src="\assets\businesspeople-office-meeting.jpg" class="card-img-top" alt="Tenants">
+          </div>
+          <div class="card__content">
             <h5 class="card-title">Tenants</h5>
             <p class="card-text">Manage your tenants and their information.</p>
           </div>
         </div>
       </div>
     </div>
-    </div>
   </div>
-
+</div>
