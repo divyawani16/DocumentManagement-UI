@@ -32,18 +32,21 @@
             </ng-template>
           </ng-template>
         </div>
-        
         <div *ngIf="head.FieldName === 'action'" class="text-center">
           <mat-icon color="primary" (click)="edit(item)" title="edit">edit</mat-icon>
           <mat-icon color="warn" (click)="delete(item)" style="margin-left: 10px;" title="delete">delete</mat-icon>
         </div>
-       <div *ngIf="head.FieldName === 'download'" class="text-center">
+
+
+
+        <div *ngIf="head.FieldName === 'download'" class="text-center">
           <mat-icon color="primary" (click)="download(item)" title="Download">cloud_download</mat-icon>
         </div>
       </td>
     </tr>
   </tbody>
 </table>
+
 
         
       <!-- </table> -->
@@ -56,5 +59,6 @@
     <!-- </div>
     </div>
   </div> -->
+
 
 

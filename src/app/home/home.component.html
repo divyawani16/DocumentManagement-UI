@@ -2,11 +2,10 @@
   <div class="page__box" style="text-align: center">Documents</div>
   <div class="page__content shadow p-3 position-relative">
     <div class="d-flex justify-content-between align-items-center mb-3">
+
       <!-- <app-button (click)="openDialog()" title="Add Document"></app-button> -->
-
-
-      <!-- <app-button (click)="openDialog()" title="Add Document"> </app-button> -->
       
+      <app-button (click)="openDialog()" title="Add Document"></app-button>
 
       <div class="search-box" [ngClass]="{ 'search-box-clicked': isClicked }">
         <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()"
@@ -18,8 +17,7 @@
           <div class="row">
             <div class="col-md-12">
               <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
-                (onEdit)="editDocument($event)" (onDelete)="deleteDocument($event)" (onDownload)="download($event)"
-                (updateApproval)="updateApproval($event)"></app-table>
+                (onEdit)="editDocument($event)" (onDelete)="deleteDocument($event)" (onDownload)="download($event)"></app-table>
               
             </div>
           </div>
@@ -28,3 +26,5 @@
     </div>
   </div>
 </div>
+
+

@@ -78,15 +78,15 @@ export class TableComponent<T> implements OnInit {
       console.log("false");
     }
   }
-  updateApproval(document: Document) {
-    const newApprovalStatus = !document.status; // Flip the current approval status
+  // updateApproval(document: Document) {
+  //   const newApprovalStatus = !document.status; // Flip the current approval status
 
-    // Emit an event to notify the parent component about the updated status
-    this.documentStatusUpdated.emit({
-      ...document,
-      status: newApprovalStatus
-    });
-  }
+  //   // Emit an event to notify the parent component about the updated status
+  //   this.documentStatusUpdated.emit({
+  //     ...document,
+  //     status: newApprovalStatus
+  //   });
+  // }
 
   
 }

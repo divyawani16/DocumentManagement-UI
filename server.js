@@ -1,13 +1,15 @@
 const express = require('express');
-const cors = require('cors');
-
 const app = express();
 
 
-app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200/');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 
-const port = process.env.PORT || 8089;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(8089, () => {
+  console.log('Server is running on port 8089');
 });

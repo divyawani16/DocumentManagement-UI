@@ -76,7 +76,6 @@ export class PropertyComponent implements OnInit {
     if (index > -1) {
       this.Propertylist.splice(index, 1);
     }
-  
     this.PropertyService.deleteProperty(item.propertyId).subscribe(
       () => {
         console.log('Record deleted successfully from the database');

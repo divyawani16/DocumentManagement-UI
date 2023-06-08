@@ -52,11 +52,11 @@ import { TenantSidenavComponent } from './tenant-sidenav/tenant-sidenav.componen
 import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { UserService } from './_services/user.service';
-import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
+import { AuthGuard } from './_auth/auth.guard';
+import { UserService } from './_services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +78,6 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
     AddUserComponent,
     PropertyOwnerDashboardComponent,
     TenantDashboardComponent,
-
     OwnerPropertyComponent,
     OwnerDocumentComponent,
     OwnerUserComponent,
@@ -88,6 +87,7 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
     TenantSidenavComponent,
     ForbiddenComponent,
     LandingPageComponent,
+    EditDocumentComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,10 +137,12 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
   AuthGuard,{
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
-    multi:true
+    multi:true,
   },
   UserService
   ],
   bootstrap: [AppComponent],
+    
+ 
 })
 export class AppModule {}
