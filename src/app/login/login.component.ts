@@ -18,7 +18,7 @@ import { UserAuthService } from '../_services/user-auth.service';
 })
 export class LoginComponent implements OnInit {
   role : string;
-
+  tenant:any;
   constructor(private router: Router,public userService: UserService, private userAuthService: UserAuthService) { }
 
   ngOnInit(): void { }
@@ -26,6 +26,10 @@ export class LoginComponent implements OnInit {
   login(loginForm: NgForm) {
     this.userService.login(loginForm.value).subscribe(
       (response:any) => {
+        this.tenant=response;
+        localStorage.setItem("userid",this.tenant.user.userId);
+        console.log(response)
+        console.log("userid:",this.tenant.user.userId);
         console.log(response.jwtToken);
         console.log(response.userRoles);
          

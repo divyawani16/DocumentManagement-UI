@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 export class TenantDocumentService {
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/documents';
+    this.baseUrl = 'http://localhost:8012/api/documents';
   }
   private baseUrl:string;
 
-   public getDocuments(): Observable<Document[]> {
-    return this.http.get<Document[]>(`${this.baseUrl}/documentsdetails`);
+   public getDocuments(tenantId:number): Observable<Document[]> {
+    return this.http.get<Document[]>(`${this.baseUrl}/documentsdetails/${tenantId}`);
   }
   public deleteDocument(documentId: number): Observable<void> {
     const url = `${this.baseUrl}/${documentId}`;

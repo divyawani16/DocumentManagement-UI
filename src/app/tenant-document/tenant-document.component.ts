@@ -24,6 +24,9 @@ export class TenantDocumentComponent implements OnInit {
 
   
   isClicked = false;
+  
+  userid:number=Number(localStorage.getItem("userid"));
+  mydocuments:any;
 
   onSearchBoxClick() {
 
@@ -39,12 +42,21 @@ export class TenantDocumentComponent implements OnInit {
   }
   ngOnInit(): void {
     try{
-      this.TenantDocumentService.getDocuments()
-      .subscribe(documents => this.documentsList = documents);
+      // this.TenantDocumentService.getDocuments(this.userid)
+      // .subscribe(documents => this.documentsList = documents);
+      // this.tenantDocumentService.getDocuments(this.userid).subscribe()
+      
       console.log(this.documentsList)
     }catch(err){
       console.log(err)
     }
+    alert("inn")
+    this.TenantDocumentService.getDocuments(this.userid).subscribe({
+      next:(res)=>{
+        this.mydocuments=res;
+        console.log("tenants docs:",this.mydocuments);
+      }
+    })
   }
 
   openDialog(): void {
@@ -123,4 +135,5 @@ export class TenantDocumentComponent implements OnInit {
     );
   }
   
+
 }

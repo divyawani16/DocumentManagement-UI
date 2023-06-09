@@ -1,10 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDocumentComponent } from '../add-document/add-document.component';
 import { HomeService } from './home.service';
 import { Document } from './home.model';
 import { EditDocumentComponent } from '../edit-document/edit-document.component';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
 
   status:boolean;
   @Output() documentStatusUpdated: EventEmitter<Document> = new EventEmitter<Document>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   snackBar: any;
 
@@ -56,8 +58,8 @@ export class HomeComponent implements OnInit {
     this.homeService.getDocuments().subscribe(
       documents => {
         this.documentsList = documents;
-        console.log('Documents:', this.documentsList); // Print the entire documents list
-        console.log('Document Ids:', this.documentsList.map(document => document.documentId)); // Print the documentIds
+        console.log('Documents:', this.documentsList);
+        console.log('Document Ids:', this.documentsList.map(document => document.documentId)); 
       },
       error => {
         console.error('Error fetching documents:', error);
