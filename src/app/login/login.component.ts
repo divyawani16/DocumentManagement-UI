@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/owner']);
           break;
         default:
-          this.router.navigate(['/owner']);
+          this.router.navigate(['/forbidden']);
       }
     },
     (error) => {

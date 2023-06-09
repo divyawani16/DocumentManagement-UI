@@ -57,6 +57,7 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { AuthGuard } from './_auth/auth.guard';
 import { UserService } from './_services/user.service';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,8 +117,37 @@ import { UserService } from './_services/user.service';
     MatPaginatorModule,
     MatSlideToggleModule,
     RouterModule,
-
-
+    NgxUiLoaderHttpModule.forRoot({showForeground:true}),
+    NgxUiLoaderModule.forRoot({
+      "bgsColor": "Black",
+      "bgsOpacity": 0.5,
+      "bgsPosition": "bottom-right",
+      "bgsSize": 60,
+      "bgsType": "ball-spin-clockwise",
+      "blur": 5,
+      "delay": 0,
+      "fastFadeOut": true,
+      "fgsColor": "red",
+      "fgsPosition": "center-center",
+      "fgsSize": 60,
+      "fgsType": "rotating-plane",
+      "gap": 24,
+      "logoPosition": "center-center",
+      "logoSize": 120,
+      "logoUrl": "",
+      "masterLoaderId": "master",
+      "overlayBorderRadius": "0",
+      "overlayColor": "rgba(40, 40, 40, 0.8)",
+      "pbColor": "red",
+      "pbDirection": "ltr",
+      "pbThickness": 3,
+      "hasProgressBar": true,
+      "text": "",
+      "textColor": "#FFFFFF",
+      "textPosition": "center-center",
+      "maxTime": -1,
+      "minTime": 300
+    }),
   ],
   providers: [
   //   SocialAuthService,{

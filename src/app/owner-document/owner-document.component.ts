@@ -13,6 +13,15 @@ export class OwnerDocumentComponent implements OnInit {
   documentsList: Document[] | undefined;
   searchValue: any;
   Propertylist: any;
+
+
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
+  
   constructor(
     private OwnerDocumentService : OwnerDocumentService,
     private dialog: MatDialog,

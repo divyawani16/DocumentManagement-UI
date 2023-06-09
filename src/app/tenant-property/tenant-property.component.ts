@@ -9,9 +9,18 @@ import { Document } from './tenant-property.model';
 export class TenantPropertyComponent implements OnInit {
   searchValue: string = '';
   Propertylist: Document[] | undefined;
+  
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
   constructor(
     private TenantPropertyService:TenantPropertyService
   ) { }
+
+
   ngOnInit(): void {
     this.TenantPropertyService.getProperty()
       .subscribe(

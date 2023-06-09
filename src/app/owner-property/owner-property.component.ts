@@ -12,6 +12,15 @@ import { AddpropertyComponent } from '../addproperty/addproperty.component';
 export class OwnerPropertyComponent implements OnInit {
   Propertylist: Document[] | undefined;
   searchValue: any;
+
+  
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
+  
   constructor(
     private OwnerPropertyService:OwnerPropertyService,
     private dialog: MatDialog,

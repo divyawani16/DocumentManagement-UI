@@ -10,6 +10,15 @@ import { OwnerUserService } from './owner-user.service';
 export class OwnerUserComponent implements OnInit {
   searchValue: string = '';
   userslist: Document[] | undefined;
+
+  
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
+  
   filteredUsersList: Document[] | undefined;
   constructor( 
     private OwnerUserService: OwnerUserService ) { }

@@ -5,6 +5,13 @@
 
         <app-button (click)="openDialog()" title="Add Document"> </app-button>
 
+
+             
+      <div class="search-box" [ngClass]="{ 'search-box-clicked': isClicked }">
+        <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()"
+          (click)="isClicked = true" (blur)="isClicked = false">
+      </div>
+      
         <div class="container-fluid">
           <div class="card-body">
             <div class="row">

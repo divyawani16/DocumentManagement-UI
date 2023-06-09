@@ -22,6 +22,13 @@ export class TenantDocumentComponent implements OnInit {
     private dialog: MatDialog,
   ) { }
 
+  
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
