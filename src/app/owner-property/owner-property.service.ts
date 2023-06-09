@@ -16,6 +16,7 @@ export class OwnerPropertyService {
   // public getProperty(): Observable<Document[]> {
   //   return this.http.get<Document[]>(`${this.baseUrl}/propertyname);
   // }
+  
   public getProperty(): Observable<Document[]> {
     return this.http.get<Document[]>(`${this.baseUrl}/get`);
   }

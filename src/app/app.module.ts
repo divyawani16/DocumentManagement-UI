@@ -53,11 +53,10 @@ import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AuthGuard } from './_auth/auth.guard';
-import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { CorsInterceptor } from './cors.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -90,7 +89,6 @@ import { CorsInterceptor } from './cors.interceptor';
     ForbiddenComponent,
     LandingPageComponent,
     EditDocumentComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -118,9 +116,8 @@ import { CorsInterceptor } from './cors.interceptor';
     MatTabsModule,
     MatPaginatorModule,
     MatSlideToggleModule,
-    RouterModule,
-
-
+    RouterModule
+  
   ],
   providers: [
   //   SocialAuthService,{
@@ -144,15 +141,6 @@ import { CorsInterceptor } from './cors.interceptor';
   // },
   // UserService
   ],
-  bootstrap: [AppComponent],
-    
-      AuthGuard,{
-        provide: HTTP_INTERCEPTORS,
-        useClass:AuthInterceptor,
-        multi:true
-      },
-      UserService
-      ],
-      bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -14,7 +14,7 @@ export class AddDocumentComponent implements OnInit {
   fileNames: string[] = [];
   successMessageVisible: boolean = false;
   public isFormVisible = true;
-  userNames: string[] = ['anj', 'divi', 'owner', 'Bob']; 
+  userNames: string[];// = ['anj', 'divi', 'owner', 'Bob']; 
   selectedUserName: string;
   constructor(
     public dialogRef: MatDialogRef<AddDocumentComponent>,
@@ -22,8 +22,17 @@ export class AddDocumentComponent implements OnInit {
     private homeservice: HomeService
   ) {}
 
-  ngOnInit(): void {}
-
+ 
+  ngOnInit(): void {
+    this.getUsernames();
+  }
+  
+  getUsernames(): void {
+    this.homeservice.getUsernames()
+      .subscribe(usernames => {
+        this.userNames = usernames;
+      });
+  }
   uploadDocument(): void {
     if (!this.selectedFiles || this.selectedFiles.length === 0) {
       console.error('No file selected.');
@@ -31,7 +40,8 @@ export class AddDocumentComponent implements OnInit {
     }
     const formData = new FormData();
     formData.append('documentName', this.document.documentName);
-    formData.append('username', this.document.userName);
+  
+    formData.append('username', this.selectedUserName);
     formData.append('propertyName', this.document.propertyName);
     formData.append('docTypeName', this.document.docTypeName);
     formData.append('docMimeTypeName', this.document.docMimeTypeName);

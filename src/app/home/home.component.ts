@@ -35,15 +35,15 @@ export class HomeComponent implements OnInit {
     this.homeService.getDocuments().subscribe(
       documents => {
         this.documentsList = documents;
-        console.log('Documents:', this.documentsList); // Print the entire documents list
-        console.log('Document Ids:', this.documentsList.map(document => document.documentId)); // Print the documentIds
+        console.log('Documents:', this.documentsList);
+        console.log('Document Ids:', this.documentsList.map(document => document.documentId));
       },
       error => {
         console.error('Error fetching documents:', error);
       }
     );
   }
-  
+
   editDocument(document: Document): void {
     const dialogRef = this.dialog.open(EditDocumentComponent, {
       width: '450px',
@@ -97,10 +97,7 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
     { 'Head': 'Action', 'FieldName': 'action' },
     { 'Head': 'View', 'FieldName': 'download' },
-
     {'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' }
-
-
   ];
 
   filterData() {
@@ -139,23 +136,50 @@ export class HomeComponent implements OnInit {
 
   public download(documentId: any) {
     console.log('Download method called with documentId:', documentId);
-    const headers = new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': 'true'
-    });
   
-    this.homeService.download(documentId)
-      .subscribe((response: HttpResponse<Blob>) => {
-        const contentDispositionHeader = response.headers.get('content-disposition');
-        const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
-        const url = window.URL.createObjectURL(response.body);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = fileName ?? 'file';
-        link.click();
-        window.URL.revokeObjectURL(url);
-      });
+    this.homeService.download(documentId).subscribe((response: HttpResponse<Blob>) => {
+      const contentDispositionHeader = response.headers.get('content-disposition');
+      const fileNameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+      const matches = fileNameRegex.exec(contentDispositionHeader || '');
+      const fileName = matches != null && matches[1] ? matches[1].replace(/['"]/g, '') : 'file';
+  
+      const blob = new Blob([response.body], { type: response.body.type });
+  
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = fileName;
+  
+      // Programmatically trigger the download
+      link.click();
+  
+      // Clean up the URL object
+      URL.revokeObjectURL(link.href);
+    });
   }
+
+  
+  
+  
+  // public download(documentId: any) {
+  //   console.log('Download method called with documentId:', documentId);
+  //   const headers = new HttpHeaders({
+  //     'Access-Control-Allow-Origin': '*',
+  //     'Access-Control-Allow-Credentials': 'true'
+  //   });
+  
+  //   this.homeService.download(documentId)
+  //     .subscribe((response: HttpResponse<Blob>) => {
+  //       const contentDispositionHeader = response.headers.get('content-disposition');
+  //       const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
+  //       const url = window.URL.createObjectURL(response.body);
+  //       const link = document.createElement('a');
+  //       link.href = url;
+  //       link.download = fileName ?? 'file';
+  //       link.click();
+  //       window.URL.revokeObjectURL(url);
+  //     });
+  // }
   
 
   print(item: any): void {
@@ -199,44 +223,37 @@ export class HomeComponent implements OnInit {
 
 
 
-  public download(documentId: number){
-    console.log(documentId);
-    const documentt = this.documentsList.find(doc => doc.documentId === documentId);
+  // public download(documentId: number){
+  //   console.log(documentId);
+  //   const documentt = this.documentsList.find(doc => doc.documentId === documentId);
     
-    if (documentId) {
-      this.homeService.download (documentId).subscribe(
-        (response: HttpResponse<Blob>) => {
-          const contentDispositionHeader = response.headers.get('content-disposition');
-          const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
-          const url = window.URL.createObjectURL(response.body);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = fileName || 'document';
-          a.click();
-          window.URL.revokeObjectURL(url);
-        },
-        (error: any) => {
-          console.error('Error downloading document:', error);
-        }
-      );
-    } else {
-      console.error('Invalid documentId');
-    }
-  }
+  //   if (documentId) {
+  //     this.homeService.download (documentId).subscribe(
+  //       (response: HttpResponse<Blob>) => {
+  //         const contentDispositionHeader = response.headers.get('content-disposition');
+  //         const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
+  //         const url = window.URL.createObjectURL(response.body);
+  //         const a = document.createElement('a');
+  //         a.href = url;
+  //         a.download = fileName || 'document';
+  //         a.click();
+  //         window.URL.revokeObjectURL(url);
+  //       },
+  //       (error: any) => {
+  //         console.error('Error downloading document:', error);
+  //       }
+  //     );
+  //   } else {
+  //     console.error('Invalid documentId');
+  //   }
+  // }
   
   
   
 
-  print(item: any): void {
-    // Handle printing
-  }
+  
 
-  isClicked = false;
 
-  onSearchBoxClick() {
-    this.isClicked = true;
-  }
-}
 
 
 
