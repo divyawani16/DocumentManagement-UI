@@ -50,7 +50,7 @@ export class TenantDocumentComponent implements OnInit {
     }catch(err){
       console.log(err)
     }
-    alert("inn")
+   
     this.TenantDocumentService.getDocuments(this.userid).subscribe({
       next:(res)=>{
         this.mydocuments=res;
