@@ -74,3 +74,15 @@
 .slider {
   display: none;
 }
+
+.approved-button {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
+
+.pending-button {
+  background-color: rgb(237, 83, 83);
+  color: white;
+  border-radius: 10px;
+}

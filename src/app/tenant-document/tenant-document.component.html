@@ -1,6 +1,9 @@
 <div class="container-fluid page">
     <div class="page__box" style="text-align: center">Your Documents</div>
     <div class="page__content shadow p-3 position-relative">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
       <div class="dropdown-container">
         <!-- <button class="dropdown-button" (click)="toggleDropdown()">Select User</button> -->
         <!-- <div class="dropdown-list" [class.show]="dropdownOpen">
@@ -12,16 +15,22 @@
       
       
       <div class="d-flex justify-content-between align-items-center mb-3">
+
         
     
         <app-button (click)="openDialog()" title="Add Document"> </app-button> 
+        
+        <div class="search-box" [ngClass]="{ 'search-box-clicked': isClicked }">
+          <input matInput [(ngModel)]="searchValue" placeholder="Search..." (ngModelChange)="filterData()"
+            (click)="isClicked = true" (blur)="isClicked = false">
+        </div>
         
         <div class="container-fluid">
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">  
   
-                  <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                  <app-table [HeadArray]="headArray" [GridArray]="filterData()"
                      (onEdit)="editDocument($event)"  (onDelete)="deleteDocument($event)" (onDownload)="download($event)"> </app-table>
                     </div>
                   </div>
@@ -29,19 +38,5 @@
               </div>
             </div>
           </div>
-       
-          <!-- <div class="card-container" (click)="toggleTable('documents')">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>Documents</mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <div class="search-container"> -->
-                  <!-- <input type="text" placeholder="Search" [(ngModel)]="searchTermDocuments" (input)="applyFilter('documents')" /> -->
-                <!-- </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-       -->
       </div>
       

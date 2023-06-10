@@ -12,8 +12,8 @@ export class TenantDocumentService {
   }
   private baseUrl:string;
 
-   public getDocuments(): Observable<Document[]> {
-    return this.http.get<Document[]>(`${this.baseUrl}/documentsdetails`);
+   public getDocuments(tenantId:number): Observable<Document[]> {
+    return this.http.get<Document[]>(`${this.baseUrl}/documentsdetails/${tenantId}`);
   }
   public deleteDocument(documentId: number): Observable<void> {
     const url = `${this.baseUrl}/${documentId}`;

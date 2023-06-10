@@ -13,6 +13,7 @@
   </mat-drawer>
   
   <mat-drawer-content>
+    <ngx-ui-loader></ngx-ui-loader>
     <app-header *ngIf="showHeader" (toggleSidebarForMe)="sideBarToggler()" title="Click here!"></app-header>
     <router-outlet></router-outlet>
     <ng-container *ngIf="!showHeader">

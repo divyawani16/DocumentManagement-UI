@@ -53,6 +53,9 @@ import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { AuthGuard } from './_auth/auth.guard';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { UserService } from './_services/user.service';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { CorsInterceptor } from './cors.interceptor';
@@ -116,8 +119,41 @@ import { CorsInterceptor } from './cors.interceptor';
     MatTabsModule,
     MatPaginatorModule,
     MatSlideToggleModule,
-    RouterModule
+    RouterModule,
+    NgxUiLoaderHttpModule.forRoot({showForeground:true}),
+    NgxUiLoaderModule.forRoot({
+  "bgsColor": "#051530",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 60,
+  "bgsType": "fading-circle",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "#051530",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "fading-circle",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(40, 40, 40, 0.8)",
+  "pbColor": "#051530",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+    }),
+
   
+
   ],
   providers: [
   //   SocialAuthService,{
@@ -134,13 +170,15 @@ import { CorsInterceptor } from './cors.interceptor';
   //      ],
   //     } as SocialAuthServiceConfig,
   //     }],
-  // AuthGuard,{
-  //   provide: HTTP_INTERCEPTORS,
-  //   useClass:AuthInterceptor,
-  //   multi:true
-  // },
-  // UserService
+  AuthGuard,{
+    provide: HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true,
+  },
+  UserService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+    
+
 })
 export class AppModule {}

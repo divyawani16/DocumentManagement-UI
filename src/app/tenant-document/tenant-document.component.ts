@@ -13,8 +13,8 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
 export class TenantDocumentComponent implements OnInit {
   searchValue: string = '';
-  public usernames: string[] = ['User 1', 'User 2', 'User 3'];
-  public dropdownOpen: boolean = false;
+  // public usernames: string[] = ['User 1', 'User 2', 'User 3'];
+  // public dropdownOpen: boolean = false;
   documentsList: Document[] | undefined;
 
   constructor(
@@ -22,23 +22,32 @@ export class TenantDocumentComponent implements OnInit {
     private dialog: MatDialog,
   ) { }
 
+  
+  isClicked = false;
+  
+  userid:number=Number(localStorage.getItem("userid"));
+  mydocuments:any;
 
-  toggleDropdown() {
-    this.dropdownOpen = !this.dropdownOpen;
+  onSearchBoxClick() {
+
+    this.isClicked = true;
   }
+
+  // toggleDropdown() {
+  //   this.dropdownOpen = !this.dropdownOpen;
+  // }
 
   selectUsername(username: string) {
     // Handle username selection
   }
   ngOnInit(): void {
-    try{
-      this.TenantDocumentService.getDocuments()
-      .subscribe(documents => this.documentsList = documents);
-      console.log(this.documentsList)
-    }catch(err){
-      console.log(err)
-    }
+    this.TenantDocumentService.getDocuments(this.userid).subscribe(documents => {
+      this.documentsList = documents;
+      console.log(this.documentsList);
+    });
   }
+  
+  
 
   openDialog(): void {
       const dialogRef = this.dialog.open(AddDocumentComponent, {
@@ -59,8 +68,9 @@ export class TenantDocumentComponent implements OnInit {
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
+    { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
+   // {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'DateTime', 'FieldName': 'dateTime' },
-    {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'View', 'FieldName': 'download' },
     {'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' },
   ];
@@ -79,6 +89,7 @@ export class TenantDocumentComponent implements OnInit {
     console.log('Filtered list:', filteredList);
     return filteredList;
   }
+
   public download(documentId: any) {
     console.log('Download method called with documentId:', documentId);
     const headers = new HttpHeaders({
@@ -116,4 +127,5 @@ export class TenantDocumentComponent implements OnInit {
     );
   }
   
+
 }

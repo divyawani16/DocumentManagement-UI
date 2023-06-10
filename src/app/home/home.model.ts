@@ -1,4 +1,6 @@
-export class Document {
+
+  export class Document {
+
   constructor(
     public documentId: number = 0,
     public file: File | undefined = undefined,

@@ -13,6 +13,15 @@ export class OwnerDocumentComponent implements OnInit {
   documentsList: Document[] | undefined;
   searchValue: any;
   Propertylist: any;
+
+
+  isClicked = false;
+
+  onSearchBoxClick() {
+
+    this.isClicked = true;
+  }
+  
   constructor(
     private OwnerDocumentService : OwnerDocumentService,
     private dialog: MatDialog,
@@ -20,7 +29,7 @@ export class OwnerDocumentComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-      const propertyName = 'Smartworks'; // Replace 'yourPropertyName' with the actual property name
+      const propertyName = 'Smartworks'; 
       this.OwnerDocumentService.getSmartworksDocuments(propertyName)
         .subscribe(documents => this.documentsList = documents);
       console.log(this.documentsList);
