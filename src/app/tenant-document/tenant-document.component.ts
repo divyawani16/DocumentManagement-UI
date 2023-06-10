@@ -59,7 +59,7 @@ export class TenantDocumentComponent implements OnInit {
     { 'Head': 'User Name ', 'FieldName': 'userName' }, 
     { 'Head': 'Property Name', 'FieldName': 'propertyName' },  
     { 'Head': 'Document Type', 'FieldName': 'docTypeName' }, 
-    { 'Head': 'Document Mime Type', 'FieldName': 'docMimeTypeName' },
+    { 'Head': 'DateTime', 'FieldName': 'dateTime' },
     {'Head': 'Action', 'FieldName': 'action' } ,
     { 'Head': 'View', 'FieldName': 'download' },
     {'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' },

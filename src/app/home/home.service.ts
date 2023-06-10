@@ -11,9 +11,13 @@ export class HomeService {
 
   private baseUrl: string;
 
+  constructor(private http: HttpClient) { 
+    this.baseUrl = 'http://localhost:8089/api/documents';
+  }
 
     public download(documentId: number): Observable<HttpResponse<Blob>> {
       const url = `${this.baseUrl}/${documentId}/download`;
+      console.log(url);
       console.log(documentId);
       return this.http.get(url, { observe: 'response', responseType: 'blob' });
     }
@@ -25,10 +29,7 @@ export class HomeService {
     //   return this.http.get(url, { observe: 'response', responseType: 'blob' });
     // }
 
-  constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/documents';
-  }
-
+  
   public getDocuments(): Observable<Document[]> {
     return this.http.get<Document[]>(`${this.baseUrl}/documentsdetails`);
   }

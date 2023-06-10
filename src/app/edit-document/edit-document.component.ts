@@ -21,7 +21,7 @@ export class EditDocumentComponent {
       userName: [data.userName, Validators.required],
       propertyName: [data.propertyName, Validators.required],
       docTypeName: [data.docTypeName, Validators.required],
-      docMimeTypeName: [data.docMimeTypeName, Validators.required]
+     // docMimeTypeName: [data.docMimeTypeName, Validators.required]
     });
   }
 
@@ -33,7 +33,7 @@ export class EditDocumentComponent {
         userName: this.editForm.value.userName,
         propertyName: this.editForm.value.propertyName,
         docTypeName: this.editForm.value.docTypeName,
-        docMimeTypeName: this.editForm.value.docMimeTypeName,
+        dateTime:this.editForm.value.datetime,
         file: this.editForm.value.file
       };
 

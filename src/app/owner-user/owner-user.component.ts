@@ -31,7 +31,7 @@ export class OwnerUserComponent implements OnInit {
     { 'Head': 'Last Name', 'FieldName': 'lastName' }, 
     { 'Head': 'User Name', 'FieldName': 'username' },  
     //{ 'Head': 'Password', 'FieldName': 'password' }, 
-   // {'Head': 'emailId', 'FieldName': 'emailId'},
+    {'Head': 'emailId', 'FieldName': 'emailId'},
     { 'Head': 'Phone Number', 'FieldName': 'phoneNumber' }, 
 
   ];

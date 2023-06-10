@@ -44,7 +44,7 @@ export class AddDocumentComponent implements OnInit {
     formData.append('username', this.selectedUserName);
     formData.append('propertyName', this.document.propertyName);
     formData.append('docTypeName', this.document.docTypeName);
-    formData.append('docMimeTypeName', this.document.docMimeTypeName);
+   // formData.append('docMimeTypeName', this.document.docMimeTypeName);
     formData.append('file', this.selectedFiles[0]);
   
     this.homeservice.createDocument(formData).subscribe(

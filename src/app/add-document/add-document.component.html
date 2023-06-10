@@ -22,10 +22,10 @@
           <mat-label class="input_label">Document Type </mat-label>
           <input matInput [(ngModel)]="document.docTypeName">
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <!-- <mat-form-field appearance="outline">
           <mat-label class="input_label">Document Mime </mat-label>
           <input matInput [(ngModel)]="document.docMimeTypeName">
-        </mat-form-field>
+        </mat-form-field> -->
         <mat-form-field appearance="outline">
           <mat-label class="input_label">Selected Files</mat-label>
           <input matInput [value]="fileNames.join('\n')" readonly>
