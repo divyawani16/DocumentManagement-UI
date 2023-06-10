@@ -43,7 +43,7 @@ export class TenantPropertyComponent implements OnInit {
     { 'Head': 'Address', 'FieldName': 'address' },
     { 'Head': 'City', 'FieldName': 'city' },
     { 'Head': 'Pincode', 'FieldName': 'pincode' },
-    { 'Head': 'Action', 'FieldName': 'action' }
+    //{ 'Head': 'Action', 'FieldName': 'action' }
   ];
 
   editDocument(document: Document) {
@@ -55,6 +55,13 @@ export class TenantPropertyComponent implements OnInit {
     if (!this.searchValue) {
       return this.Propertylist;
     }
+    const filteredList = this.Propertylist.filter(property => {
+      return property.propertyName.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+    console.log('Filtered list:', filteredList);
+    return filteredList;
+  }
+
   //   const filteredList = this.Propertylist.filter(document => {
   //     return document.documentName.toLowerCase().includes(this.searchValue.toLowerCase());
   //   });
@@ -62,5 +69,5 @@ export class TenantPropertyComponent implements OnInit {
   //   return filteredList;
   // }
  
-}
+
 }

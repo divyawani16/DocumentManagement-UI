@@ -16,7 +16,7 @@
             <div class="row">
               <div class="col-md-12">  
   
-                  <app-table [HeadArray]="headArray" [GridArray]="filterData()" 
+                  <app-table [HeadArray]="headArray" [GridArray]="filterData()"
                      (onEdit)="editDocument($event)"  (onDelete)="deleteDocument($event)" (onDownload)="download($event)"> </app-table>
                     </div>
                   </div>
@@ -24,19 +24,5 @@
               </div>
             </div>
           </div>
-       
-          <!-- <div class="card-container" (click)="toggleTable('documents')">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>Documents</mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <div class="search-container"> -->
-                  <!-- <input type="text" placeholder="Search" [(ngModel)]="searchTermDocuments" (input)="applyFilter('documents')" /> -->
-                <!-- </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-       -->
       </div>
       
