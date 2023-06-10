@@ -1,7 +1,21 @@
 <div class="container-fluid page">
     <div class="page__box" style="text-align: center">Your Documents</div>
     <div class="page__content shadow p-3 position-relative">
+
     <div class="d-flex justify-content-between align-items-center mb-3">
+
+      <div class="dropdown-container">
+        <!-- <button class="dropdown-button" (click)="toggleDropdown()">Select User</button> -->
+        <!-- <div class="dropdown-list" [class.show]="dropdownOpen">
+          <div class="dropdown-item" *ngFor="let username of usernames" (click)="selectUsername(username)">
+            {{ username }}
+          </div>
+        </div> -->
+      </div>
+      
+      
+      <div class="d-flex justify-content-between align-items-center mb-3">
+
         
     
         <app-button (click)="openDialog()" title="Add Document"> </app-button> 
