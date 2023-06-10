@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class TenantDocumentService {
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8012/api/documents';
+    this.baseUrl = 'http://localhost:8089/api/documents';
   }
   private baseUrl:string;
 

@@ -23,27 +23,11 @@ export class HomeComponent implements OnInit {
 
   snackBar: any;
 
-
   constructor(
     private dialog: MatDialog,
     private homeService: HomeService
   ) {}
 
-
- 
-    // ngOnInit() {
-    //   try {
-    //     this.homeService.getDocuments()
-    //       .subscribe(documents => {
-    //         this.documentsList = documents;
-    //         // console.log(this.documentsList);
-         
-    //       });
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
-    
 
   ngOnInit() {
     try {
@@ -93,7 +77,6 @@ export class HomeComponent implements OnInit {
         );
       }
     });
-  
   }
   
 
@@ -110,9 +93,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
-
-
   headArray = [
     { 'Head': 'Document Name', 'FieldName': 'documentName' },
     { 'Head': 'User Name ', 'FieldName': 'userName' },
@@ -122,9 +102,6 @@ export class HomeComponent implements OnInit {
     { 'Head': 'Action', 'FieldName': 'action' },
     { 'Head': 'View', 'FieldName': 'download' },
     { 'Head': 'Status', 'FieldName': 'status', 'FieldType': 'toggle' }
-
-
-
   ];
 
   filterData() {
@@ -150,7 +127,6 @@ export class HomeComponent implements OnInit {
     if (index > -1) {
       this.documentsList.splice(index, 1);
     }
-  
     this.homeService.deleteDocument(item.documentId).subscribe(
       () => {
         console.log('Record deleted successfully from the database');
@@ -161,8 +137,6 @@ export class HomeComponent implements OnInit {
     );
   }
 
-
- 
 
   public download(documentId: any) {
     console.log('Download method called with documentId:', documentId);
@@ -183,11 +157,7 @@ export class HomeComponent implements OnInit {
         window.URL.revokeObjectURL(url);
       });
   }
-  
 
-  print(item: any): void {
-    
-  }
 
   isClicked = false;
 
@@ -197,78 +167,5 @@ export class HomeComponent implements OnInit {
 }
 
   
-
-// updateApproval(document: Document) {
-//   const newApprovalStatus = !document.status; 
-
-//     this.homeService.updateDocumentApproval(document.documentId, newApprovalStatus).subscribe(
-//       (updatedDocument: Document) => {
-//         console.log(document.documentId, newApprovalStatus);
-//         document.status = updatedDocument.status;
-//         this.documentStatusUpdated.emit(updatedDocument); 
-//         this.notifyUser(updatedDocument);
-//       },
-//       (error) => {
-//         console.error('Error updating document approval status:', error);
-//       }
-//     );
-//   }
-
-//   handleDocumentStatusUpdated(updatedDocument: Document) {
-   
-//     console.log('Document status updated:', updatedDocument);
-//     const index = this.documentsList.findIndex(doc => doc.documentId === updatedDocument.documentId);
-//     if (index > -1) {
-//       console.log(index);
-//       this.documentsList[index].status = updatedDocument.status; 
-//     }
-//   }
-
-//   notifyUser(document: Document) {
-
-//     const message = document.status ? 'Your document has been approved' : 'Your document has been disapproved';
-//     this.snackBar.open(message, 'Dismiss', {
-//       duration: 3000
-//     });
-//   }
-
-  // download(item: any): void {
-    
-  // }
-
-
-
-  // public download(documentId: number){
-  //   console.log(documentId);
-  //   const documentt = this.documentsList.find(doc => doc.documentId === documentId);
-    
-  //   if (documentId) {
-  //     this.homeService.download (documentId).subscribe(
-  //       (response: HttpResponse<Blob>) => {
-  //         const contentDispositionHeader = response.headers.get('content-disposition');
-  //         const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
-  //         const url = window.URL.createObjectURL(response.body);
-  //         const a = document.createElement('a');
-  //         a.href = url;
-  //         a.download = fileName || 'document';
-  //         a.click();
-  //         window.URL.revokeObjectURL(url);
-  //       },
-  //       (error: any) => {
-  //         console.error('Error downloading document:', error);
-  //       }
-  //     );
-  //   } else {
-  //     console.error('Invalid documentId');
-  //   }
-  
-  
-  
-  
-
- 
-
-  
-
 
 
