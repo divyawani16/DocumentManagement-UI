@@ -7,7 +7,7 @@ export class CorsInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     request = request.clone({
-      withCredentials: true // Include credentials in the request
+      withCredentials: true 
     });
 
     return next.handle(request);

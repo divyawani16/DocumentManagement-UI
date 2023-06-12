@@ -54,10 +54,13 @@ import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AuthInterceptor } from './_auth/auth.interceptor';
-import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { AuthGuard } from './_auth/auth.guard';
-import { UserService } from './_services/user.service';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { UserService } from './_services/user.service';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
+import { CorsInterceptor } from './cors.interceptor';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -148,6 +151,9 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
   "maxTime": -1,
   "minTime": 300
     }),
+
+  
+
   ],
   providers: [
   //   SocialAuthService,{
@@ -173,6 +179,6 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
   ],
   bootstrap: [AppComponent],
     
- 
+
 })
 export class AppModule {}

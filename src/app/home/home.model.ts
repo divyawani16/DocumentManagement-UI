@@ -8,6 +8,6 @@
     public userName: string = '',
     public propertyName: string = '',
     public docTypeName: string = '',
-    public docMimeTypeName: string = ''
+    public dateTime:string=''
   ) {}
 }
