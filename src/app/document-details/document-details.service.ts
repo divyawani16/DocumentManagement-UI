@@ -10,7 +10,7 @@ export class DocumentDetailsService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/v1/documentVersions/';
+    this.baseUrl = 'https://localhost:8089/api/v1/documentVersions/';
   }
 
    public getDocumentVersion(): Observable<Document[]> {

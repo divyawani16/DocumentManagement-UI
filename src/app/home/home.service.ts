@@ -3,6 +3,7 @@ import { HttpClient, HttpProgressEvent, HttpEvent, HttpResponse, HttpHeaders} fr
 import { Observable } from 'rxjs';
 import { Document } from './home.model';
 import { map } from 'rxjs/operators';
+//import { backendurl } from '../config';
 
 @Injectable({
   providedIn: 'root'
@@ -12,22 +13,22 @@ export class HomeService {
   private baseUrl: string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/documents';
+    this.baseUrl = 'https://localhost:8089/api/documents';
   }
 
-    public download(documentId: number): Observable<HttpResponse<Blob>> {
-      const url = `${this.baseUrl}/${documentId}/download`;
-      console.log(url);
-      console.log(documentId);
-      return this.http.get(url, { observe: 'response', responseType: 'blob' });
-    }
-
     // public download(documentId: number): Observable<HttpResponse<Blob>> {
-    //   console.log(documentId);
-    //   const url = this.baseUrl+"/"+9+"/download";
+    //   const url = `${this.baseUrl}/${documentId}/download`;
+    //   console.log(url);
     //   console.log(documentId);
     //   return this.http.get(url, { observe: 'response', responseType: 'blob' });
     // }
+
+    public download(documentId: number): Observable<HttpResponse<Blob>> {
+      console.log(documentId);
+      const url = this.baseUrl+"/"+9+"/download";
+      console.log(documentId);
+      return this.http.get(url, { observe: 'response', responseType: 'blob' });
+    }
 
   
   public getDocuments(): Observable<Document[]> {
@@ -89,7 +90,7 @@ export class HomeService {
     return this.http.put<Document>(url, {});
   }
   public getUsernames(): Observable<string[]> {
-    const url = 'http://localhost:8089/api/users/usernames';
+    const url = 'https://localhost:8089/api/users/usernames';
     return this.http.get<string[]>(url);
   }
 }

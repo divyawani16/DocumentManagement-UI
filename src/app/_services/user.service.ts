@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
-
+import { backendurl } from '../config';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
  
-  PATH_OF_API= "http://localhost:8089";
+  PATH_OF_API= "https://localhost:8089";
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
   constructor( private httpclient: HttpClient, private userAuthService: UserAuthService) { }
 

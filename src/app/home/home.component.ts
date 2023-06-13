@@ -147,18 +147,11 @@ export class HomeComponent implements OnInit {
       const fileNameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
       const matches = fileNameRegex.exec(contentDispositionHeader || '');
       const fileName = matches != null && matches[1] ? matches[1].replace(/['"]/g, '') : 'file';
-  
       const blob = new Blob([response.body], { type: response.body.type });
-  
-      // Create a temporary link element
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
       link.download = fileName;
-  
-      // Programmatically trigger the download
       link.click();
-  
-      // Clean up the URL object
       URL.revokeObjectURL(link.href);
     });
   }

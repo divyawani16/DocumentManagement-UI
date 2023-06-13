@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { backendurl } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-  private apiUrl = 'http://localhost:8089/api';
+  private apiUrl = 'https://localhost:8089/api';
 
   constructor(private http: HttpClient) { }
 

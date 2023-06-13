@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Document } from './tenant-document.model';
 import { HttpClient, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { backendurl } from '../config';
 @Injectable({
   providedIn: 'root'
 })
 export class TenantDocumentService {
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/documents';
+    this.baseUrl = 'https://localhost:8089/api/documents';
   }
   private baseUrl:string;
 

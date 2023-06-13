@@ -13,8 +13,6 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
 export class TenantDocumentComponent implements OnInit {
   searchValue: string = '';
-  // public usernames: string[] = ['User 1', 'User 2', 'User 3'];
-  // public dropdownOpen: boolean = false;
   documentsList: Document[] | undefined;
 
   constructor(

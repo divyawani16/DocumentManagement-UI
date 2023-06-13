@@ -13,7 +13,7 @@ export class OwnerDocumentService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'http://localhost:8089/api/documents';
+    this.baseUrl = 'https://localhost:8089/api/documents';
   }
 
   // public getDocuments(): Observable<Document[]> {
