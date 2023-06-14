@@ -10,7 +10,7 @@ export class OwnerUserService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'https://localhost:8089/api/users/';
+    this.baseUrl = 'http://localhost:8089/api/users/';
   }
 
    public getUsers(): Observable<Document[]> {

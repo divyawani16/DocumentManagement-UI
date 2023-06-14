@@ -10,7 +10,7 @@ export class OwnerPropertyService {
   private baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'https://localhost:8089/api/properties';
+    this.baseUrl = 'http://localhost:8089/api/properties';
   }
 
   // public getProperty(): Observable<Document[]> {
@@ -28,4 +28,6 @@ export class OwnerPropertyService {
   public createProperty(property: Document): Observable<Document> {
     return this.http.post<Document>(`${this.baseUrl}/post`, property);
   }
+ 
+
 }

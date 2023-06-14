@@ -7,13 +7,13 @@ import { backendurl } from '../config';
 })
 export class UserService {
  
-  PATH_OF_API= "https://localhost:8089";
+  PATH_OF_API= "http://localhost:8089";
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
   constructor( private httpclient: HttpClient, private userAuthService: UserAuthService) { }
 
   
   public login(loginData) {
-    return this.httpclient.post(this.PATH_OF_API + '/authenticate', loginData, {
+    return this.httpclient.post(this.PATH_OF_API + '/api/authenticate', loginData, {
       headers: this.requestHeader,
     });
   }

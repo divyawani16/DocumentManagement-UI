@@ -44,8 +44,8 @@ export class TenantDocumentComponent implements OnInit {
       console.log(this.documentsList);
     });
   }
-  
-  
+
+
 
   openDialog(): void {
       const dialogRef = this.dialog.open(AddDocumentComponent, {
@@ -88,24 +88,25 @@ export class TenantDocumentComponent implements OnInit {
     return filteredList;
   }
 
-  public download(documentId: any) {
-    console.log('Download method called with documentId:', documentId);
-    const headers = new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': 'true'
+  public download(event:any) {
+    const selectedDocumentId=event.documentId;
+    const documentResponse= this.documentsList;
+    const documentTodownload=documentResponse.filter((document)=>document.documentId===selectedDocumentId);
+    console.log(documentTodownload);
+    //const documentToDownload=documentResponse.((document)=>document.documentId==documentId);
+    this.TenantDocumentService.download(selectedDocumentId).subscribe((response: HttpResponse<Blob>) => {
+      const contentDispositionHeader = response.headers.get('content-disposition');
+      const fileNameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+      const matches = fileNameRegex.exec(contentDispositionHeader || '');
+      const fileName = event.documentName;
+      const fileExtension= event.filePath.split('.')[1];
+      const blob = new Blob([response.body], { type: response.body.type });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = fileName+"."+fileExtension;
+      link.click();
+      URL.revokeObjectURL(link.href);
     });
-  
-    this.TenantDocumentService.download(documentId)
-      .subscribe((response: HttpResponse<Blob>) => {
-        const contentDispositionHeader = response.headers.get('content-disposition');
-        const fileName = contentDispositionHeader?.split(';')[1].split('=')[1];
-        const url = window.URL.createObjectURL(response.body);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = fileName ?? 'file';
-        link.click();
-        window.URL.revokeObjectURL(url);
-      });
   }
   
 

@@ -6,7 +6,7 @@ import { backendurl } from '../config';
   providedIn: 'root'
 })
 export class DashboardService {
-  private apiUrl = 'https://localhost:8089/api';
+  private apiUrl = 'http://localhost:8089/api';
 
   constructor(private http: HttpClient) { }
 

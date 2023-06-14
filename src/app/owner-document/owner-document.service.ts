@@ -13,7 +13,7 @@ export class OwnerDocumentService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'https://localhost:8089/api/documents';
+    this.baseUrl = 'http://localhost:8089/api/documents';
   }
 
   // public getDocuments(): Observable<Document[]> {
@@ -31,8 +31,9 @@ export class OwnerDocumentService {
   }
   public download(documentId: number): Observable<HttpResponse<Blob>> {
     console.log(documentId);
-    const url = this.baseUrl+"/"+2+"/download";
+    const url = this.baseUrl+"/"+`${documentId}`+"/download";
     console.log(documentId);
     return this.http.get(url, { observe: 'response', responseType: 'blob' });
   }
+ 
 }

@@ -11,7 +11,7 @@ export class HistoryService {
   private baseUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'https://localhost:8089/document-audit/';
+    this.baseUrl = 'http://localhost:8089/document-audit/';
   }
 
    public getDocumentAudit(): Observable<Document[]> {

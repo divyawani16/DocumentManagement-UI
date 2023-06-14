@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { Document } from './tenant-document.model';
 import { HttpClient, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { backendurl } from '../config';
 @Injectable({
   providedIn: 'root'
 })
 export class TenantDocumentService {
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = 'https://localhost:8089/api/documents';
+    this.baseUrl = 'http://localhost:8089/api/documents';
   }
   private baseUrl:string;
 
@@ -23,8 +22,9 @@ export class TenantDocumentService {
 
   public download(documentId: number): Observable<HttpResponse<Blob>> {
     console.log(documentId);
-    const url = this.baseUrl+"/"+3+"/download";
+    const url = this.baseUrl+"/"+`${documentId}`+"/download";
     console.log(documentId);
     return this.http.get(url, { observe: 'response', responseType: 'blob' });
   }
+
 }

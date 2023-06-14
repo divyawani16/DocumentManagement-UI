@@ -11,7 +11,7 @@ export class TenantPropertyService {
   private baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'https://localhost:8089/api/properties';
+    this.baseUrl = 'http://localhost:8089/api/properties';
   }
 
   public getProperty(): Observable<Document[]> {
