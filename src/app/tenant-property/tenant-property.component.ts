@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TenantPropertyService } from './tenant-property.service';
 import { Document } from './tenant-property.model';
+import { EditPropertyComponent } from '../edit-property/edit-property.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-tenant-property',
   templateUrl: './tenant-property.component.html',
@@ -17,7 +19,8 @@ export class TenantPropertyComponent implements OnInit {
     this.isClicked = true;
   }
   constructor(
-    private TenantPropertyService:TenantPropertyService
+    private TenantPropertyService:TenantPropertyService,
+    private dialog: MatDialog,
   ) { }
 
 
@@ -46,9 +49,7 @@ export class TenantPropertyComponent implements OnInit {
     //{ 'Head': 'Action', 'FieldName': 'action' }
   ];
 
-  editDocument(document: Document) {
-  
-  }
+ 
 
   filterData() {
     console.log('Search value:', this.searchValue);

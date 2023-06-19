@@ -37,11 +37,6 @@ export class OwnerDocumentComponent implements OnInit {
       console.log(err);
     }
   }
-
-
-  
-
- 
   
   openDialog(): void {
       const dialogRef = this.dialog.open(AddDocumentComponent, {

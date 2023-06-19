@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Document } from './tenant-property.model';
-import { backendurl } from '../config';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +17,6 @@ export class TenantPropertyService {
   public getProperty(): Observable<Document[]> {
     return this.http.get<Document[]>(`${this.baseUrl}/get`);
   }
+
 
 }

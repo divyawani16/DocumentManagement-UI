@@ -49,34 +49,46 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
-  editDocument(document: Document): void {
+  editDocument(item: any) {
     const dialogRef = this.dialog.open(EditDocumentComponent, {
-      width: '450px',
+      width: '500px',
       height: '500px',
-      data: document,
+      data: { document: item }
     });
   
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.homeService.updateDocument(result.documentId, result).subscribe(
-          updatedDocument => {
-            console.log('Document updated successfully:', updatedDocument);
-            this.getDocuments();
-            this.snackBar.open('Document updated successfully', 'Dismiss', {
-              duration: 3000
-            });
-          },
-          error => {
-            console.error('Error updating document:', error);
-            this.snackBar.open('Error updating document', 'Dismiss', {
-              duration: 3000
-            });
-          }
-        );
-      }
+      console.log('The dialog was closed');
+      console.log(result);
+     
     });
   }
+  // editDocument(document: Document): void {
+  //   const dialogRef = this.dialog.open(EditDocumentComponent, {
+  //     width: '450px',
+  //     height: '500px',
+  //     data: document,
+  //   });
+  
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result) {
+  //       this.homeService.updateDocument(result.documentId, result).subscribe(
+  //         updatedDocument => {
+  //           console.log('Document updated successfully:', updatedDocument);
+  //           this.getDocuments();
+  //           this.snackBar.open('Document updated successfully', 'Dismiss', {
+  //             duration: 3000
+  //           });
+  //         },
+  //         error => {
+  //           console.error('Error updating document:', error);
+  //           this.snackBar.open('Error updating document', 'Dismiss', {
+  //             duration: 3000
+  //           });
+  //         }
+  //       );
+  //     }
+  //   });
+  // }
   
 
   openDialog(): void {

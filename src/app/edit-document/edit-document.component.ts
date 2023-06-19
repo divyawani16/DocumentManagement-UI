@@ -10,9 +10,10 @@ import { HomeService } from '../home/home.service';
 })
 export class EditDocumentComponent {
   editForm: FormGroup;
-
+document:Document
   constructor(
     private dialogRef: MatDialogRef<EditDocumentComponent>,
+    private homeService:HomeService,
     @Inject(MAT_DIALOG_DATA) public data: Document,
     private formBuilder: FormBuilder
   ) {
@@ -25,6 +26,10 @@ export class EditDocumentComponent {
     });
   }
 
+
+  updateDocument(documentId: number, updateDocument: any) {
+    throw new Error('Method not implemented.');
+  }
   onSubmit(): void {
     if (this.editForm.valid) {
       const updatedDocument: Document = {

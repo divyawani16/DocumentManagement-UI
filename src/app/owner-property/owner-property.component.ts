@@ -3,7 +3,7 @@ import { OwnerPropertyService } from './owner-property.service';
 import { Document } from './owner-property.model';
 import { MatDialog } from '@angular/material/dialog';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
-
+import { EditPropertyComponent } from '../edit-property/edit-property.component';
 @Component({
   selector: 'app-owner-property',
   templateUrl: './owner-property.component.html',
@@ -78,8 +78,18 @@ export class OwnerPropertyComponent implements OnInit {
 
   ];
 
-  editDocument(document: Document) {
+  editProperty(item: any) {
+    const dialogRef = this.dialog.open(EditPropertyComponent, {
+      width: '500px',
+      height: '500px',
+      data: { property: item }
+    });
   
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      
+    });
   }
 
   filterData() {
@@ -87,12 +97,7 @@ export class OwnerPropertyComponent implements OnInit {
     if (!this.searchValue) {
       return this.Propertylist;
     }
-  //   const filteredList = this.Propertylist.filter(document => {
-  //     return document.documentName.toLowerCase().includes(this.searchValue.toLowerCase());
-  //   });
-  //   console.log('Filtered list:', filteredList);
-  //   return filteredList;
-  // }
+
  
 }
 }

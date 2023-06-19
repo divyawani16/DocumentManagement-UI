@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { backendurl } from '../config';
+
 
 @Injectable({
   providedIn: 'root'

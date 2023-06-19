@@ -1,5 +1,6 @@
 export class Document {
     constructor(
+        public propertyId :number=0,
         public propertyName: string = '',
         public address: string = '',
         public city: string = '',

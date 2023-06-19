@@ -38,7 +38,7 @@ export class HomeService {
   }
   
 
-  updateDocument(documentId: string, document: Document): Observable<Document> {
+  public updateDocument(documentId: number, document: Document): Observable<Document> {
     const url = `${this.baseUrl}/${documentId}`;
     return this.http.put<Document>(url, document);
   }
@@ -51,5 +51,9 @@ export class HomeService {
     const url = 'http://localhost:8089/api/users/usernames';
     return this.http.get<string[]>(url);
   }
+  // public updateProperty(propertyId: number, property: Document): Observable<Document> {
+  //   const url = `${this.baseUrl}/${propertyId}`;
+  //   return this.http.put<Document>(url, property);
+  // }
 }
 

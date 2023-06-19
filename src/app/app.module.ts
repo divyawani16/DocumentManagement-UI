@@ -59,6 +59,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { UserService } from './_services/user.service';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { CorsInterceptor } from './cors.interceptor';
+import { EditPropertyComponent } from './edit-property/edit-property.component';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { CorsInterceptor } from './cors.interceptor';
     ForbiddenComponent,
     LandingPageComponent,
     EditDocumentComponent,
+    EditPropertyComponent,
   ],
   imports: [
     BrowserModule,

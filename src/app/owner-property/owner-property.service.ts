@@ -29,5 +29,8 @@ export class OwnerPropertyService {
     return this.http.post<Document>(`${this.baseUrl}/post`, property);
   }
  
-
+  public updateProperty(propertyId: number, property: Document): Observable<Document> {
+    const url = `${this.baseUrl}/${propertyId}`;
+    return this.http.put<Document>(url, property);
+  }
 }

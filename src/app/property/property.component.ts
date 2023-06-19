@@ -3,6 +3,7 @@ import { Document } from './property.model';
 import { PropertyService } from './property.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddpropertyComponent } from '../addproperty/addproperty.component';
+import { EditPropertyComponent } from '../edit-property/edit-property.component';
 @Component({
   selector: 'app-property',
   templateUrl: './property.component.html',
@@ -69,8 +70,20 @@ export class PropertyComponent implements OnInit {
   }
 
   editProperty(item: any) {
-    
+    const dialogRef = this.dialog.open(EditPropertyComponent, {
+      width: '500px',
+      height: '500px',
+      data: { property: item }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+     
+    });
   }
+  
+
   deleteProperty(item: any) {
     const index = this.Propertylist.indexOf(item);
     if (index > -1) {
